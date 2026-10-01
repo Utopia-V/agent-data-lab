@@ -8,6 +8,32 @@ from agent_data_lab.runner import CodexRunner
 
 
 class CaptureBoundary(unittest.TestCase):
+    def test_followup_reuses_thread_and_counts_only_new_tokens(self):
+        from pathlib import Path
+        client=object.__new__(CodexRunner)
+        client.cwd=Path('/tmp')
+        client.model,client.effort,client.timeout='test-model','high',1
+        client.errors=[]
+        client.thread_usage={'existing':{'inputTokens':100,'cachedInputTokens':60,'outputTokens':10}}
+        requests=[]
+        def request(method,params):
+            requests.append((method,params))
+            return {'turn':{'id':'next'}}
+        client.request=request
+        events=iter([
+            {'method':'thread/tokenUsage/updated','params':{'threadId':'existing','tokenUsage':{
+                'total':{'inputTokens':145,'cachedInputTokens':90,'outputTokens':18},
+                'last':{'inputTokens':45,'outputTokens':8}}}},
+            {'method':'turn/completed','params':{'threadId':'existing','turn':{'id':'old','status':'completed'}}},
+            {'method':'turn/completed','params':{'threadId':'existing','turn':{'id':'next','status':'completed'}}},
+        ])
+        client.receive=lambda _:next(events)
+        result=client.run('followup',None,thread_id='existing')
+        self.assertEqual([method for method,_ in requests],['turn/start'])
+        self.assertEqual(result['turn_id'],'next')
+        self.assertEqual(result['usage']['total'],{'inputTokens':45,'cachedInputTokens':30,'outputTokens':8})
+        self.assertEqual(result['cumulative_usage']['total']['inputTokens'],145)
+
     def test_completed_exchange_is_preserved_before_a_later_turn_failure(self):
         client=object.__new__(CodexRunner)
         from pathlib import Path

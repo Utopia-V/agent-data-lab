@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Belles_cookbook_store · 2023年1月逐规则费用审计</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#172c3b;background:#f3f6f8}body{max-width:1100px;margin:40px auto;padding:0 24px}h1{font-size:1.8rem}p{line-height:1.7}.note{border-left:4px solid #247684;padding:12px 18px;background:white}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0}select{padding:8px 12px;font:inherit;border:1px solid #8497a4;border-radius:6px;background:white}.table-wrap{overflow:auto;border:1px solid #d2dce2;border-radius:8px}table{border-collapse:collapse;width:100%;background:white}th,td{padding:11px 16px;border-bottom:1px solid #e2e8ec;text-align:right;font-variant-numeric:tabular-nums}th{background:#183d50;color:white}th:nth-child(2),td:nth-child(2){text-align:left}tbody tr:nth-child(even){background:#f5f9fb}caption{text-align:left;padding:14px;font-weight:600}footer{margin:24px 0;color:#4f6572;font-size:.9rem}
+</style></head><body><aside style="padding:12px 16px;margin:0 0 20px;border:1px solid #ccd6df;background:#fff;font-size:13px;line-height:1.6">实验示例 · 规则 602 的 rate 调整后。数据来自 <a href="https://huggingface.co/datasets/adyen/DABstep/tree/8afcb4ee3df0d73da5e0cddfddfb55665b760169">Adyen DABstep</a> 的合成交易记录，许可 <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。实验另加入一笔交易并修改指定费率，非真实商户账单。<br>来源集合 SHA256：<code style="overflow-wrap:anywhere">cb0f26c2866b7e91c531c0d83dc1c99191d69d363bf94ad13984f533734fdfa3</code>。公开副本仅添加本段出处说明；计算数据与交互程序保持模型原输出。</aside>
+<h1>Belles_cookbook_store</h1>
+<p>2023年1月 · 逐规则费用审计（欧元）</p>
+<p class="note">每行独立统计一个适用规则。交易可能同时匹配多个规则，行间金额与费用不可相加为总账单。</p>
+<p>范围：2023年1月1日至31日全部 1202 笔交易（含拒绝交易）。自然月交易金额 €1113260.42；欺诈争议金额 €11680.62；欺诈金额占比约 1.049226%。商户账户类型 R，MCC 5942，捕获延迟 1 天。</p>
+<div class="controls"><label for="scheme-filter">卡组织</label><select id="scheme-filter"><option value="">全部卡组织</option></select><span>当前行数：<strong id="row-count" aria-live="polite">0</strong></span></div>
+<div class="table-wrap"><table id="fees"><caption>适用费用规则</caption><thead><tr><th scope="col">fee_id</th><th scope="col">card_scheme</th><th scope="col">transactions</th><th scope="col">amount_eur</th><th scope="col">fee_eur</th></tr></thead><tbody></tbody></table></div>
+<noscript>请启用 JavaScript 以查看和筛选嵌入的审计数据。</noscript>
+<footer>计算：每笔费用 = fixed_amount + rate × eur_amount / 10000。各规则对所有匹配交易独立求和，计算中不舍入；金额显示 2 位小数，费用显示 6 位小数，末位采用半偶舍入。空分类列表和 null 不限制匹配。来源：payments.csv、merchant_data.json、fees.json、manual.md。数据已内嵌，无需网络连接。</footer>
+<script id="fee-data" type="application/json">[{"fee_id": 36, "card_scheme": "SwiftCharge", "transactions": 2, "amount_eur": "74.13", "fee_eur": "0.612193"}, {"fee_id": 51, "card_scheme": "TransactPlus", "transactions": 4, "amount_eur": "199.73", "fee_eur": "1.578407"}, {"fee_id": 53, "card_scheme": "NexPay", "transactions": 6, "amount_eur": "1019.64", "fee_eur": "10.106580"}, {"fee_id": 64, "card_scheme": "SwiftCharge", "transactions": 54, "amount_eur": "4754.18", "fee_eur": "28.566318"}, {"fee_id": 65, "card_scheme": "SwiftCharge", "transactions": 1, "amount_eur": "63.33", "fee_eur": "0.245322"}, {"fee_id": 107, "card_scheme": "SwiftCharge", "transactions": 5, "amount_eur": "450.96", "fee_eur": "4.374312"}, {"fee_id": 123, "card_scheme": "TransactPlus", "transactions": 3, "amount_eur": "325.39", "fee_eur": "1.073787"}, {"fee_id": 150, "card_scheme": "SwiftCharge", "transactions": 2, "amount_eur": "58.17", "fee_eur": "0.641373"}, {"fee_id": 163, "card_scheme": "SwiftCharge", "transactions": 5, "amount_eur": "554.83", "fee_eur": "4.644123"}, {"fee_id": 231, "card_scheme": "NexPay", "transactions": 10, "amount_eur": "715.12", "fee_eur": "1.987800"}, {"fee_id": 249, "card_scheme": "GlobalCard", "transactions": 8, "amount_eur": "407.60", "fee_eur": "2.222040"}, {"fee_id": 276, "card_scheme": "GlobalCard", "transactions": 6, "amount_eur": "890.59", "fee_eur": "6.919425"}, {"fee_id": 286, "card_scheme": "GlobalCard", "transactions": 24, "amount_eur": "1837.66", "fee_eur": "8.831810"}, {"fee_id": 347, "card_scheme": "SwiftCharge", "transactions": 5, "amount_eur": "554.83", "fee_eur": "5.305089"}, {"fee_id": 381, "card_scheme": "TransactPlus", "transactions": 56, "amount_eur": "5647.69", "fee_eur": "49.690134"}, {"fee_id": 384, "card_scheme": "NexPay", "transactions": 12, "amount_eur": "729.31", "fee_eur": "1.621034"}, {"fee_id": 394, "card_scheme": "NexPay", "transactions": 9, "amount_eur": "1367.45", "fee_eur": "7.467250"}, {"fee_id": 428, "card_scheme": "GlobalCard", "transactions": 3, "amount_eur": "214.29", "fee_eur": "0.334290"}, {"fee_id": 471, "card_scheme": "NexPay", "transactions": 4, "amount_eur": "113.51", "fee_eur": "0.721603"}, {"fee_id": 473, "card_scheme": "TransactPlus", "transactions": 117, "amount_eur": "10106.19", "fee_eur": "49.679712"}, {"fee_id": 477, "card_scheme": "GlobalCard", "transactions": 32, "amount_eur": "2245.26", "fee_eur": "15.964404"}, {"fee_id": 536, "card_scheme": "TransactPlus", "transactions": 11, "amount_eur": "1538.14", "fee_eur": "8.790700"}, {"fee_id": 556, "card_scheme": "GlobalCard", "transactions": 1, "amount_eur": "296.76", "fee_eur": "1.524772"}, {"fee_id": 572, "card_scheme": "GlobalCard", "transactions": 85, "amount_eur": "1007027.60", "fee_eur": "4436.021440"}, {"fee_id": 595, "card_scheme": "TransactPlus", "transactions": 1, "amount_eur": "25.11", "fee_eur": "0.235682"}, {"fee_id": 602, "card_scheme": "TransactPlus", "transactions": 211, "amount_eur": "22848.96", "fee_eur": "214.255536"}, {"fee_id": 608, "card_scheme": "SwiftCharge", "transactions": 5, "amount_eur": "554.83", "fee_eur": "1.964490"}, {"fee_id": 626, "card_scheme": "SwiftCharge", "transactions": 4, "amount_eur": "220.21", "fee_eur": "2.303701"}, {"fee_id": 680, "card_scheme": "TransactPlus", "transactions": 4, "amount_eur": "157.31", "fee_eur": "1.432866"}, {"fee_id": 709, "card_scheme": "GlobalCard", "transactions": 11, "amount_eur": "1206.25", "fee_eur": "3.370625"}, {"fee_id": 725, "card_scheme": "GlobalCard", "transactions": 6, "amount_eur": "890.59", "fee_eur": "1.692121"}, {"fee_id": 741, "card_scheme": "GlobalCard", "transactions": 7, "amount_eur": "695.20", "fee_eur": "5.422560"}, {"fee_id": 813, "card_scheme": "GlobalCard", "transactions": 108, "amount_eur": "1009497.78", "fee_eur": "7679.743128"}, {"fee_id": 868, "card_scheme": "SwiftCharge", "transactions": 2, "amount_eur": "276.21", "fee_eur": "0.853388"}, {"fee_id": 960, "card_scheme": "NexPay", "transactions": 9, "amount_eur": "1367.45", "fee_eur": "3.911880"}]</script>
+<script>
+'use strict';
+const rows=JSON.parse(document.getElementById('fee-data').textContent);
+const select=document.getElementById('scheme-filter');
+const body=document.querySelector('#fees tbody');
+const fields=['fee_id','card_scheme','transactions','amount_eur','fee_eur'];
+const schemeName=r=>r.card_scheme===null?'全部（规则不限卡组织）':r.card_scheme;
+for(const scheme of [...new Set(rows.map(schemeName))].sort()){
+ const option=document.createElement('option');option.value=scheme;option.textContent=scheme;select.appendChild(option);
+}
+function render(){
+ const filtered=rows.filter(r=>select.value===''||schemeName(r)===select.value);
+ body.replaceChildren();
+ for(const row of filtered){
+  const tr=document.createElement('tr');
+  for(const field of fields){const td=document.createElement('td');td.textContent=field==='card_scheme'?schemeName(row):String(row[field]);tr.appendChild(td);}
+  body.appendChild(tr);
+ }
+ document.getElementById('row-count').textContent=String(filtered.length);
+}
+select.addEventListener('change',render);render();
+</script></body></html>

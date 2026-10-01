@@ -19,3 +19,8 @@ packages = ["src/agent_data_lab"]
 analysis = [
     "matplotlib>=3.11.2",
 ]
+environment = [
+    "duckdb>=1.5.6",
+    "jieba==0.42.1",
+    "pandas>=3.0.6",
+]

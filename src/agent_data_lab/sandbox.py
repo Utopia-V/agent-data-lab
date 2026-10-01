@@ -1,6 +1,8 @@
 """Run model-authored programs with corpus access, excluding host/oracle access."""
 
 from pathlib import Path
+import importlib.util
+import importlib.metadata
 import subprocess
 import time
 
@@ -9,13 +11,15 @@ import mdurl
 
 
 class Sandbox:
-    def __init__(self, corpus: Path, scratch: Path, *, interface: bool, provider: Path | None = None, helpers: bool = False):
+    def __init__(self, corpus: Path, scratch: Path, *, interface: bool, provider: Path | None = None, helpers: bool = False,
+                 libraries: tuple[str, ...] = ()):
         self.corpus = corpus.resolve()
         self.scratch = scratch.resolve()
         self.scratch.mkdir(parents=True, exist_ok=True)
         self.interface = interface
         self.provider = (provider or Path(__file__).with_name("access.py")).resolve()
         self.helpers = helpers
+        self.libraries = libraries
 
     def run(self, command: str, *, max_chars: int = 24000):
         if not isinstance(command, str):
@@ -32,10 +36,31 @@ class Sandbox:
                 "--dir", "/opt/deps", "--chdir", "/work"]
         for module in (markdown_it, mdurl):
             args += ["--ro-bind", str(Path(module.__file__).parent), f"/opt/deps/{module.__name__}"]
+        distributions=importlib.metadata.packages_distributions() if self.libraries else {}
+        mounted_metadata=set()
+        for name in self.libraries:
+            spec=importlib.util.find_spec(name)
+            if spec is None or spec.origin is None:
+                raise RuntimeError(f"configured runtime library unavailable: {name}")
+            path=Path(spec.origin)
+            origin=path.parent if spec.submodule_search_locations is not None else path
+            args += ["--ro-bind",str(origin),"/opt/deps/"+origin.name]
+            for parent in (path.parent,path.parent.parent):
+                for dependency in parent.glob(name+".libs"):
+                    args += ["--ro-bind",str(dependency),"/opt/deps/"+dependency.name]
+            for distribution_name in distributions.get(name,[]):
+                distribution=importlib.metadata.distribution(distribution_name)
+                for item in distribution.files or []:
+                    if item.name=="METADATA" and item.parent.name.endswith('.dist-info'):
+                        metadata=Path(distribution.locate_file(item)).parent
+                        if metadata not in mounted_metadata:
+                            mounted_metadata.add(metadata)
+                            args += ["--ro-bind",str(metadata),"/opt/deps/"+metadata.name]
         if self.interface or self.helpers:
             args += ["--dir", "/opt/agent_data_lab",
-                     "--ro-bind", str(self.provider.with_name("__init__.py")), "/opt/agent_data_lab/__init__.py",
-                     "--ro-bind", str(self.provider.with_name("native.py")), "/opt/agent_data_lab/native.py"]
+                     "--ro-bind", str(self.provider.with_name("__init__.py")), "/opt/agent_data_lab/__init__.py"]
+        if self.interface or self.helpers:
+            args += ["--ro-bind", str(self.provider.with_name("native.py")), "/opt/agent_data_lab/native.py"]
         if self.interface:
             args += ["--ro-bind", str(self.provider), "/opt/agent_data_lab/access.py"]
         args += ["/bin/bash", "--noprofile", "--norc", "-c", command]

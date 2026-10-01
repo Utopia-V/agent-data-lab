@@ -1,0 +1,3894 @@
+[
+  {
+    "campaign": "raw-discovery-probe",
+    "manifest": {
+      "kind": "raw-source-discovery",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "tasks": [
+        {
+          "task_id": "70",
+          "question": "Is Martinis_Fine_Steakhouse in danger of getting a high-fraud rate fine?",
+          "guidelines": "Answer must be just either yes or no. If a question does not have a relevant or applicable answer for the task, please respond with 'Not Applicable'",
+          "level": "easy",
+          "answer": "Not Applicable"
+        },
+        {
+          "task_id": "1305",
+          "question": "For account type H and the MCC description: Eating Places and Restaurants, what would be the average fee that the card scheme GlobalCard would charge for a transaction value of 10 EUR? Provide the answer in EUR and 6 decimals",
+          "answer": "0.123217",
+          "guidelines": "Answer must be just a number expressed in EUR rounded to 6 decimals. If a question does not have a relevant or applicable answer for the task, please respond with 'Not Applicable'",
+          "level": "hard"
+        },
+        {
+          "task_id": "1681",
+          "question": "For the 10th of the year 2023, what are the Fee IDs applicable to Belles_cookbook_store?",
+          "answer": "741, 709, 454, 813, 381, 536, 473, 572, 477, 286",
+          "guidelines": "Answer must be a list of values in comma separated list, eg: A, B, C. If the answer is an empty list, reply with an empty string. If a question does not have a relevant or applicable answer for the task, please respond with 'Not Applicable'",
+          "level": "hard"
+        }
+      ],
+      "conditions": [
+        "files",
+        "catalog"
+      ],
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "implementation_sha256": "f6bc344b1cb912fb070ebc61867f3d4fb2b1a34754d51b9e49ac20331f747ebe",
+      "source_sha256": "81129fecbd59a8dd8df6f3a5b9caa8ab2e6cfb96acbbb0e139e33b8d55204cb7",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "task_mode": "fresh thread; program output artifact graded"
+    },
+    "archive": "implementations/f6bc344b1cb912fb070ebc61867f3d4fb2b1a34754d51b9e49ac20331f747ebe.tar.gz",
+    "archive_sha256": "ba0e7c7b67187e9039667aa842566a8df5e60faaf962a5443c69641bf403a5e3",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "condition": "catalog",
+        "task": "70",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "1305",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "1681",
+        "replicate": 0
+      },
+      {
+        "condition": "catalog",
+        "task": "1681",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "70",
+        "replicate": 0
+      },
+      {
+        "condition": "catalog",
+        "task": "1305",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "retained-work-v1",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation",
+        "workspace"
+      ],
+      "models": [
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "cb22c8ce74853c47c74403a8d0435c227311ffb72ffbacd3cb3de42dce4bae6f",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/cb22c8ce74853c47c74403a8d0435c227311ffb72ffbacd3cb3de42dce4bae6f.tar.gz",
+    "archive_sha256": "1c2962942bf889eab3ebfec6ac2d5e1d065d5f114fa36a82e170fe6fecf86e99",
+    "evidence_status": "diagnostic: previous answer artifact removed",
+    "order": null
+  },
+  {
+    "campaign": "retained-work-v2",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation",
+        "workspace"
+      ],
+      "models": [
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "4132d2e8cf885d9d81f8b790ff4a332027784550d288342680b8b13926823a32",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/4132d2e8cf885d9d81f8b790ff4a332027784550d288342680b8b13926823a32.tar.gz",
+    "archive_sha256": "5956338d40c6b35bcf53d6ca9b23dd8b3d4c470875dddfa1a8380834e5a7ce0d",
+    "evidence_status": "diagnostic: previous answer artifact removed",
+    "order": null
+  },
+  {
+    "campaign": "observation-factorial-v1",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation"
+      ],
+      "context_conditions": [
+        "none",
+        "discovery",
+        "changes",
+        "both"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "4b7b3df9f070b24d36f5792d3fdf170639221ddca94040f07ca253edd89ae140",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 2,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/4b7b3df9f070b24d36f5792d3fdf170639221ddca94040f07ca253edd89ae140.tar.gz",
+    "archive_sha256": "2e2f9ff707364eaf10629ad3e05a425a7abf9d88c6c8054817d07388db4afae1",
+    "evidence_status": "diagnostic: previous answer artifact removed",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "none",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "both",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "discovery",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "changes",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "changes",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "discovery",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "both",
+        "replicate": 1
+      }
+    ]
+  },
+  {
+    "campaign": "retained-instructions-v1",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation"
+      ],
+      "context_conditions": [
+        "instructions"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "c902ca8079efc5ad049fbcfcbea97824340582b0db8831eb095ad5e1c6ad0078",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 2,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/c902ca8079efc5ad049fbcfcbea97824340582b0db8831eb095ad5e1c6ad0078.tar.gz",
+    "archive_sha256": "70f2d446f7941bca29413f37dbc47ba26ea3745443affad4c614a00a3a14ce50",
+    "evidence_status": "diagnostic: previous answer artifact removed",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "instructions",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "instructions",
+        "replicate": 1
+      }
+    ]
+  },
+  {
+    "campaign": "layout-1-v1",
+    "manifest": {
+      "kind": "raw-source-discovery",
+      "dataset": {
+        "kind": "controlled-layout-variant",
+        "parts": 1,
+        "history": false,
+        "upstream": {
+          "repository": "adyen/DABstep",
+          "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+          "license": "CC-BY-4.0",
+          "files": [
+            {
+              "path": "context/acquirer_countries.csv",
+              "upstream": "data/context/acquirer_countries.csv",
+              "bytes": 194,
+              "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+            },
+            {
+              "path": "context/fees.json",
+              "upstream": "data/context/fees.json",
+              "bytes": 531118,
+              "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+            },
+            {
+              "path": "context/manual.md",
+              "upstream": "data/context/manual.md",
+              "bytes": 22127,
+              "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+            },
+            {
+              "path": "context/merchant_category_codes.csv",
+              "upstream": "data/context/merchant_category_codes.csv",
+              "bytes": 26611,
+              "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+            },
+            {
+              "path": "context/merchant_data.json",
+              "upstream": "data/context/merchant_data.json",
+              "bytes": 6857,
+              "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+            },
+            {
+              "path": "context/payments-readme.md",
+              "upstream": "data/context/payments-readme.md",
+              "bytes": 1719,
+              "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+            },
+            {
+              "path": "context/payments.csv",
+              "upstream": "data/context/payments.csv",
+              "bytes": 23581339,
+              "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+            },
+            {
+              "path": "dev.jsonl",
+              "upstream": "data/tasks/dev.jsonl",
+              "bytes": 6330,
+              "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+            },
+            {
+              "path": "LICENSE",
+              "upstream": "LICENSE",
+              "bytes": 321,
+              "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+            }
+          ]
+        },
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          },
+          {
+            "path": "context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "bytes": 22456,
+            "sha256": "bfcd9156e13ade810680c14c997421055fc782824606816e5dc4fb6275226b14"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "bytes": 761,
+            "sha256": "ef61941e4e2a1f1a8a56b4a95dfed943be9aee60317b66192dcc60b7b425b990"
+          }
+        ],
+        "invariant": "identical current rules and answers; only file partitioning and explicitly excluded history vary"
+      },
+      "tasks": [
+        {
+          "task_id": "hospitality",
+          "answer": "0.123217",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 10 transaction, account type H, merchant category Eating Places and Restaurants? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        },
+        {
+          "task_id": "books",
+          "answer": "0.129439",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 12.75 transaction, account type R, merchant category Book Stores? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        }
+      ],
+      "conditions": [
+        "files",
+        "observed"
+      ],
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "implementation_sha256": "7e35f0a608b5e433ff84c9d106b9ec553e7425d9d95a8dc9382f7943a174e543",
+      "source_sha256": "1f36c7b2caf332e9421004cd1d756579cbddb6e70be6c8503472380ef0f36feb",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "task_mode": "fresh thread; program output artifact graded"
+    },
+    "archive": "implementations/7e35f0a608b5e433ff84c9d106b9ec553e7425d9d95a8dc9382f7943a174e543.tar.gz",
+    "archive_sha256": "6da132ab489ec8abfd9419d49fcb4d762434d20d8dca9e50fb05bc377e9b2d07",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "condition": "files",
+        "task": "books",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "books",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "layout-32-v1",
+    "manifest": {
+      "kind": "raw-source-discovery",
+      "dataset": {
+        "kind": "controlled-layout-variant",
+        "parts": 32,
+        "history": false,
+        "upstream": {
+          "repository": "adyen/DABstep",
+          "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+          "license": "CC-BY-4.0",
+          "files": [
+            {
+              "path": "context/acquirer_countries.csv",
+              "upstream": "data/context/acquirer_countries.csv",
+              "bytes": 194,
+              "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+            },
+            {
+              "path": "context/fees.json",
+              "upstream": "data/context/fees.json",
+              "bytes": 531118,
+              "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+            },
+            {
+              "path": "context/manual.md",
+              "upstream": "data/context/manual.md",
+              "bytes": 22127,
+              "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+            },
+            {
+              "path": "context/merchant_category_codes.csv",
+              "upstream": "data/context/merchant_category_codes.csv",
+              "bytes": 26611,
+              "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+            },
+            {
+              "path": "context/merchant_data.json",
+              "upstream": "data/context/merchant_data.json",
+              "bytes": 6857,
+              "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+            },
+            {
+              "path": "context/payments-readme.md",
+              "upstream": "data/context/payments-readme.md",
+              "bytes": 1719,
+              "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+            },
+            {
+              "path": "context/payments.csv",
+              "upstream": "data/context/payments.csv",
+              "bytes": 23581339,
+              "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+            },
+            {
+              "path": "dev.jsonl",
+              "upstream": "data/tasks/dev.jsonl",
+              "bytes": 6330,
+              "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+            },
+            {
+              "path": "LICENSE",
+              "upstream": "LICENSE",
+              "bytes": 321,
+              "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+            }
+          ]
+        },
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          },
+          {
+            "path": "context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/manual.md",
+            "bytes": 22558,
+            "sha256": "cc575858458cfe18c0485777c789291d0ad74e608d59a7e3db25a6e87d4ff8c0"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "context/pricing/current/part-0000.json",
+            "bytes": 13414,
+            "sha256": "1027efe1b99db24165c14ed0139acd724d60643596ea3deced9ce4864756f5af"
+          },
+          {
+            "path": "context/pricing/current/part-0001.json",
+            "bytes": 14028,
+            "sha256": "c1c5a703cc03495410c28191fd7e405a1d6ba91dc098ca14fb5f8fc32ed7a377"
+          },
+          {
+            "path": "context/pricing/current/part-0002.json",
+            "bytes": 13796,
+            "sha256": "939c384d5f811bb1206ad627dc34b7d4a95e9dec6ceb64c4f0d827db29ebc5fe"
+          },
+          {
+            "path": "context/pricing/current/part-0003.json",
+            "bytes": 13340,
+            "sha256": "f8152f13f73a8a8019874c74cff3e9f8d92178400ea6bcbfab04b7ca755a91a5"
+          },
+          {
+            "path": "context/pricing/current/part-0004.json",
+            "bytes": 13210,
+            "sha256": "dff462781b480938cc67ad4b6222a4a6568d4ea535cdd39cca1ed8a6ba5cd8ba"
+          },
+          {
+            "path": "context/pricing/current/part-0005.json",
+            "bytes": 13610,
+            "sha256": "8050e6924e0243025e1760d10694a7b5f7b5eed31fda2c39d32e07d83f38c1a4"
+          },
+          {
+            "path": "context/pricing/current/part-0006.json",
+            "bytes": 13399,
+            "sha256": "befe2507a83d39656270152dc4c13ada88bf268524e78dd12d14e4ff4cb9de01"
+          },
+          {
+            "path": "context/pricing/current/part-0007.json",
+            "bytes": 13633,
+            "sha256": "4055bb1cba5a015d7c1d4657510a77d4b1d2c61cb55caea81ca0c0fafc25aed5"
+          },
+          {
+            "path": "context/pricing/current/part-0008.json",
+            "bytes": 13359,
+            "sha256": "088836aa98ff305b759472a1960cd9e98c2259a926aea8de01e450020087ca39"
+          },
+          {
+            "path": "context/pricing/current/part-0009.json",
+            "bytes": 13225,
+            "sha256": "d2153d2d9100c84fb341e53f84e10159b775aac44deacbc4aa85d17fc1c43b62"
+          },
+          {
+            "path": "context/pricing/current/part-0010.json",
+            "bytes": 13095,
+            "sha256": "7e409e3f3d8db72efd3a7eef7d9da527d7361083a5e84a56d0d9e1c9d98035e3"
+          },
+          {
+            "path": "context/pricing/current/part-0011.json",
+            "bytes": 13209,
+            "sha256": "53f5fe00eb3e262dbac16f39911d36b03a7d8ef4aadb3b91182d9ffdbf28d967"
+          },
+          {
+            "path": "context/pricing/current/part-0012.json",
+            "bytes": 13284,
+            "sha256": "1c507689530232fb1be13f18f7f9b0d52a4a9bee50a0e6e19ae1f66862bed5d6"
+          },
+          {
+            "path": "context/pricing/current/part-0013.json",
+            "bytes": 12828,
+            "sha256": "3f3c5ca1d7688705eb9f841241fdbaac96a6f8de6a2540ed9ec71e7c94d75a72"
+          },
+          {
+            "path": "context/pricing/current/part-0014.json",
+            "bytes": 13443,
+            "sha256": "a76166d4953f54193aa7b73dbf805b2b6c3bb878dce9a61657078831b5bd71c4"
+          },
+          {
+            "path": "context/pricing/current/part-0015.json",
+            "bytes": 12859,
+            "sha256": "603c157b6a65acaea670a020d6b0c1f9fda4ebc5e355746964878152b3c515f4"
+          },
+          {
+            "path": "context/pricing/current/part-0016.json",
+            "bytes": 13362,
+            "sha256": "d0fceb2d45b12fb0399d84ffb5eae299bb93ce665eb16a287378434916850e29"
+          },
+          {
+            "path": "context/pricing/current/part-0017.json",
+            "bytes": 12883,
+            "sha256": "9830af941fdac7c380d4f9c4ae2baa912280310f0698e863338810cffaf0fd77"
+          },
+          {
+            "path": "context/pricing/current/part-0018.json",
+            "bytes": 12776,
+            "sha256": "ea635a41546106468c100692378501f35839bf9031e5dca2a430ecb9c51f219e"
+          },
+          {
+            "path": "context/pricing/current/part-0019.json",
+            "bytes": 12964,
+            "sha256": "19d30a4e5207f82b6770eab38235023389e0b57101b8cf03434e7d3f9643beb7"
+          },
+          {
+            "path": "context/pricing/current/part-0020.json",
+            "bytes": 12733,
+            "sha256": "ecbb1658ff3b015ddab9292fd90072a9ccbe7f0398460f5117104ed27ecaeb48"
+          },
+          {
+            "path": "context/pricing/current/part-0021.json",
+            "bytes": 12973,
+            "sha256": "8534b1bebe02663f3a0fdaa68a38a8dba0417216995699c5fcb3f569d26d6aff"
+          },
+          {
+            "path": "context/pricing/current/part-0022.json",
+            "bytes": 12757,
+            "sha256": "85eda18f982f7c783e4e7382659691a4650b6e8fe0a6d7fbe710073171847be5"
+          },
+          {
+            "path": "context/pricing/current/part-0023.json",
+            "bytes": 12847,
+            "sha256": "ed39d1d02cc307f24a674b9ea88efaf891778083fc8db9e5e53ba2a933828d21"
+          },
+          {
+            "path": "context/pricing/current/part-0024.json",
+            "bytes": 13058,
+            "sha256": "f7955b51b9d566e94e354c60859684ee23409cbf66ccd0747d328608a8679359"
+          },
+          {
+            "path": "context/pricing/current/part-0025.json",
+            "bytes": 13211,
+            "sha256": "fa9019bddd5d93bfced505cf38953d6db9f7fa356436f1f164b4135bd2334cf2"
+          },
+          {
+            "path": "context/pricing/current/part-0026.json",
+            "bytes": 13097,
+            "sha256": "7c1bb6b216de5a2ccadb3b28fd8fda5babd18611de0fd8640ec7c300e80db383"
+          },
+          {
+            "path": "context/pricing/current/part-0027.json",
+            "bytes": 12953,
+            "sha256": "0bd7d22670ad15a2696915af79262c256af5d2dd16ac563b89e4f4e79a99d55b"
+          },
+          {
+            "path": "context/pricing/current/part-0028.json",
+            "bytes": 12920,
+            "sha256": "3b959c974500bad5164773508c5097d5bb90a0ce5cfa2c3aa2d1f9321fc6debb"
+          },
+          {
+            "path": "context/pricing/current/part-0029.json",
+            "bytes": 13285,
+            "sha256": "cb6677d1d3f3a49145fe910ca0fee485ace9155dc98a77b692bf31221716aab3"
+          },
+          {
+            "path": "context/pricing/current/part-0030.json",
+            "bytes": 12857,
+            "sha256": "6c0596b1949b233d725c12d22ef746b4b1a0d13ffeb5bd98e2acac08911cd669"
+          },
+          {
+            "path": "context/pricing/current/part-0031.json",
+            "bytes": 12748,
+            "sha256": "08f1291108364e66d3b9d5ca491542ecbeaf8c64c92ad503cc26411028c911e6"
+          },
+          {
+            "path": "dev.jsonl",
+            "bytes": 761,
+            "sha256": "ef61941e4e2a1f1a8a56b4a95dfed943be9aee60317b66192dcc60b7b425b990"
+          }
+        ],
+        "invariant": "identical current rules and answers; only file partitioning and explicitly excluded history vary"
+      },
+      "tasks": [
+        {
+          "task_id": "hospitality",
+          "answer": "0.123217",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 10 transaction, account type H, merchant category Eating Places and Restaurants? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        },
+        {
+          "task_id": "books",
+          "answer": "0.129439",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 12.75 transaction, account type R, merchant category Book Stores? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        }
+      ],
+      "conditions": [
+        "files",
+        "observed"
+      ],
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "implementation_sha256": "e9b631caee5f615db8e7f0fc31222a348bacde888dc70425804db30ace897da7",
+      "source_sha256": "bc3d87d1f4dfaa0c7f7fe990c75501d85945fc802685417e89b89ca9d186348f",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "task_mode": "fresh thread; program output artifact graded"
+    },
+    "archive": "implementations/e9b631caee5f615db8e7f0fc31222a348bacde888dc70425804db30ace897da7.tar.gz",
+    "archive_sha256": "027c3abaeb7ff2a3cd599c75207e6a8d55ca3b486aabbc2536dde62160a3079a",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "condition": "files",
+        "task": "books",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "books",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "layout-256-v1",
+    "manifest": {
+      "kind": "raw-source-discovery",
+      "dataset": {
+        "kind": "controlled-layout-variant",
+        "parts": 256,
+        "history": true,
+        "upstream": {
+          "repository": "adyen/DABstep",
+          "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+          "license": "CC-BY-4.0",
+          "files": [
+            {
+              "path": "context/acquirer_countries.csv",
+              "upstream": "data/context/acquirer_countries.csv",
+              "bytes": 194,
+              "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+            },
+            {
+              "path": "context/fees.json",
+              "upstream": "data/context/fees.json",
+              "bytes": 531118,
+              "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+            },
+            {
+              "path": "context/manual.md",
+              "upstream": "data/context/manual.md",
+              "bytes": 22127,
+              "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+            },
+            {
+              "path": "context/merchant_category_codes.csv",
+              "upstream": "data/context/merchant_category_codes.csv",
+              "bytes": 26611,
+              "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+            },
+            {
+              "path": "context/merchant_data.json",
+              "upstream": "data/context/merchant_data.json",
+              "bytes": 6857,
+              "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+            },
+            {
+              "path": "context/payments-readme.md",
+              "upstream": "data/context/payments-readme.md",
+              "bytes": 1719,
+              "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+            },
+            {
+              "path": "context/payments.csv",
+              "upstream": "data/context/payments.csv",
+              "bytes": 23581339,
+              "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+            },
+            {
+              "path": "dev.jsonl",
+              "upstream": "data/tasks/dev.jsonl",
+              "bytes": 6330,
+              "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+            },
+            {
+              "path": "LICENSE",
+              "upstream": "LICENSE",
+              "bytes": 321,
+              "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+            }
+          ]
+        },
+        "files": [
+          {
+            "path": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          },
+          {
+            "path": "context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/archive/fees.json",
+            "bytes": 422063,
+            "sha256": "5b9a5fa7451d1b6627fa645cb6dda1021b74f3426c8e495bb2703c1794de9d0c"
+          },
+          {
+            "path": "context/manual.md",
+            "bytes": 22736,
+            "sha256": "0f2eb8f21fae8554d314d29d9441efa50923eba9fba63d688ffbeba93f1cd5f2"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "context/pricing/current/part-0000.json",
+            "bytes": 1701,
+            "sha256": "72439366d8312324f103646935078612f1b30555d8b48927e0df494147584a34"
+          },
+          {
+            "path": "context/pricing/current/part-0001.json",
+            "bytes": 1787,
+            "sha256": "6060e1ea4ca432c89d05c84ee075cc5001ef0e9056d1e6b653a5dd43fb80eabd"
+          },
+          {
+            "path": "context/pricing/current/part-0002.json",
+            "bytes": 1704,
+            "sha256": "3f3e5f73ac679734c6fc04bb5812f46f3cae10b972946fa7fb4595e2386a8f19"
+          },
+          {
+            "path": "context/pricing/current/part-0003.json",
+            "bytes": 1710,
+            "sha256": "176d30ca225b6ea8d54cdc9d397dcda1f236dc2531fc4fbfde9cf03e0a41abe2"
+          },
+          {
+            "path": "context/pricing/current/part-0004.json",
+            "bytes": 1723,
+            "sha256": "475182469306526657bf65d976883e103ea1da089aed79a53ab00355b6f499cd"
+          },
+          {
+            "path": "context/pricing/current/part-0005.json",
+            "bytes": 1697,
+            "sha256": "dd8585bd620db85a5b9d8fbd475d0c42f2338211e019d4986ebe7c45121e2adb"
+          },
+          {
+            "path": "context/pricing/current/part-0006.json",
+            "bytes": 1710,
+            "sha256": "a15620e7d57437a14c62cd91cad5fb7babafcf0471490d6928fdd3d432eb61ae"
+          },
+          {
+            "path": "context/pricing/current/part-0007.json",
+            "bytes": 1751,
+            "sha256": "ac7331ecf8d4965fb14776262125c04c2dfe65d6cd42e43d04a5faf7113cbfe4"
+          },
+          {
+            "path": "context/pricing/current/part-0008.json",
+            "bytes": 1698,
+            "sha256": "130aadd9f7f309573a8900d9fe32b5396933fe56a8b8e1c617b58f9caf7f1518"
+          },
+          {
+            "path": "context/pricing/current/part-0009.json",
+            "bytes": 1696,
+            "sha256": "ff2dbfef87bc9efce98298c4ea8cc6f64e949153b32299e44f4f00323f9259e2"
+          },
+          {
+            "path": "context/pricing/current/part-0010.json",
+            "bytes": 1741,
+            "sha256": "3646158d927307b35f909ac44a00580d06baa94f44522f70eda75f499b383900"
+          },
+          {
+            "path": "context/pricing/current/part-0011.json",
+            "bytes": 1721,
+            "sha256": "2496595ba166dcf898b835b43c9edafbd20ce2b82d1a0dcb2d4d0e4d94883c94"
+          },
+          {
+            "path": "context/pricing/current/part-0012.json",
+            "bytes": 1787,
+            "sha256": "9c891078ce192e07d48e3b8cca9c5efa05e5d81e6b9e3b9236fcb0523c8d5f4a"
+          },
+          {
+            "path": "context/pricing/current/part-0013.json",
+            "bytes": 1750,
+            "sha256": "28d012fad9f2d3c7f76edad4c7fdbcfd7d88e5559d94654beac171ba230f1861"
+          },
+          {
+            "path": "context/pricing/current/part-0014.json",
+            "bytes": 1710,
+            "sha256": "41d2bb8ccdf7dc1dd824a55b2949fb13a076ab1151713c4803b24a94ef344dc4"
+          },
+          {
+            "path": "context/pricing/current/part-0015.json",
+            "bytes": 1647,
+            "sha256": "e2253177029ac85161b1764236f6c50d324c3aaf8b23a471ddc272c996ea633f"
+          },
+          {
+            "path": "context/pricing/current/part-0016.json",
+            "bytes": 1710,
+            "sha256": "838485f0c32b93b9fd61328259ed7c0d191d59262aa3958d304896c2161d681b"
+          },
+          {
+            "path": "context/pricing/current/part-0017.json",
+            "bytes": 1694,
+            "sha256": "27e8c968ca0c816f95cdc42b50be7f8300aa4e2972147654fda16fd66bfdca79"
+          },
+          {
+            "path": "context/pricing/current/part-0018.json",
+            "bytes": 1589,
+            "sha256": "5bb3882f103dd6ed06e5e0bae2cb883fe4af61b34c6cf190ff04a1c4024ec038"
+          },
+          {
+            "path": "context/pricing/current/part-0019.json",
+            "bytes": 1643,
+            "sha256": "ad414a4473b4e3d85cf3f0d5ca0ad4fcfa42752f1176567130a2a144c4c195c1"
+          },
+          {
+            "path": "context/pricing/current/part-0020.json",
+            "bytes": 1718,
+            "sha256": "692595c94cc3993d1029a20c1f97f36f5feaa78d3a42932ec3f62612eecc2022"
+          },
+          {
+            "path": "context/pricing/current/part-0021.json",
+            "bytes": 1787,
+            "sha256": "52219c63df63d1f81211d810770ded9911f6e9c203adfdcbc16123c0120ee58c"
+          },
+          {
+            "path": "context/pricing/current/part-0022.json",
+            "bytes": 1731,
+            "sha256": "3eec117a9197d0480ffa56dbefc34329cdfec3d8045ca53197472ca0c47b84cb"
+          },
+          {
+            "path": "context/pricing/current/part-0023.json",
+            "bytes": 1510,
+            "sha256": "0b4527b9e5f45a40a715cf5f902254e69338d2d4b9cc43848e828265a7611f00"
+          },
+          {
+            "path": "context/pricing/current/part-0024.json",
+            "bytes": 1788,
+            "sha256": "3df9415456022ef5573d070efb691049dcbfca19dfdade6203d08b969eae737b"
+          },
+          {
+            "path": "context/pricing/current/part-0025.json",
+            "bytes": 1760,
+            "sha256": "72ec03f3ce3b029aefad01cff31dcf6b4298cf1ab3772b99597b6bc72a7bb3c5"
+          },
+          {
+            "path": "context/pricing/current/part-0026.json",
+            "bytes": 1701,
+            "sha256": "cd9e1cb1f044f25e5c827e2dc30612e3563790eab99519c05baf30890bcf873f"
+          },
+          {
+            "path": "context/pricing/current/part-0027.json",
+            "bytes": 1631,
+            "sha256": "a07012303af0d55b4441b036ec44f747c7d25944999cab861888b5e78311576a"
+          },
+          {
+            "path": "context/pricing/current/part-0028.json",
+            "bytes": 1600,
+            "sha256": "25160bb5790e33a638180297db87c08cbc0ebb2aa7251eca948af6c7b86a7355"
+          },
+          {
+            "path": "context/pricing/current/part-0029.json",
+            "bytes": 1691,
+            "sha256": "65c925cb2cf81b769587a9fb949c2d00e1633e1aa614a32c6ef7d39ec13b92b1"
+          },
+          {
+            "path": "context/pricing/current/part-0030.json",
+            "bytes": 1663,
+            "sha256": "94ebdefa8074e810b0d3b1fb96e221c6dfc11a558385565d404461e6b401fa77"
+          },
+          {
+            "path": "context/pricing/current/part-0031.json",
+            "bytes": 1710,
+            "sha256": "97d9fc843a12fb78351c1e0197a4d6e7fc493130dd0836c05a6e43176372a881"
+          },
+          {
+            "path": "context/pricing/current/part-0032.json",
+            "bytes": 1703,
+            "sha256": "e33648a9c738008ad59e36e42faa9599193c3f241d7d7c58344a8c028a4029c3"
+          },
+          {
+            "path": "context/pricing/current/part-0033.json",
+            "bytes": 1775,
+            "sha256": "e0f762241ddc5d2ce1f8b221a33b82d74a04032bc6df696261d96c6842ef333f"
+          },
+          {
+            "path": "context/pricing/current/part-0034.json",
+            "bytes": 1747,
+            "sha256": "24bc8cb7d786c9dabd407e722087f146a8386c64b11da2bdd9a0579cef0ac7fe"
+          },
+          {
+            "path": "context/pricing/current/part-0035.json",
+            "bytes": 1520,
+            "sha256": "324162db8ee43217c976ca020d511ee6df84a7a56c204c2ea32cbd72c9ccf795"
+          },
+          {
+            "path": "context/pricing/current/part-0036.json",
+            "bytes": 1692,
+            "sha256": "319f0265d73c42ad4d2e8a67739d2529463f1bd8edbcf3fad70a01416b0bc4ea"
+          },
+          {
+            "path": "context/pricing/current/part-0037.json",
+            "bytes": 1739,
+            "sha256": "57da167706e8620895ffb505481b60d39f88be7ce8ec81818dabe8bf7362254c"
+          },
+          {
+            "path": "context/pricing/current/part-0038.json",
+            "bytes": 1704,
+            "sha256": "be864da972ab0bcf2b324c8eb7cd28f1340e26891f68b5b2009a78468a05c24c"
+          },
+          {
+            "path": "context/pricing/current/part-0039.json",
+            "bytes": 1743,
+            "sha256": "be7ca2325ec6a80df699c4b073a3262d658b496cb01d99862592ace752cab621"
+          },
+          {
+            "path": "context/pricing/current/part-0040.json",
+            "bytes": 1736,
+            "sha256": "d5eeabdd395b48acc5ff58884f4ef8391918816637290f12a500fa41586937c9"
+          },
+          {
+            "path": "context/pricing/current/part-0041.json",
+            "bytes": 1761,
+            "sha256": "20e4ccc639c91dc4e5f04f797e35180eaa063e4aebeffb17b36fd9bcd4a5731f"
+          },
+          {
+            "path": "context/pricing/current/part-0042.json",
+            "bytes": 1695,
+            "sha256": "60c942b5b3de5be7773e3b082906c79130f5bb0d5fe57a472f08c876db8759e8"
+          },
+          {
+            "path": "context/pricing/current/part-0043.json",
+            "bytes": 1686,
+            "sha256": "5e267e802b411322da891cde604e9316132bec52489bc2fae91635974a7a2175"
+          },
+          {
+            "path": "context/pricing/current/part-0044.json",
+            "bytes": 1594,
+            "sha256": "f7ce10ea34f45fef3e0c0e0e350120ed456fc8dd2b620ef3e2da9ab3aaf3e28c"
+          },
+          {
+            "path": "context/pricing/current/part-0045.json",
+            "bytes": 1683,
+            "sha256": "3cf23a39646c5e6cff9dae68e5b1fdd582d84ba99fa98487627fc3f315ba3b1f"
+          },
+          {
+            "path": "context/pricing/current/part-0046.json",
+            "bytes": 1750,
+            "sha256": "f2dc0675226e52c2e37284be128ace4c64ffa677a07fbe6511975b4a7d5b64a7"
+          },
+          {
+            "path": "context/pricing/current/part-0047.json",
+            "bytes": 1533,
+            "sha256": "456b5fdf79fd7bfd4aead6dffe921f0cfcdaf67f33f848bdb74f5d4dbdddb42e"
+          },
+          {
+            "path": "context/pricing/current/part-0048.json",
+            "bytes": 1800,
+            "sha256": "721608d939d9686d9450224f66b2407e8208588de32160012ec504767302c23b"
+          },
+          {
+            "path": "context/pricing/current/part-0049.json",
+            "bytes": 1748,
+            "sha256": "317d1e78eac8b57ccdbe62ab894a07286a68c962ef05a16122086066b39ecd69"
+          },
+          {
+            "path": "context/pricing/current/part-0050.json",
+            "bytes": 1638,
+            "sha256": "18c0763fcd469a8bed6bfa35f7b71097337e13e24b354b99037a36ea7041f62d"
+          },
+          {
+            "path": "context/pricing/current/part-0051.json",
+            "bytes": 1740,
+            "sha256": "267ac62bb5bb8d4a0e633ec6428602e4ccf8f913aa434a733e3370e5f5edc7e3"
+          },
+          {
+            "path": "context/pricing/current/part-0052.json",
+            "bytes": 1614,
+            "sha256": "dc8b00e0c5251ca18ed547f4791df07da4dba1c59d2529c5c0873049c2207b50"
+          },
+          {
+            "path": "context/pricing/current/part-0053.json",
+            "bytes": 1704,
+            "sha256": "398bd6f6e49ef2ba6fcb7974cf5c4ade6aca427d03f1e232f053bd88509dd75a"
+          },
+          {
+            "path": "context/pricing/current/part-0054.json",
+            "bytes": 1762,
+            "sha256": "41bfa480afbd99b65276e16973b7316e308d0adf1544981510af4300f90fe204"
+          },
+          {
+            "path": "context/pricing/current/part-0055.json",
+            "bytes": 1621,
+            "sha256": "ea8da735a484c3e0aa88857a1cf7a25ba8fda4f1a4620836aa3892da62db7705"
+          },
+          {
+            "path": "context/pricing/current/part-0056.json",
+            "bytes": 1706,
+            "sha256": "39b6d94da9d69182ce3cd0c651165460f526a24f694ae0fffc5b8eb41b5ed379"
+          },
+          {
+            "path": "context/pricing/current/part-0057.json",
+            "bytes": 1659,
+            "sha256": "ec20e3f923119afa3dcd0457575e538ad18221eaa6cc5c5fd9246623fd603a6d"
+          },
+          {
+            "path": "context/pricing/current/part-0058.json",
+            "bytes": 1712,
+            "sha256": "6de1e5f96f14fcf8fd03abd2a581af97efce0ce82d1526789d7e89d00837049f"
+          },
+          {
+            "path": "context/pricing/current/part-0059.json",
+            "bytes": 1570,
+            "sha256": "db7e6d6ce915382411917e4d34b01d10a63351f03b889a89ac33408e3c230dfa"
+          },
+          {
+            "path": "context/pricing/current/part-0060.json",
+            "bytes": 1705,
+            "sha256": "143c5fdc9d0ab105b5963b8e3e8cbb9c2aad863e03be12d274dda5e12404c0b6"
+          },
+          {
+            "path": "context/pricing/current/part-0061.json",
+            "bytes": 1667,
+            "sha256": "5e60a01cbbf7ab99c867efc8c950a09a7eb56d8d8ee914979af1c750fc94a04b"
+          },
+          {
+            "path": "context/pricing/current/part-0062.json",
+            "bytes": 1602,
+            "sha256": "c1003571cf6b9a5754d951d0511431a169a1a9f5ba7e82f95916f900f1bef06d"
+          },
+          {
+            "path": "context/pricing/current/part-0063.json",
+            "bytes": 1590,
+            "sha256": "458ba9dfa17ea7ae0040b4c8f442f22b94633f67cd5a940a0856bb40212358cd"
+          },
+          {
+            "path": "context/pricing/current/part-0064.json",
+            "bytes": 1634,
+            "sha256": "d37292149f8a023ae432614adb4ceb93e3a72fa3e9667ab376be4a7c1b2db9a5"
+          },
+          {
+            "path": "context/pricing/current/part-0065.json",
+            "bytes": 1743,
+            "sha256": "b7be0455082d6f5ec8e4f8a95e4f7dfd5938be514db47582fb1885c4c571feb3"
+          },
+          {
+            "path": "context/pricing/current/part-0066.json",
+            "bytes": 1653,
+            "sha256": "3a1e80f6547d03c1e58701ff1a5f180947b9118f7f0bc73ca496da4d4d853e2e"
+          },
+          {
+            "path": "context/pricing/current/part-0067.json",
+            "bytes": 1764,
+            "sha256": "9d284df7bf651f93f5f86d75fbec9360b74b22d6e7d0780d5dfab29f3b8b6c4c"
+          },
+          {
+            "path": "context/pricing/current/part-0068.json",
+            "bytes": 1759,
+            "sha256": "5dc827fd976d86fa0f290374e383464b6b27e5a8dd6074231bccfb3ba1b0dc4b"
+          },
+          {
+            "path": "context/pricing/current/part-0069.json",
+            "bytes": 1741,
+            "sha256": "f28ceed79acaf92b3c4b99d87fdaad1b6963fceea5668d114ff83063504adeb2"
+          },
+          {
+            "path": "context/pricing/current/part-0070.json",
+            "bytes": 1676,
+            "sha256": "97623a067031807d04b895bfbc6d27032036a7f110013fee7946a481891806d6"
+          },
+          {
+            "path": "context/pricing/current/part-0071.json",
+            "bytes": 1750,
+            "sha256": "2f1adadab3294b056b98655bd7119c01542738444d9fb73ddfb186230f8230e8"
+          },
+          {
+            "path": "context/pricing/current/part-0072.json",
+            "bytes": 1722,
+            "sha256": "a03fbd63e4d421ddbbe96b7a2357822bb4194b6d1704fadf8dc5c555d8681c54"
+          },
+          {
+            "path": "context/pricing/current/part-0073.json",
+            "bytes": 1687,
+            "sha256": "58dbe03e792a0f528c11dc2f4f5e43604849930e918c489cc127ac7f4f730ebc"
+          },
+          {
+            "path": "context/pricing/current/part-0074.json",
+            "bytes": 1747,
+            "sha256": "0b428d2826e2a1d9f4f03f17067e2550fa4a06854e7348fe94a4aad55946da02"
+          },
+          {
+            "path": "context/pricing/current/part-0075.json",
+            "bytes": 1749,
+            "sha256": "91634dc92d15e07435ea1ca338904f4c3f5a439c2aa52bb840ed658368651876"
+          },
+          {
+            "path": "context/pricing/current/part-0076.json",
+            "bytes": 1739,
+            "sha256": "0f92dbce318e728ad5706d01561a3d887866b328861ea9175fef828f45d7d757"
+          },
+          {
+            "path": "context/pricing/current/part-0077.json",
+            "bytes": 1541,
+            "sha256": "14cec0dbc2f3a25264d8f31a2c4f94b566cef5f1a6e11e906a932ccaf83b34f3"
+          },
+          {
+            "path": "context/pricing/current/part-0078.json",
+            "bytes": 1687,
+            "sha256": "4372b0b49e4d7e362ff4df8030d28ee05e277aee4d5cb5aa23f1a7d621aa7afd"
+          },
+          {
+            "path": "context/pricing/current/part-0079.json",
+            "bytes": 1643,
+            "sha256": "08fb4a544ee743a1128175950403e3677566aa4924cbb31e76f646cdb88fc7db"
+          },
+          {
+            "path": "context/pricing/current/part-0080.json",
+            "bytes": 1673,
+            "sha256": "89a63a6f61593b29b192ab5adbe9e778214e980129f4dcdc9a8b8118d96b852b"
+          },
+          {
+            "path": "context/pricing/current/part-0081.json",
+            "bytes": 1762,
+            "sha256": "7fb7e47fc4dc9b519326b0fa9f8ffdd1d9d6d3bc86f3db19637c687369b76900"
+          },
+          {
+            "path": "context/pricing/current/part-0082.json",
+            "bytes": 1576,
+            "sha256": "b4d77f8bda39b4cc4d06046af831889659611769d575f09e2a8daf1a2788d178"
+          },
+          {
+            "path": "context/pricing/current/part-0083.json",
+            "bytes": 1591,
+            "sha256": "50712a40be44427ca519b34090630e7576498b9f8743cc4b30131bf8bd45673d"
+          },
+          {
+            "path": "context/pricing/current/part-0084.json",
+            "bytes": 1634,
+            "sha256": "bf2de3aa8989a9abd83e2b93a30014d98745a53fb4fe501fa18b0a48654a078f"
+          },
+          {
+            "path": "context/pricing/current/part-0085.json",
+            "bytes": 1748,
+            "sha256": "15b04fbda1de743b0780b0c0d8adc31df5ae7b1be775a4d570ab16f34c923b90"
+          },
+          {
+            "path": "context/pricing/current/part-0086.json",
+            "bytes": 1697,
+            "sha256": "5f84f4366ea65e06d49d0e0be9b6b6c909c663f07098ff7693ef9119ea142ba6"
+          },
+          {
+            "path": "context/pricing/current/part-0087.json",
+            "bytes": 1708,
+            "sha256": "cf522ce6c77a81f0a81f49d715117fc88e834fabc46be5341b8a2cf7355dc341"
+          },
+          {
+            "path": "context/pricing/current/part-0088.json",
+            "bytes": 1629,
+            "sha256": "4a7166e3e6f4fe32b42c6fbf83905520868076f18a260539ccf52e8b1ac39958"
+          },
+          {
+            "path": "context/pricing/current/part-0089.json",
+            "bytes": 1627,
+            "sha256": "fb4d89caddfdfa93c1bed63e23e31f955745745ee7beb0726df4acdeaba44f17"
+          },
+          {
+            "path": "context/pricing/current/part-0090.json",
+            "bytes": 1589,
+            "sha256": "23d37569febd65bbe62e89746ee439a49ad9a8988d2f6c91c66743b8537fe57e"
+          },
+          {
+            "path": "context/pricing/current/part-0091.json",
+            "bytes": 1712,
+            "sha256": "2490d8e8e0185c457c7a7c94b3e4bab0bb4c9e8ec47b5e630e61b667cd084f28"
+          },
+          {
+            "path": "context/pricing/current/part-0092.json",
+            "bytes": 1649,
+            "sha256": "ca77c00105fb8520bbf988fb71339e3c45db801e2228e7f26146402d4275eee5"
+          },
+          {
+            "path": "context/pricing/current/part-0093.json",
+            "bytes": 1640,
+            "sha256": "2e2083ad0421f67f3ed28dd7d15bca4c15165107da2fc54faf8f2244f410d5e6"
+          },
+          {
+            "path": "context/pricing/current/part-0094.json",
+            "bytes": 1537,
+            "sha256": "b015e762050ee130c51cfdaebe34c090948dc5ae7085777fab4cce712823f1a8"
+          },
+          {
+            "path": "context/pricing/current/part-0095.json",
+            "bytes": 1624,
+            "sha256": "407b8d74b1a9539c76dc3365fe2ca7172e85c6e2d01137ca7bd4a493e715b2d1"
+          },
+          {
+            "path": "context/pricing/current/part-0096.json",
+            "bytes": 1562,
+            "sha256": "0f83d0db7d6d653dc170b30e8ca5b038db25c321ac20e3679b888c540211fbff"
+          },
+          {
+            "path": "context/pricing/current/part-0097.json",
+            "bytes": 1747,
+            "sha256": "cc972bae4d8655c9dade6ae6541e7ebf4a13d4122657665e319cdbad18dd0e43"
+          },
+          {
+            "path": "context/pricing/current/part-0098.json",
+            "bytes": 1743,
+            "sha256": "252c3ab2ef27ecc7bdbd8084f7bc828f3a7cccac752ea6cde3d702a53b48efb2"
+          },
+          {
+            "path": "context/pricing/current/part-0099.json",
+            "bytes": 1577,
+            "sha256": "7dcffef1cb72e12477fe2cb358ee12a03471950e0973d88f315453c90710bcb5"
+          },
+          {
+            "path": "context/pricing/current/part-0100.json",
+            "bytes": 1567,
+            "sha256": "69ece4ede8425e8f766f8e00776e812776725cdbc344a1dadf1ba937b253060b"
+          },
+          {
+            "path": "context/pricing/current/part-0101.json",
+            "bytes": 1613,
+            "sha256": "adc120ed6a1e242022e4f21cfde9710993558546b738403880a7e52d32d87010"
+          },
+          {
+            "path": "context/pricing/current/part-0102.json",
+            "bytes": 1577,
+            "sha256": "287d76af0e4d54b3dcfc8f98de275ff0e6c9822e029ad4c725f135efd7053739"
+          },
+          {
+            "path": "context/pricing/current/part-0103.json",
+            "bytes": 1758,
+            "sha256": "ed0385ad99a4c680521ccaaf79e66eb6e9870d3091f02cb7a5543635b8f881ac"
+          },
+          {
+            "path": "context/pricing/current/part-0104.json",
+            "bytes": 1710,
+            "sha256": "4ce226add6d2f420175552e536d51f8f7c32f2a43207c534aa8974e4dcd2adf7"
+          },
+          {
+            "path": "context/pricing/current/part-0105.json",
+            "bytes": 1688,
+            "sha256": "b313321cb5a6a0b99f2a3cf2b76837bec82a29568fd5e3ddf64a09f583d9c014"
+          },
+          {
+            "path": "context/pricing/current/part-0106.json",
+            "bytes": 1610,
+            "sha256": "9bdb54afae21babd4f96b2a4a52f488749ba8ec36520866b049b6c6ea33ed86b"
+          },
+          {
+            "path": "context/pricing/current/part-0107.json",
+            "bytes": 1688,
+            "sha256": "aab12cd00e73ace7f724e24b979b00eb7256af729a04251c5298cbb24fd7bded"
+          },
+          {
+            "path": "context/pricing/current/part-0108.json",
+            "bytes": 1745,
+            "sha256": "8cd978602d255fd49f1f3aabbdae68e536c53367115b6e54c3f0cc7db7a4ab57"
+          },
+          {
+            "path": "context/pricing/current/part-0109.json",
+            "bytes": 1690,
+            "sha256": "8d2ed1cdc62f71585d4399e01bf31b2c4ce98d08247d74b4c282d61bfce449ba"
+          },
+          {
+            "path": "context/pricing/current/part-0110.json",
+            "bytes": 1720,
+            "sha256": "743add559920cf95634c019b3d8373d328a2ad43c3c55d6c33ec4aa420739415"
+          },
+          {
+            "path": "context/pricing/current/part-0111.json",
+            "bytes": 1705,
+            "sha256": "a80419a81b4051a2c4f6abbe207269fa629448b638b9a8a18fcbcf8377831f78"
+          },
+          {
+            "path": "context/pricing/current/part-0112.json",
+            "bytes": 1784,
+            "sha256": "fe3cdd7de6e1fcdba3cb6ee776b3434baddb4bafea3421e8a1142916c0c5469a"
+          },
+          {
+            "path": "context/pricing/current/part-0113.json",
+            "bytes": 1532,
+            "sha256": "19fba079a0321a336d07f0ae6d9b986f756e61e4cad897013e5eff655f48ecd3"
+          },
+          {
+            "path": "context/pricing/current/part-0114.json",
+            "bytes": 1651,
+            "sha256": "2094e2fdf9d9ff733196fc825ad063b7055df39a3d93a1ca7db84453f93baf7f"
+          },
+          {
+            "path": "context/pricing/current/part-0115.json",
+            "bytes": 1666,
+            "sha256": "f2062551db55181a86fd8c9144e55449ae59f2d849b475aac6d5b5f8281cfef1"
+          },
+          {
+            "path": "context/pricing/current/part-0116.json",
+            "bytes": 1729,
+            "sha256": "fbc5bdbcd2564dd2e4f69fcda9d5c32fa9379d28f103566e7a8c0a0a5b5490b3"
+          },
+          {
+            "path": "context/pricing/current/part-0117.json",
+            "bytes": 1720,
+            "sha256": "021982a4c3d8d28f46aefeb3cc999f1c65da9012284b087dff6067fa4be6d5db"
+          },
+          {
+            "path": "context/pricing/current/part-0118.json",
+            "bytes": 1554,
+            "sha256": "84bcd1fd7c80e82dbb73097d15616425b40d6c99a1453d8c84cb7f8abeab77f0"
+          },
+          {
+            "path": "context/pricing/current/part-0119.json",
+            "bytes": 1652,
+            "sha256": "9519af282e603dfe00a8d632ffced2415ac7fd0b5e46f1e52b2117aec75e6f75"
+          },
+          {
+            "path": "context/pricing/current/part-0120.json",
+            "bytes": 1620,
+            "sha256": "1fec8b09e460257973a3188c22125ad461841482e4d05ed027833090e9c220bc"
+          },
+          {
+            "path": "context/pricing/current/part-0121.json",
+            "bytes": 1617,
+            "sha256": "ec6732350c8e1aba0d9d3a575e92e7f627fad164dc5a4a6b35671e3610592648"
+          },
+          {
+            "path": "context/pricing/current/part-0122.json",
+            "bytes": 1596,
+            "sha256": "83f27bb213a70641f0f632460017ad891815167a5cefe629254b39ac6403a2fb"
+          },
+          {
+            "path": "context/pricing/current/part-0123.json",
+            "bytes": 1647,
+            "sha256": "4b930f7a9bde1bf5a229e5536ba93cd398cc3e5bc42cc0eb9d2e53ad51f71b15"
+          },
+          {
+            "path": "context/pricing/current/part-0124.json",
+            "bytes": 1603,
+            "sha256": "be743c56f60b6834ae04e7cf56eeb304572f9ce81c78decac93cd39734aaf462"
+          },
+          {
+            "path": "context/pricing/current/part-0125.json",
+            "bytes": 1821,
+            "sha256": "894c06b7631375a2b0cb1249fe532fccb78fac1adf1a023499e8c6a86749e1cb"
+          },
+          {
+            "path": "context/pricing/current/part-0126.json",
+            "bytes": 1637,
+            "sha256": "3ed857f2d2bbcf8517c1354f4e9f49e8c6aba89e1132b3d76bf48f74fc53397c"
+          },
+          {
+            "path": "context/pricing/current/part-0127.json",
+            "bytes": 1614,
+            "sha256": "3086a00e95b6d2fde158b3f23839cda2c88bc175554e54fc6928bbba617ac50c"
+          },
+          {
+            "path": "context/pricing/current/part-0128.json",
+            "bytes": 1688,
+            "sha256": "3ca2f6aa6cd2881b78c4d4d0c7d68ebce6ad5dad3115c229685feb04b30d170c"
+          },
+          {
+            "path": "context/pricing/current/part-0129.json",
+            "bytes": 1649,
+            "sha256": "f6992c2ab887af79f97c9cae3c2277dfd7e6a0c4fde97f3fe769ebd58ae5da25"
+          },
+          {
+            "path": "context/pricing/current/part-0130.json",
+            "bytes": 1771,
+            "sha256": "64ec28bb9652ba97d08d44cd0170430970cac111b1ec060c56f8c7aa6d7488f0"
+          },
+          {
+            "path": "context/pricing/current/part-0131.json",
+            "bytes": 1734,
+            "sha256": "e2f35bfdf65d636106428822f0d583d140a6238d5d39bdb1b4d3e47d8b76315e"
+          },
+          {
+            "path": "context/pricing/current/part-0132.json",
+            "bytes": 1791,
+            "sha256": "da38d2d7c78062b08fe203ff96fa524cd9e2d0e6ee721335880af6e3d1dbc6a0"
+          },
+          {
+            "path": "context/pricing/current/part-0133.json",
+            "bytes": 1838,
+            "sha256": "425bc34235a01dff7f09099de18098b34af64c1cfb4e4f3e9f65bb9077273fd0"
+          },
+          {
+            "path": "context/pricing/current/part-0134.json",
+            "bytes": 1721,
+            "sha256": "fa81899ad6c27bef78f39fd75acc90575e1d49c3bbad6ff2e425ed714e5b768c"
+          },
+          {
+            "path": "context/pricing/current/part-0135.json",
+            "bytes": 1692,
+            "sha256": "8f1578a199fe0fea3bb42012947facbcd302f97d831567b5bb90ae1ab432ef26"
+          },
+          {
+            "path": "context/pricing/current/part-0136.json",
+            "bytes": 1787,
+            "sha256": "e3d40dc4e894825041e63562d957cc3d4564f6f39b7c4dc633b155efde9c3042"
+          },
+          {
+            "path": "context/pricing/current/part-0137.json",
+            "bytes": 1641,
+            "sha256": "7ec870563dd5bd874f644f29cb717254f26bd7c04ae7695e76bb2c42923a7af7"
+          },
+          {
+            "path": "context/pricing/current/part-0138.json",
+            "bytes": 1737,
+            "sha256": "bfd58f5c0e217443feb684339e1541395e38413bb71228539028b46c2e6ce96f"
+          },
+          {
+            "path": "context/pricing/current/part-0139.json",
+            "bytes": 1726,
+            "sha256": "c39576ba46a27f212ee7ea95259948f20b2c3277c7dc460385c2aa6ba1e9abd8"
+          },
+          {
+            "path": "context/pricing/current/part-0140.json",
+            "bytes": 1616,
+            "sha256": "40d86cbdc49336c7c20e150534fb91de7ef81f9b3986ffbe6bf5c0fa2a18ec28"
+          },
+          {
+            "path": "context/pricing/current/part-0141.json",
+            "bytes": 1694,
+            "sha256": "db7792eaaa89f52b96f23b63e3dc1b27b1ccabd68deadfa36e009d46b55cd9ae"
+          },
+          {
+            "path": "context/pricing/current/part-0142.json",
+            "bytes": 1758,
+            "sha256": "378a4e8c527018220a9ae6140f58622ddebdf6e57cdfd48a2bb47b069bdf2162"
+          },
+          {
+            "path": "context/pricing/current/part-0143.json",
+            "bytes": 1702,
+            "sha256": "865f08e992c6161fe836cf9a1ded91a96cc60568b58fdc6df89707a7926d269e"
+          },
+          {
+            "path": "context/pricing/current/part-0144.json",
+            "bytes": 1701,
+            "sha256": "511c90243562531dc31dd88d51e02eb84419c0d5da50e1668dd3380f612de8e0"
+          },
+          {
+            "path": "context/pricing/current/part-0145.json",
+            "bytes": 1645,
+            "sha256": "a37e311f7473f3ad00dfac81f83828156199602710f0c873d4e6273252bf1732"
+          },
+          {
+            "path": "context/pricing/current/part-0146.json",
+            "bytes": 1711,
+            "sha256": "c43ee78e8056391ef69c3e91903b59da23dc5ad583700b9b1c6ab9b7e9f9f2bb"
+          },
+          {
+            "path": "context/pricing/current/part-0147.json",
+            "bytes": 1724,
+            "sha256": "5f2057d9f91f809036f53307256214401671a6390327d57a1822568ad1869f59"
+          },
+          {
+            "path": "context/pricing/current/part-0148.json",
+            "bytes": 1622,
+            "sha256": "2af9029f1b8b19f39cf694cab1ba42e47dd85545b891703e5117d8c220a54d34"
+          },
+          {
+            "path": "context/pricing/current/part-0149.json",
+            "bytes": 1571,
+            "sha256": "ef800d2f219795d2cd457ba55cab73002590a820b8b3786954432931ffe4c674"
+          },
+          {
+            "path": "context/pricing/current/part-0150.json",
+            "bytes": 1683,
+            "sha256": "d08af0ed0d54023415987ab698e6aeba654530047f463c0a68def0ef28c0abcf"
+          },
+          {
+            "path": "context/pricing/current/part-0151.json",
+            "bytes": 1716,
+            "sha256": "d761ec1a45d16c9f65044a75101c06404241fdb550af348b0ebcedc1d9c92993"
+          },
+          {
+            "path": "context/pricing/current/part-0152.json",
+            "bytes": 1776,
+            "sha256": "151cc380350ca4d17dae3129348bd3662533f6dbeef79672c5f6c16c12a0e066"
+          },
+          {
+            "path": "context/pricing/current/part-0153.json",
+            "bytes": 1711,
+            "sha256": "e2ddddedc0cd30be2608b794f96c85727e4ca4ac78ff7402591ededf451f0892"
+          },
+          {
+            "path": "context/pricing/current/part-0154.json",
+            "bytes": 1762,
+            "sha256": "f9be450c1aa8f592519242816f5caad24acbce8cf45a93ae35a414e54dcd0128"
+          },
+          {
+            "path": "context/pricing/current/part-0155.json",
+            "bytes": 1681,
+            "sha256": "4b407e4321291715cfdb1cf90341b5df40298b1e1c3b2684737939668ea75a60"
+          },
+          {
+            "path": "context/pricing/current/part-0156.json",
+            "bytes": 1700,
+            "sha256": "7cfb60c30716b0e42decc09f4a6ef3feae2286b164060b94036ccefc8bab7872"
+          },
+          {
+            "path": "context/pricing/current/part-0157.json",
+            "bytes": 1760,
+            "sha256": "5182dfd5cf2e6b59f491b6437edf292ad40d4c2e7dcc12bec88aae27c66ec6f3"
+          },
+          {
+            "path": "context/pricing/current/part-0158.json",
+            "bytes": 1738,
+            "sha256": "21dca0b2a6901adf1a92b084df34aac6cffaffb8372db7d8a118a7da2eefc8ce"
+          },
+          {
+            "path": "context/pricing/current/part-0159.json",
+            "bytes": 1712,
+            "sha256": "9982a8377bbe769763184b066ffb6a42e5539272223ba23a4fd520194dc9d1e9"
+          },
+          {
+            "path": "context/pricing/current/part-0160.json",
+            "bytes": 1708,
+            "sha256": "ef2a9589890a0ce3d8a0d77953d0942dd6a408269438ac8a8fca40618386a7cb"
+          },
+          {
+            "path": "context/pricing/current/part-0161.json",
+            "bytes": 1760,
+            "sha256": "f797b036bfab274bd11601e97e7ee968de8d6313de1607f4a51fd0369334f440"
+          },
+          {
+            "path": "context/pricing/current/part-0162.json",
+            "bytes": 1693,
+            "sha256": "26833330eed3a44a34ddff9f7e51a1ef0eeb3c6cf767de7c964f6d7db1f3bd0a"
+          },
+          {
+            "path": "context/pricing/current/part-0163.json",
+            "bytes": 1712,
+            "sha256": "5e846b168fc0ab61bb99d18352c0683b9f858ee1e41d6d16923203ee8b1cd241"
+          },
+          {
+            "path": "context/pricing/current/part-0164.json",
+            "bytes": 1726,
+            "sha256": "f647f9d7b74e00802a7e85830b9a8616a5a6a2ebeed95a56a2e7fc748c3c2570"
+          },
+          {
+            "path": "context/pricing/current/part-0165.json",
+            "bytes": 1650,
+            "sha256": "76bf275cf4119509af9cd36bcbdf29fae1004bd6d7ead635c28692c9b687fb3f"
+          },
+          {
+            "path": "context/pricing/current/part-0166.json",
+            "bytes": 1737,
+            "sha256": "a2695b3b7f169a8a361ec893b97e77daca8ecfc5e52197fbba210e25e50a4cf7"
+          },
+          {
+            "path": "context/pricing/current/part-0167.json",
+            "bytes": 1707,
+            "sha256": "17aca6c691ace60a81481ac10ef966f9611a40d08093995ac48383571e3acfec"
+          },
+          {
+            "path": "context/pricing/current/part-0168.json",
+            "bytes": 1745,
+            "sha256": "c282c3fc32d167c9cefb44e8b97c24da06053a2e009dca64e51db193678697d5"
+          },
+          {
+            "path": "context/pricing/current/part-0169.json",
+            "bytes": 1785,
+            "sha256": "ad107a3f4b55eb2599f3ef58df5ab35f564d457ae1107aeffe4e164b3239b670"
+          },
+          {
+            "path": "context/pricing/current/part-0170.json",
+            "bytes": 1552,
+            "sha256": "a8cb6ffc081d3104f9ed07edaf9e8b0db09bf98e8975c9c78af0208c97e7c4ed"
+          },
+          {
+            "path": "context/pricing/current/part-0171.json",
+            "bytes": 1610,
+            "sha256": "82c54e10e4ae45f54f5a98cacefed3a171fb41aa7aa16335f977704a49cb0cdc"
+          },
+          {
+            "path": "context/pricing/current/part-0172.json",
+            "bytes": 1767,
+            "sha256": "d1b1b5d6b99f9707cfb01e742b4ee1a3881ba43dbc69b596886159ce267a4cde"
+          },
+          {
+            "path": "context/pricing/current/part-0173.json",
+            "bytes": 1634,
+            "sha256": "399f5a90d582868104f41b8a3420363a852a1da4107a5941d8001d97094dbf33"
+          },
+          {
+            "path": "context/pricing/current/part-0174.json",
+            "bytes": 1711,
+            "sha256": "23af2ff2796cf580be42896d6ee8bb5450f4c6dc32dc73e69ee11cba2ee6be67"
+          },
+          {
+            "path": "context/pricing/current/part-0175.json",
+            "bytes": 1635,
+            "sha256": "0a576f4d163be7d330b74667a0943f76c55f31c2a1561825acb830e454fd9821"
+          },
+          {
+            "path": "context/pricing/current/part-0176.json",
+            "bytes": 1712,
+            "sha256": "bbf728e8cb27c06f2034a4012e4e419b93cd6b90b705c49ada01f3a2dd16f5e6"
+          },
+          {
+            "path": "context/pricing/current/part-0177.json",
+            "bytes": 1696,
+            "sha256": "a35e6ce063ad6ad2b07b089584a3d1a6682bafb8d8e5de6d0b02a7ee7489015b"
+          },
+          {
+            "path": "context/pricing/current/part-0178.json",
+            "bytes": 1612,
+            "sha256": "6595027f350e128ff7b8f30f27f6720aa67cfd8330c131e73af46a415153ef3c"
+          },
+          {
+            "path": "context/pricing/current/part-0179.json",
+            "bytes": 1732,
+            "sha256": "d12f74b48dc9cb585f7c58c94089c949a7cd862a3878ce97dea9cf9840af4f67"
+          },
+          {
+            "path": "context/pricing/current/part-0180.json",
+            "bytes": 1620,
+            "sha256": "98e78dd215db056aed4602ab26d5989780dd0186949425b4b02725e212852dd7"
+          },
+          {
+            "path": "context/pricing/current/part-0181.json",
+            "bytes": 1747,
+            "sha256": "238fb1b3e554c99a5c9a77f62188e0ea52ecec424f16748672e3b09dad7c7df6"
+          },
+          {
+            "path": "context/pricing/current/part-0182.json",
+            "bytes": 1502,
+            "sha256": "b9dcef4ad9e1a5fc3e229e46602ea41bed09a1bbf9dd19c3d5b4c483bc562f36"
+          },
+          {
+            "path": "context/pricing/current/part-0183.json",
+            "bytes": 1626,
+            "sha256": "04b4380f0f5fb837f9bdee21fbb5f9553aae0bca09ef85ad234c4147876c26f5"
+          },
+          {
+            "path": "context/pricing/current/part-0184.json",
+            "bytes": 1692,
+            "sha256": "ea80261e505ab8ee51ddd53b7a9b341d561749ed48d26279b27a474bdbc9b9fc"
+          },
+          {
+            "path": "context/pricing/current/part-0185.json",
+            "bytes": 1738,
+            "sha256": "fbf1bf5cfe81af0a40802adde24ee22de207a07e8315ae92fd0a91460dce1708"
+          },
+          {
+            "path": "context/pricing/current/part-0186.json",
+            "bytes": 1736,
+            "sha256": "77d4bb1838ec436797d19c7035125cf60aa853fc3c3bb515d7a17a69cb6095a7"
+          },
+          {
+            "path": "context/pricing/current/part-0187.json",
+            "bytes": 1692,
+            "sha256": "4cdf7d68dd9b7fd61f4f32ce0a0e13850f779abf5a0258c45f23bbc011cd012b"
+          },
+          {
+            "path": "context/pricing/current/part-0188.json",
+            "bytes": 1713,
+            "sha256": "28eabdcf44019d8e24680b2b7bfb526e0ae3fe4bf23a6100d9a4303a0d29221d"
+          },
+          {
+            "path": "context/pricing/current/part-0189.json",
+            "bytes": 1742,
+            "sha256": "9d8bf651875038c874a69aa2554fe2fe6c326c4a125d6e7cca203e629e5b2e11"
+          },
+          {
+            "path": "context/pricing/current/part-0190.json",
+            "bytes": 1758,
+            "sha256": "8c9e9047d0b121524131183eab992e1bb822171f97ecbbfbf776d6688f9f72a0"
+          },
+          {
+            "path": "context/pricing/current/part-0191.json",
+            "bytes": 1424,
+            "sha256": "00feb8b71eb2e902658b4e54054d0b5645c105ee28d130fa70460cc13cba1367"
+          },
+          {
+            "path": "context/pricing/current/part-0192.json",
+            "bytes": 1694,
+            "sha256": "61d2641d12240a8952b34a59a8ce8c8adf9bd24cdbc62b9266e523d7e2d4d396"
+          },
+          {
+            "path": "context/pricing/current/part-0193.json",
+            "bytes": 1827,
+            "sha256": "81b2c509872b1a8ea5fd1134f7a877a666964b75dac841f74415f71c615ef376"
+          },
+          {
+            "path": "context/pricing/current/part-0194.json",
+            "bytes": 1807,
+            "sha256": "cedff89e93a514b3a3d4da7b59b25563e39aad5a1f0040305f72a4c2119eb090"
+          },
+          {
+            "path": "context/pricing/current/part-0195.json",
+            "bytes": 1761,
+            "sha256": "3e37d2571e2cc2bedb3b6cea672bc494fe4e904bbfbfe574231805b92fa11f70"
+          },
+          {
+            "path": "context/pricing/current/part-0196.json",
+            "bytes": 1541,
+            "sha256": "16833e2e45b71b73ed8da5e18055d4563f656497e6f83862e8bd8f05e1bae466"
+          },
+          {
+            "path": "context/pricing/current/part-0197.json",
+            "bytes": 1660,
+            "sha256": "4b2a6bf4af38eb0d985d86a475182c17b0db8273c0c25cc5de638fc999f47039"
+          },
+          {
+            "path": "context/pricing/current/part-0198.json",
+            "bytes": 1634,
+            "sha256": "43c676e92851fe49e3a7d4183bf7c373ee760f248bcaf02352a1e46bd07d61d9"
+          },
+          {
+            "path": "context/pricing/current/part-0199.json",
+            "bytes": 1528,
+            "sha256": "6fc61d06e7e8ade576e4e0e34c75b5c5f2243b717f6131bf7fdb31f28d28865e"
+          },
+          {
+            "path": "context/pricing/current/part-0200.json",
+            "bytes": 1667,
+            "sha256": "0f03681c5b4c270a8e7a7fcfb953d86ea672dad1134d78389f1fb5a14731a146"
+          },
+          {
+            "path": "context/pricing/current/part-0201.json",
+            "bytes": 1721,
+            "sha256": "f8c590d897dcaf6a76e2a3ae93ed4dbb33909a68bcc0bf9f5007a179acd7eb7b"
+          },
+          {
+            "path": "context/pricing/current/part-0202.json",
+            "bytes": 1760,
+            "sha256": "28505fe27b79c9adc0f3dcb3c20d93ecc33633168d985d3577b8e28e11f0d032"
+          },
+          {
+            "path": "context/pricing/current/part-0203.json",
+            "bytes": 1732,
+            "sha256": "2ae2ce5b77f3067ca33c7b0bf8ed1b1b1137ca83b521a039d105fd94821a66f9"
+          },
+          {
+            "path": "context/pricing/current/part-0204.json",
+            "bytes": 1721,
+            "sha256": "763d029b0449e7418b710d02313a68621b6a8eed9b10a25da84d6dd8a460405f"
+          },
+          {
+            "path": "context/pricing/current/part-0205.json",
+            "bytes": 1595,
+            "sha256": "07218d8cb9e8e67a3cf8b1534eab6319d19d1e8e50dd90707756b4a75dc559be"
+          },
+          {
+            "path": "context/pricing/current/part-0206.json",
+            "bytes": 1754,
+            "sha256": "88e1ec200f3bd522ee12009d156374be93ce864bcf09a0f08b09ea2ce0c26ebb"
+          },
+          {
+            "path": "context/pricing/current/part-0207.json",
+            "bytes": 1771,
+            "sha256": "7ae899e9a7ee4d512b936454b88966a87c7d6a9b1e6946bf56cf5ad8ff5a221e"
+          },
+          {
+            "path": "context/pricing/current/part-0208.json",
+            "bytes": 1694,
+            "sha256": "5af6f0fa1c6748542ffab99dca545869dd978586fb8744307eeaac7b6a691293"
+          },
+          {
+            "path": "context/pricing/current/part-0209.json",
+            "bytes": 1624,
+            "sha256": "17a2c07f766ef8b2156a85e599e5524faaacc3b9910d1ae227473f2d867e1a5c"
+          },
+          {
+            "path": "context/pricing/current/part-0210.json",
+            "bytes": 1710,
+            "sha256": "51a8d7b7d238d71ebf2afe8e0f2db546180f2d5bd1a6888b1cf5779cae8b74cd"
+          },
+          {
+            "path": "context/pricing/current/part-0211.json",
+            "bytes": 1696,
+            "sha256": "c04edc6c9869922fb490865b4b5cd1c5607c19c5a091644647b585c6a40a8119"
+          },
+          {
+            "path": "context/pricing/current/part-0212.json",
+            "bytes": 1615,
+            "sha256": "8c024ca35059deae7582b09c8608282f177135e6a114b5d15efcaf0e4827a0d0"
+          },
+          {
+            "path": "context/pricing/current/part-0213.json",
+            "bytes": 1505,
+            "sha256": "76c7149c52e208d5c21376a613857dce26bbf7a6ef71fc3d039b01fd8a1dc864"
+          },
+          {
+            "path": "context/pricing/current/part-0214.json",
+            "bytes": 1569,
+            "sha256": "4ed7bdb1fb02252b0db2edc13dfcd9d98b27a57ed82899406339b6d053ff7439"
+          },
+          {
+            "path": "context/pricing/current/part-0215.json",
+            "bytes": 1736,
+            "sha256": "ddd24e5432607443d6dd5fc2d220f45baa2578551c9fc6162a3f7b4acfbcf8c0"
+          },
+          {
+            "path": "context/pricing/current/part-0216.json",
+            "bytes": 1631,
+            "sha256": "9a23dbd857ba231f94224e0a2d6bcdcb5b743877c23ad755ccd9dda5c678c9dd"
+          },
+          {
+            "path": "context/pricing/current/part-0217.json",
+            "bytes": 1771,
+            "sha256": "b639e638c069ece70e821bdc2b5cc2b4feb1f1b7ba920db1cb881c30e1d6fd24"
+          },
+          {
+            "path": "context/pricing/current/part-0218.json",
+            "bytes": 1761,
+            "sha256": "7ed5913a6aa0fd0e8e662af6063047b89de6e2e0bf2e67011f94c81b83dc207a"
+          },
+          {
+            "path": "context/pricing/current/part-0219.json",
+            "bytes": 1711,
+            "sha256": "0a5b504a200d0f05686cb8d6ae264beaefd402234325170e5de50edef631e235"
+          },
+          {
+            "path": "context/pricing/current/part-0220.json",
+            "bytes": 1646,
+            "sha256": "6f091c071a38da6792036a23b48659c7874d2e0e30943ac1836c8ef2aa7f4e38"
+          },
+          {
+            "path": "context/pricing/current/part-0221.json",
+            "bytes": 1703,
+            "sha256": "594c045297c294e0f968fb27aaf40a577a25223a8cf0433a633d0edfd8b69b13"
+          },
+          {
+            "path": "context/pricing/current/part-0222.json",
+            "bytes": 1695,
+            "sha256": "cd6ced7aaa660c23e0240cf0fda1a5b0bd1185de478937e25c5bdea8004fd111"
+          },
+          {
+            "path": "context/pricing/current/part-0223.json",
+            "bytes": 1775,
+            "sha256": "d48153caebd1df5742dc36ddadcea9edb3f03fd0fe7f69d7353f650316b77d81"
+          },
+          {
+            "path": "context/pricing/current/part-0224.json",
+            "bytes": 1745,
+            "sha256": "968c1205b121dd7141e40b8c91050c1c37efd183538b04caa24b883155056384"
+          },
+          {
+            "path": "context/pricing/current/part-0225.json",
+            "bytes": 1761,
+            "sha256": "84dd99e997cc33fd06d5836814e033aea6bf077f0fe20541ac1421a9b5bfb214"
+          },
+          {
+            "path": "context/pricing/current/part-0226.json",
+            "bytes": 1699,
+            "sha256": "67074013f93812274af9c95fd3827063f4eea5002032c28bcb9dae3c53e1ff83"
+          },
+          {
+            "path": "context/pricing/current/part-0227.json",
+            "bytes": 1583,
+            "sha256": "c204992d70b5b04429c283edf41f24f811880330a6618f241c90508c5923da17"
+          },
+          {
+            "path": "context/pricing/current/part-0228.json",
+            "bytes": 1432,
+            "sha256": "03c459108eea718a52ffa5a759ac304ea95e3cc11b07979a5f6aefcc838e4fe0"
+          },
+          {
+            "path": "context/pricing/current/part-0229.json",
+            "bytes": 1693,
+            "sha256": "b9075c425bba59b17d2b5785aa9c1a6c91b13abd42138859f7f4e5ee251ab208"
+          },
+          {
+            "path": "context/pricing/current/part-0230.json",
+            "bytes": 1661,
+            "sha256": "99cd8f245d4f5a469a64d5fceccecfc63d3077d03bec82e1aeecb510ccb7b194"
+          },
+          {
+            "path": "context/pricing/current/part-0231.json",
+            "bytes": 1725,
+            "sha256": "c754252697980ef1f4b2921071a872e56469a9e7a884f0d428354f8d5e0918d6"
+          },
+          {
+            "path": "context/pricing/current/part-0232.json",
+            "bytes": 1315,
+            "sha256": "467ad830825f7be08df9c507dce84bf2705d2fb95f2766594d6ecb3d39092374"
+          },
+          {
+            "path": "context/pricing/current/part-0233.json",
+            "bytes": 1267,
+            "sha256": "73e0aa3bd20eccb5e2d33b2f0350c64a002a8e23584c44a30f8318dc0a220c84"
+          },
+          {
+            "path": "context/pricing/current/part-0234.json",
+            "bytes": 1274,
+            "sha256": "c989145252c5105093f8097f51ccc7cb1fcca858892f3e685a76188c3de84e01"
+          },
+          {
+            "path": "context/pricing/current/part-0235.json",
+            "bytes": 1318,
+            "sha256": "dd835d1cd941c251d7beb39ebf48d82dce5d94a4ec7f0201708c551d8b7fc75b"
+          },
+          {
+            "path": "context/pricing/current/part-0236.json",
+            "bytes": 1336,
+            "sha256": "d707b7f929ddb7924961af5ca8eaad6ff1aefe10611ce57a1a1526b71002536f"
+          },
+          {
+            "path": "context/pricing/current/part-0237.json",
+            "bytes": 1262,
+            "sha256": "bd73a49e353ebaa335d4f7c4fb966f20567c270942f0e094cb2cdbbf8ffab605"
+          },
+          {
+            "path": "context/pricing/current/part-0238.json",
+            "bytes": 1374,
+            "sha256": "295660829298071e0cdb3f4e176d36b599af15efcc5a1d750874f2394696b708"
+          },
+          {
+            "path": "context/pricing/current/part-0239.json",
+            "bytes": 1244,
+            "sha256": "99254dc88d1a38ba83a420b62d38f7b08bc1f9242f668c020f88a26261d817cf"
+          },
+          {
+            "path": "context/pricing/current/part-0240.json",
+            "bytes": 1309,
+            "sha256": "ab6a638690d7a30ec55fb87ea72f60ead7d75ff02daad4f2df5db58a6c0bf5d6"
+          },
+          {
+            "path": "context/pricing/current/part-0241.json",
+            "bytes": 1203,
+            "sha256": "8dc00980ee287538284a28c4ebffc6a4bb66657225ab12c0307f5a08d0532dcb"
+          },
+          {
+            "path": "context/pricing/current/part-0242.json",
+            "bytes": 1310,
+            "sha256": "5d10f568dcb89ee3fc23fd6d3e22532834f857adf1a6471cf8eb210c7711c0ff"
+          },
+          {
+            "path": "context/pricing/current/part-0243.json",
+            "bytes": 1193,
+            "sha256": "775e8363b5d63e63b15ed10d0f18a67ea89113f8b5d02cdc7492ae05256c1de8"
+          },
+          {
+            "path": "context/pricing/current/part-0244.json",
+            "bytes": 1202,
+            "sha256": "8f644a52750fe24ebf14add5c8811062f2029b03fa20c555ceff62d1e2bcbd97"
+          },
+          {
+            "path": "context/pricing/current/part-0245.json",
+            "bytes": 1212,
+            "sha256": "4f15c38fd254f2c69b50c450c9d3c7d9635d63322d60f00b84a296f214d776b5"
+          },
+          {
+            "path": "context/pricing/current/part-0246.json",
+            "bytes": 1280,
+            "sha256": "2a3a08ccddf0f3a21bb724bb97e1558070195189a753d5a8d9470ca2a08e8bb4"
+          },
+          {
+            "path": "context/pricing/current/part-0247.json",
+            "bytes": 1299,
+            "sha256": "99fe7cfa62c38c1aec851e72521eefd4fad156a1fdd6fd69d2456f7f24ef0214"
+          },
+          {
+            "path": "context/pricing/current/part-0248.json",
+            "bytes": 1237,
+            "sha256": "4a3e43aaadea691e78afd8a246ccfd452aabc042e886be23ea65713843056556"
+          },
+          {
+            "path": "context/pricing/current/part-0249.json",
+            "bytes": 1349,
+            "sha256": "d1b0a5265a2c0315bbfc3d2590868ecc5c82ecd15a3f787dea6d9d7c89db8682"
+          },
+          {
+            "path": "context/pricing/current/part-0250.json",
+            "bytes": 1261,
+            "sha256": "124907ee02751f45df5ba8afb2413b8c40de6d7bd2d9c292e134fff84658d950"
+          },
+          {
+            "path": "context/pricing/current/part-0251.json",
+            "bytes": 1330,
+            "sha256": "58c5e140dfffcbe48e630777a8b6b69629d1e2b7d2614d06ef0e213c293b045a"
+          },
+          {
+            "path": "context/pricing/current/part-0252.json",
+            "bytes": 1325,
+            "sha256": "b3b9bea525633075c33813c5e4c8b895b99c3cfcdef9d170c0340fc696101776"
+          },
+          {
+            "path": "context/pricing/current/part-0253.json",
+            "bytes": 1282,
+            "sha256": "b81a929b2b2eef32e46e53d9067966c7cb957d05f9cd6ba42eb1583b0e2e5686"
+          },
+          {
+            "path": "context/pricing/current/part-0254.json",
+            "bytes": 1248,
+            "sha256": "d10cd08e855580c9b68896843329abcf49c1e2da4c3c302bac1477993ef86cb5"
+          },
+          {
+            "path": "context/pricing/current/part-0255.json",
+            "bytes": 1320,
+            "sha256": "f84f8f5d09dd1e51cd09be854aab2f0ead435cffd8d3faf443885eafd0da8f42"
+          },
+          {
+            "path": "dev.jsonl",
+            "bytes": 761,
+            "sha256": "ef61941e4e2a1f1a8a56b4a95dfed943be9aee60317b66192dcc60b7b425b990"
+          }
+        ],
+        "invariant": "identical current rules and answers; only file partitioning and explicitly excluded history vary"
+      },
+      "tasks": [
+        {
+          "task_id": "hospitality",
+          "answer": "0.123217",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 10 transaction, account type H, merchant category Eating Places and Restaurants? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        },
+        {
+          "task_id": "books",
+          "answer": "0.129439",
+          "question": "Using the current fee schedule, what is the equally weighted average GlobalCard fee for a EUR 12.75 transaction, account type R, merchant category Book Stores? Match only those specified characteristics; do not include archived fee schedules.",
+          "guidelines": "Answer must be just a number rounded to 6 decimals."
+        }
+      ],
+      "conditions": [
+        "files",
+        "observed"
+      ],
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "implementation_sha256": "c902ca8079efc5ad049fbcfcbea97824340582b0db8831eb095ad5e1c6ad0078",
+      "source_sha256": "64e02e52c30f1199eca398b5d4dcf168325549ab69ee83f9986bd78ce1d27245",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "task_mode": "fresh thread; program output artifact graded"
+    },
+    "archive": "implementations/c902ca8079efc5ad049fbcfcbea97824340582b0db8831eb095ad5e1c6ad0078.tar.gz",
+    "archive_sha256": "70f2d446f7941bca29413f37dbc47ba26ea3745443affad4c614a00a3a14ce50",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "condition": "files",
+        "task": "books",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "hospitality",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "books",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "repa-understanding-v1",
+    "manifest": {
+      "kind": "raw-source-discovery",
+      "dataset": {
+        "kind": "repa-understanding",
+        "repository": "Utopia-V/repa",
+        "revision": "040aa16d7c7a142cdebf39388486c1bc65a98387",
+        "files": [
+          {
+            "path": "context/CONTEXT.md",
+            "bytes": 25667,
+            "sha256": "9b05f33f8ee2c7668b43d094aeaf0e3104598b8d5fc346c2e1d531bc437a17b3"
+          },
+          {
+            "path": "context/README.md",
+            "bytes": 47162,
+            "sha256": "3d26d203f8b3a4529a25fe1b9fedec6fab9ca83aacfeecb9c56747f698b6609a"
+          },
+          {
+            "path": "context/docs/adr/0001-embed-pi-through-node-sdk.md",
+            "bytes": 11855,
+            "sha256": "16d30c303f72bcb92c8f3397fa3f294a5d44c6fef8617650b4067ed36de39c69"
+          },
+          {
+            "path": "context/docs/adr/0002-progressively-load-learning-context.md",
+            "bytes": 8887,
+            "sha256": "71cdbfa3b63d2201a5de10c2eb07f65a459ef0cc2cd4cbb1ba992c50c78db7ea"
+          },
+          {
+            "path": "context/docs/adr/0003-share-file-based-content-operations.md",
+            "bytes": 19569,
+            "sha256": "4fe8758a767a9736890ce5e968ae55f18b044ea95d101b13aa9651da1301da37"
+          },
+          {
+            "path": "context/docs/adr/0004-connect-replaceable-frontends-through-application-protocol.md",
+            "bytes": 18921,
+            "sha256": "3c975c759296546eb6221ae6f1f8022b21315ae1b67e90fbb7dd51c59f4ca885"
+          },
+          {
+            "path": "context/docs/adr/0005-execute-display-content-with-host-permissions.md",
+            "bytes": 8517,
+            "sha256": "827839f5e7215a34faf438259fe1306bd3019c2ee2a24742cf2030dd582b8ffa"
+          },
+          {
+            "path": "context/docs/adr/0006-govern-frontend-visuals-through-a-semantic-design-system.md",
+            "bytes": 3532,
+            "sha256": "bd6bda5520ac9d4ee1968eb025703c7d3fef8781e514afbe568aedfe64321bd2"
+          },
+          {
+            "path": "context/docs/design-system-implementation.md",
+            "bytes": 10340,
+            "sha256": "d74936f661b615f8531d278549470a9381396ed7edf006620be489416c19f3ff"
+          },
+          {
+            "path": "context/docs/design-system.md",
+            "bytes": 13852,
+            "sha256": "170ab77fb6d46a1e0dbbf1a16a894888200dd3dd3e7c61f1b37ba8e0113dbdc8"
+          },
+          {
+            "path": "context/docs/development/README.md",
+            "bytes": 12468,
+            "sha256": "7dfefffcf34ae971b96f13a01f666081109af575f5a1a80a51f1e25a22925c6a"
+          },
+          {
+            "path": "context/docs/development/agent-runtime.md",
+            "bytes": 12992,
+            "sha256": "4bf48f3922a78e13c4d80f9cf15e110ee1c1410f2ee6495b9c34a242d416167b"
+          },
+          {
+            "path": "context/docs/development/content.md",
+            "bytes": 9213,
+            "sha256": "2a9026721fb1da2ef21e28c4c3ee705f1c533641a7d6d463a5c77e768ba0b51f"
+          },
+          {
+            "path": "context/docs/development/integration.md",
+            "bytes": 5216,
+            "sha256": "d568da825e436275a62141e56b937c89ee666fadab1ca40882d8c74440bce751"
+          },
+          {
+            "path": "context/docs/development/resources.md",
+            "bytes": 6594,
+            "sha256": "f0e9e65992dc2b68679b764198052b64d8cb15de764fe3c7a329da3b824528f8"
+          },
+          {
+            "path": "context/docs/development/spaces.md",
+            "bytes": 6860,
+            "sha256": "a6315ac9053198e1ac0b720d53c0af35691953b35f597b1a9844fc72978885d8"
+          },
+          {
+            "path": "context/docs/research/pi-ecosystem-compatibility.md",
+            "bytes": 32865,
+            "sha256": "57ae88d2103ae9ad2c9e9c0ac4459ffa0e37563debde02f7b11d60999c94948b"
+          },
+          {
+            "path": "dev.jsonl",
+            "bytes": 3503,
+            "sha256": "a1bf0f58291b4e701e0f28b874a1124ae4ba4f6956139c7aa1d4e6c6dc780fc1"
+          }
+        ],
+        "oracle": "manually checked against CONTEXT.md and ADR 0002/0003/0004"
+      },
+      "tasks": [
+        {
+          "task_id": "context-lifecycle",
+          "answer": "A, C, D, F",
+          "question": "仅依据 /work 中的固定 Repa 文档，选出下列受到文档支持的设计陈述。判断约定的设计，不把尚未实现理解为没有该约定。\nA. 官方学习能力拥有学习语境的选择、组成与展开规则。\nB. 同一运行中每次 steer 都会重新组装并注入最新学习语境。\nC. 排队请求实际开始处理时取得当前学习语境，而非受理排队时固定。\nD. 关闭自动注入仍保留文档、绑定查询和独立预览。\nE. 语境读取失败时可静默使用旧视图或空视图继续。\nF. token 计量、压缩触发和有限溢出恢复复用 Pi 已有机制。\n在 answer 中按字母顺序返回被支持的陈述编号。结果文件额外保存 evidence 数组，每项包含 claim、path、quote；每个选中编号都附来源相对路径和至少十个字符的连续原文摘录。摘录使用原文，不改写。",
+          "guidelines": "Answer must be a comma separated list of claim IDs, for example A, C."
+        },
+        {
+          "task_id": "content-identity",
+          "answer": "A, E, H",
+          "question": "仅依据 /work 中的固定 Repa 文档，选出下列受到文档支持的设计陈述。判断约定的设计，不把尚未实现理解为没有该约定。\nA. 独立复制内容时建立新身份，旧引用继续指向原内容。\nB. 删除内容后，在原路径创建新文件会自动恢复原身份引用。\nC. 每个稳定内容引用都会自动保存被引用材料的完整历史正文。\nD. 重建材料提取缓存时会覆盖围绕原件持续编辑的校订稿。\nE. 外部移动后不能确认身份和位置关系时，需要重新关联或归属判断。\nF. 空间首次读取任何文件时都必须分配独立内容身份。\nG. 应用关闭期间的全部外部中间编辑都保证可从操作历史恢复。\nH. 代码与交互产物也属于可持续维护的文档，而非只支持 Markdown。\n在 answer 中按字母顺序返回被支持的陈述编号。结果文件额外保存 evidence 数组，每项包含 claim、path、quote；每个选中编号都附来源相对路径和至少十个字符的连续原文摘录。摘录使用原文，不改写。",
+          "guidelines": "Answer must be a comma separated list of claim IDs, for example A, C."
+        },
+        {
+          "task_id": "frontend-runtime",
+          "answer": "A, E, F, G",
+          "question": "仅依据 /work 中的固定 Repa 文档，选出下列受到文档支持的设计陈述。判断约定的设计，不把尚未实现理解为没有该约定。\nA. 独立前端通过公开应用接口使用后端，Pi SDK 对象留在内部适配层。\nB. 前端组件角色是 MacOS、Windows、Linux、Web 等平台分类。\nC. 公开组件契约要求安装新组件后立即热加载其代码。\nD. 关闭最后一个窗口等价于完整退出，会立即取消全部已启动任务。\nE. 完整退出取消当前工作，保留未执行项，重开后由明确操作继续。\nF. 运行中普通发送作为关联当前运行的 steer，不自动转交其他运行。\nG. Full Access 放宽执行范围时仍保留内容来源、操作记录和生命周期语义。\n在 answer 中按字母顺序返回被支持的陈述编号。结果文件额外保存 evidence 数组，每项包含 claim、path、quote；每个选中编号都附来源相对路径和至少十个字符的连续原文摘录。摘录使用原文，不改写。",
+          "guidelines": "Answer must be a comma separated list of claim IDs, for example A, C."
+        }
+      ],
+      "conditions": [
+        "files",
+        "observed"
+      ],
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "implementation_sha256": "d7fa690d758ed1706bb42b0ee8044f2ae1999737432d5096ad5d485df08763a7",
+      "source_sha256": "7caa295939ef3f7cfda222f0e55ce036be00905593f7faf3dbe229c8bdaf16ed",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "task_mode": "fresh thread; program output artifact graded"
+    },
+    "archive": "implementations/d7fa690d758ed1706bb42b0ee8044f2ae1999737432d5096ad5d485df08763a7.tar.gz",
+    "archive_sha256": "90ad0f1329c9aa169d47df7a4812e5c6e9fc1f13191dd2cfbe881d56718d2edf",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "condition": "observed",
+        "task": "context-lifecycle",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "content-identity",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "frontend-runtime",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "frontend-runtime",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "context-lifecycle",
+        "replicate": 0
+      },
+      {
+        "condition": "observed",
+        "task": "content-identity",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "compaction-probe-v1",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "compacted"
+      ],
+      "context_conditions": [
+        "none",
+        "both"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "6c392eb94ae257dbd25bcccdfec8d89714c700daf4cbedec562a05fe2a28a22b",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/6c392eb94ae257dbd25bcccdfec8d89714c700daf4cbedec562a05fe2a28a22b.tar.gz",
+    "archive_sha256": "5df26c02af1b9a56283a6e4de23550b00285c018f3cdddbe28e44f6bbcf66b9a",
+    "evidence_status": "diagnostic: previous answer artifact removed",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "compacted",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "compacted",
+        "context": "both",
+        "replicate": 0
+      }
+    ],
+    "compactions": [
+      {
+        "sequence": "gpt-6-luna-compacted-both-0",
+        "status": "completed",
+        "compaction_observed": true,
+        "usage": {
+          "total": {
+            "totalTokens": 0,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "last": {
+            "totalTokens": 3175,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "modelContextWindow": 828400
+        },
+        "errors": [],
+        "wall_seconds": 9.43173233102425
+      },
+      {
+        "sequence": "gpt-6-luna-compacted-none-0",
+        "status": "completed",
+        "compaction_observed": true,
+        "usage": {
+          "total": {
+            "totalTokens": 0,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "last": {
+            "totalTokens": 871,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "modelContextWindow": 828400
+        },
+        "errors": [],
+        "wall_seconds": 7.607249502005288
+      }
+    ]
+  },
+  {
+    "campaign": "retained-artifacts-v2",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation"
+      ],
+      "artifact_protocol": 2,
+      "context_conditions": [
+        "none",
+        "discovery",
+        "changes",
+        "both",
+        "instructions"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "4b28bc18d11e127033226a505260a48402f047d847e93204886249c8e2dd81a1",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 2,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/4b28bc18d11e127033226a505260a48402f047d847e93204886249c8e2dd81a1.tar.gz",
+    "archive_sha256": "595601c6651258376501c091c78af75fb374e9c67fddca98a1a197397aa6b8d5",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "discovery",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "instructions",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "both",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "changes",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "discovery",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "instructions",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "both",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "none",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "changes",
+        "replicate": 1
+      }
+    ]
+  },
+  {
+    "campaign": "workspace-artifacts-v2",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "workspace"
+      ],
+      "artifact_protocol": 2,
+      "context_conditions": [
+        "none",
+        "both"
+      ],
+      "models": [
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "4b28bc18d11e127033226a505260a48402f047d847e93204886249c8e2dd81a1",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/4b28bc18d11e127033226a505260a48402f047d847e93204886249c8e2dd81a1.tar.gz",
+    "archive_sha256": "595601c6651258376501c091c78af75fb374e9c67fddca98a1a197397aa6b8d5",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "model": "gpt-6-astra",
+        "mode": "workspace",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-astra",
+        "mode": "workspace",
+        "context": "both",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "workspace",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "workspace",
+        "context": "both",
+        "replicate": 0
+      }
+    ]
+  },
+  {
+    "campaign": "composed-work-v1",
+    "manifest": {
+      "kind": "composed-work",
+      "artifact_protocol": 2,
+      "steps": [
+        {
+          "name": "day",
+          "kind": "ids",
+          "merchant": "Belles_cookbook_store",
+          "month": 1,
+          "day": 10
+        },
+        {
+          "name": "month",
+          "kind": "ids",
+          "merchant": "Belles_cookbook_store",
+          "month": 3
+        },
+        {
+          "name": "counterfactual",
+          "kind": "delta",
+          "merchant": "Belles_cookbook_store",
+          "month": 1
+        },
+        {
+          "name": "changed-background",
+          "kind": "ids",
+          "merchant": "Belles_cookbook_store",
+          "month": 1,
+          "day": 10
+        },
+        {
+          "name": "new-session-merchant",
+          "kind": "ids",
+          "merchant": "Rafa_AI",
+          "month": 1,
+          "fresh": true
+        },
+        {
+          "name": "report",
+          "kind": "report",
+          "merchant": "Belles_cookbook_store",
+          "month": 1
+        },
+        {
+          "name": "updated-report",
+          "kind": "report",
+          "merchant": "Belles_cookbook_store",
+          "month": 1
+        }
+      ],
+      "models": [
+        "gpt-6-astra",
+        "gpt-6-luna"
+      ],
+      "conditions": [
+        "none",
+        "both"
+      ],
+      "effort": "high",
+      "clarification": "\n## Interpretation for the composed analysis experiment\n\nNull and empty categorical restriction lists impose no restriction. Every row in\npayments.csv is part of the analysis unless a question explicitly excludes it.\nMonthly volume is the sum of eur_amount for the merchant in that natural calendar\nmonth. Monthly fraud percentage is 100 times the fraudulent-dispute eur_amount\nsum divided by the total eur_amount sum, using all rows in that merchant-month,\neven when the requested result concerns only one day. Use the input decimal euro\namounts without rounding intermediate sums. A fee rule applies when all of its\nspecified restrictions hold. Returning applicable rule IDs means the union of\nrules matching at least one transaction in the requested range. A per-rule audit\nreports each applicable rule independently; it does not select a single winning\nrule or add overlapping rules into an invoice total.\n",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "implementation_sha256": "386021c2a624dfd7064190b551e2ba3bded053c8a277439dfef824ecfba6bce0",
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c"
+    },
+    "archive": "implementations/386021c2a624dfd7064190b551e2ba3bded053c8a277439dfef824ecfba6bce0.tar.gz",
+    "archive_sha256": "d832ef2233408b421aa8668126c3d140cf9583ff2821ab1d87464e389bb175f2",
+    "evidence_status": "current protocol",
+    "order": [
+      [
+        "gpt-6-astra",
+        "both"
+      ],
+      [
+        "gpt-6-luna",
+        "both"
+      ],
+      [
+        "gpt-6-luna",
+        "none"
+      ],
+      [
+        "gpt-6-astra",
+        "none"
+      ]
+    ]
+  },
+  {
+    "campaign": "local-contract-v1",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "conversation",
+        "workspace"
+      ],
+      "artifact_protocol": 2,
+      "context_conditions": [
+        "local_contract"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "f39a8132caecfaaa03f0063ae0a7ac437b1e21a061c936d09d308aca7f00fb21",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 2,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/f39a8132caecfaaa03f0063ae0a7ac437b1e21a061c936d09d308aca7f00fb21.tar.gz",
+    "archive_sha256": "c10f7815562474a7553651f6b8931cea10e279f7a2d5bbf18eb1f7c06ea1061b",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "local_contract",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "workspace",
+        "context": "local_contract",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "conversation",
+        "context": "local_contract",
+        "replicate": 1
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "workspace",
+        "context": "local_contract",
+        "replicate": 1
+      }
+    ]
+  },
+  {
+    "campaign": "compaction-artifacts-v2",
+    "manifest": {
+      "kind": "retained-work-source-changes",
+      "steps": [
+        {
+          "name": "derive",
+          "amount": "10",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-amount",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "data-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "meaning-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "unrelated-change",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "move-source",
+          "amount": "37.50",
+          "account": "H",
+          "category": "Eating Places and Restaurants"
+        },
+        {
+          "name": "new-category",
+          "amount": "12.75",
+          "account": "R",
+          "category": "Book Stores"
+        }
+      ],
+      "conditions": [
+        "compacted"
+      ],
+      "artifact_protocol": 2,
+      "context_conditions": [
+        "none",
+        "both"
+      ],
+      "models": [
+        "gpt-6-luna"
+      ],
+      "effort": "high",
+      "clarification": "\n## Local experiment: fee rule interpretation\n\nAn empty categorical restriction list, like null, imposes no restriction.\nFor an average fee across rules, match only the characteristics named in the\nquestion. Do not filter unspecified characteristics. Give each matching rule\nequal weight; this is not an average over observed payments.\n",
+      "implementation_sha256": "f39a8132caecfaaa03f0063ae0a7ac437b1e21a061c936d09d308aca7f00fb21",
+      "dataset": {
+        "repository": "adyen/DABstep",
+        "revision": "8afcb4ee3df0d73da5e0cddfddfb55665b760169",
+        "license": "CC-BY-4.0",
+        "files": [
+          {
+            "path": "context/acquirer_countries.csv",
+            "upstream": "data/context/acquirer_countries.csv",
+            "bytes": 194,
+            "sha256": "6744cf1962e4b5086342821e627f4557c32f06c3c58e8b0ff3b449dcc634f37f"
+          },
+          {
+            "path": "context/fees.json",
+            "upstream": "data/context/fees.json",
+            "bytes": 531118,
+            "sha256": "9a833666ae9be5a8e756dd1fe076c72e7c502d64161315ffa8fee9e5bf2599dc"
+          },
+          {
+            "path": "context/manual.md",
+            "upstream": "data/context/manual.md",
+            "bytes": 22127,
+            "sha256": "bb7f4ca6fdc759af1f480702b3a3b12e17e9293b0d38a1dbfbbc8ffc1e572d2c"
+          },
+          {
+            "path": "context/merchant_category_codes.csv",
+            "upstream": "data/context/merchant_category_codes.csv",
+            "bytes": 26611,
+            "sha256": "83247d79f5ddcdd180e02f184b644f4912731942a2fc58d91f2a06b911d04b41"
+          },
+          {
+            "path": "context/merchant_data.json",
+            "upstream": "data/context/merchant_data.json",
+            "bytes": 6857,
+            "sha256": "f158e834de27ee8407e99d9c32da690357981d2770958fd302a9bb79ced83581"
+          },
+          {
+            "path": "context/payments-readme.md",
+            "upstream": "data/context/payments-readme.md",
+            "bytes": 1719,
+            "sha256": "8754b92d0b3127856ff72266ea482995d2a1f6a34d0a12732f7c26f527f2c4a5"
+          },
+          {
+            "path": "context/payments.csv",
+            "upstream": "data/context/payments.csv",
+            "bytes": 23581339,
+            "sha256": "5fbb26210a45427d7a6560cfab3a362a08e4067f27cd03695f211a51c47ffc25"
+          },
+          {
+            "path": "dev.jsonl",
+            "upstream": "data/tasks/dev.jsonl",
+            "bytes": 6330,
+            "sha256": "c1da755a6fe9cb538fc84719f51e1db0bff0190a1d6905767ac18c755e66a07b"
+          },
+          {
+            "path": "LICENSE",
+            "upstream": "LICENSE",
+            "bytes": 321,
+            "sha256": "f8a83b510da6dfffb2fab959cb8a48f05dec344e76338cff7cd5da36b50eec22"
+          }
+        ]
+      },
+      "git_revision": "be11cbd2c3ef3fe1199a9cdd693f3d82fc45c08c",
+      "replicates": 1,
+      "conditions_description": "conversation retains thread and files; workspace retains files but starts a fresh thread per task"
+    },
+    "archive": "implementations/f39a8132caecfaaa03f0063ae0a7ac437b1e21a061c936d09d308aca7f00fb21.tar.gz",
+    "archive_sha256": "c10f7815562474a7553651f6b8931cea10e279f7a2d5bbf18eb1f7c06ea1061b",
+    "evidence_status": "current protocol",
+    "order": [
+      {
+        "model": "gpt-6-luna",
+        "mode": "compacted",
+        "context": "none",
+        "replicate": 0
+      },
+      {
+        "model": "gpt-6-luna",
+        "mode": "compacted",
+        "context": "both",
+        "replicate": 0
+      }
+    ],
+    "compactions": [
+      {
+        "sequence": "gpt-6-luna-compacted-both-0",
+        "status": "completed",
+        "compaction_observed": true,
+        "usage": null,
+        "reported_thread_usage": {
+          "total": {
+            "totalTokens": 193090,
+            "inputTokens": 191230,
+            "cachedInputTokens": 167680,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 1860,
+            "reasoningOutputTokens": 307
+          },
+          "last": {
+            "totalTokens": 3273,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "modelContextWindow": 828400
+        },
+        "errors": [],
+        "wall_seconds": 9.858389036991866
+      },
+      {
+        "sequence": "gpt-6-luna-compacted-none-0",
+        "status": "completed",
+        "compaction_observed": true,
+        "usage": null,
+        "reported_thread_usage": {
+          "total": {
+            "totalTokens": 248390,
+            "inputTokens": 245951,
+            "cachedInputTokens": 225536,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 2439,
+            "reasoningOutputTokens": 448
+          },
+          "last": {
+            "totalTokens": 915,
+            "inputTokens": 0,
+            "cachedInputTokens": 0,
+            "cacheWriteInputTokens": 0,
+            "outputTokens": 0,
+            "reasoningOutputTokens": 0
+          },
+          "modelContextWindow": 828400
+        },
+        "errors": [],
+        "wall_seconds": 9.145632102008676
+      }
+    ]
+  }
+]

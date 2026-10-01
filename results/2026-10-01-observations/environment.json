@@ -1,0 +1,14 @@
+{
+  "host_python": "3.12.14",
+  "sandbox_python": "Python 3.12.3",
+  "codex": "codex-cli 0.159.2",
+  "packages": {
+    "duckdb": "1.5.6",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "markdown-it-py": "4.2.0",
+    "jieba": "0.42.1",
+    "matplotlib": "3.11.2"
+  },
+  "note": "导出时记录。早期英文发现批次没有使用 jieba；逐批次的冻结源码哈希区分各实现。"
+}

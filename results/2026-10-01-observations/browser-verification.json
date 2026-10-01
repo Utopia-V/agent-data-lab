@@ -1,0 +1,60 @@
+[
+  {
+    "case": "gpt-6-astra-composed-both-0",
+    "defaultRows": 35,
+    "globalCardRows": 11,
+    "transactPlusRows": 8,
+    "fee602": "214.255536"
+  },
+  {
+    "case": "gpt-6-astra-composed-none-0",
+    "defaultRows": 35,
+    "transactPlusRows": 8,
+    "rowCount": "8",
+    "selectedRows": [
+      "fee_idcard_schemetransactionsamount_eurfee_eur",
+      "51TransactPlus4199.731.578407",
+      "123TransactPlus3325.391.073787",
+      "381TransactPlus565647.6949.690134",
+      "473TransactPlus11710106.1949.679712",
+      "536TransactPlus111538.148.790700",
+      "595TransactPlus125.110.235682",
+      "602TransactPlus21122848.96214.255536",
+      "680TransactPlus4157.311.432866"
+    ]
+  },
+  {
+    "case": "gpt-6-luna-composed-both-0",
+    "defaultRows": 35,
+    "transactPlusRows": 8,
+    "rowCount": "8 rows",
+    "selectedRows": [
+      "fee_idcard_schemetransactionsamount_eurfee_eur",
+      "51TransactPlus4199.731.578407",
+      "123TransactPlus3325.391.073787",
+      "381TransactPlus565647.6949.690134",
+      "473TransactPlus11710106.1949.679712",
+      "536TransactPlus111538.148.790700",
+      "595TransactPlus125.110.235682",
+      "602TransactPlus21122848.96214.255536",
+      "680TransactPlus4157.311.432866"
+    ]
+  },
+  {
+    "case": "gpt-6-luna-composed-none-0",
+    "defaultRows": 35,
+    "transactPlusRows": 8,
+    "rowCount": "8 rules",
+    "selectedRows": [
+      "fee_idcard_schemetransactionsamount_eurfee_eur",
+      "51TransactPlus4199.731.578407",
+      "123TransactPlus3325.391.073787",
+      "381TransactPlus565647.6949.690134",
+      "473TransactPlus11710106.1949.679712",
+      "536TransactPlus111538.148.790700",
+      "595TransactPlus125.110.235682",
+      "602TransactPlus21122848.96214.255536",
+      "680TransactPlus4157.311.432866"
+    ]
+  }
+]
