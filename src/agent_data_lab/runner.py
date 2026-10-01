@@ -98,7 +98,7 @@ class CodexRunner:
         response = self.request("account/read", {"refreshToken": False})
         return (response.get("account") or {}).get("type")
 
-    def run(self, prompt: str, sandbox: Sandbox, max_calls: int = 30):
+    def run(self, prompt: str, sandbox: Sandbox, max_calls: int = 30, on_exchange=None):
         started = time.monotonic()
         response = self.request("thread/start", {
             "model": self.model, "modelProvider": "openai", "allowProviderModelFallback": False,
@@ -140,6 +140,8 @@ class CodexRunner:
                     except (TypeError, ValueError) as error:
                         result, success = {"error": str(error)}, False
                 trace.append({"arguments": arguments, "result": result, "success": success})
+                if on_exchange is not None:
+                    on_exchange(trace[-1])
                 self.send({"id": value["id"], "result": {"contentItems": [
                     {"type": "inputText", "text": json.dumps(result, ensure_ascii=False)}], "success": success}})
             elif "id" in value and method:

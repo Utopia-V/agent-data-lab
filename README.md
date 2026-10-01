@@ -6,7 +6,9 @@
 
 这是独立实验项目。候选接口不属于 Repa 已接受的产品协议。
 
-- [当前设计与待裁决选择](docs/design.md)
+已完成 117 次正式模型运行。Astra 下统一接口减少了部分往返与 token；Luna 下也减少了往返，但正确率没有超过普通文件加说明。较小模型暴露了程序结果正确、最终转录出错的问题。[研究报告](results/2026-10-01/report.md)保留具体错误、token 分项、源码版本与逐次证据。
+
+- [实验后收敛的设计](docs/design.md)
 - [实验协议](docs/experiment.md)
 - [实验结果](results/README.md)
 
@@ -24,5 +26,7 @@ uv run data-lab campaign --output campaigns/example --seed 71 --model gpt-6-astr
 ```
 
 `campaign` 会实际调用模型。每个输出目录只创建一次；manifest 保存语料与实现哈希、模型、思考强度、任务、运行顺序和源码快照。原始结果包含可见工具交互、最终回答和使用量，不保留模型隐藏推理。
+
+图表由 `analysis` 依赖组中的 Matplotlib 生成，当前使用已安装的 Noto Sans CJK 中文字体。公开结果包含冻结实现归档，可按报告中的哈希恢复各阶段；本机 campaigns/ 另外保留原始语料和完整运行目录。
 
 关联研究入口：[Repa #30](https://github.com/Utopia-V/repa/issues/30)。

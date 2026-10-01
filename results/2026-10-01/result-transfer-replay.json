@@ -1,0 +1,154 @@
+[
+  {
+    "campaign": "v3-luna-seed2027",
+    "run": "helpers-references-0",
+    "observation_step": 5,
+    "observed_model_grade": {
+      "correct": false,
+      "missing": [],
+      "extra": [
+        "d0b9b98bcc9@12:2"
+      ],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "direct_program_result": {
+      "answers": [
+        "d03f67803a7@12:1",
+        "d03f67803a7@12:2",
+        "dcf2df567a0@12:1",
+        "d0d8dd0af9c@12:1",
+        "dc47496ca77@12:1",
+        "d0b9b98bcc9@12:1",
+        "d0b9b98bcc9@14:1",
+        "d0b9b98bcc9@14:2",
+        "d37b55abfc4@12:1",
+        "d30a378117d@12:1",
+        "da723101789@12:1",
+        "da723101789@12:2",
+        "d6b47608062@12:1",
+        "de5393e7a44@12:1",
+        "de8b81a3b18@12:1",
+        "de8b81a3b18@12:2",
+        "df238ee4f7f@12:1",
+        "d1e98e79287@12:1",
+        "d0e7e3edc2b@12:1",
+        "db1799b9c63@12:1",
+        "db1799b9c63@12:2",
+        "da65258770a@12:1",
+        "da744419536@12:1",
+        "d7a1dcc7614@12:1"
+      ],
+      "unresolved": []
+    },
+    "direct_program_grade": {
+      "correct": true,
+      "missing": [],
+      "extra": [],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "meaning": "已观察程序输出的确定性转交重放；不是新的模型运行，也不修复原模型最终答案"
+  },
+  {
+    "campaign": "v3-luna-seed2027",
+    "run": "interface-join-0",
+    "observation_step": 5,
+    "observed_model_grade": {
+      "correct": false,
+      "missing": [],
+      "extra": [
+        "d9d9caf509d=（正文不含短语）"
+      ],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "direct_program_result": {
+      "answers": [
+        "d895241b3c8=K739bdc62",
+        "de3c9fc29dd=K3e19b7e2",
+        "d29dfd1a055=K87bf5685",
+        "d6eb6374531=K063492ce",
+        "d92c44d9531=K531c2b64",
+        "d88875a4d11=Ke1e7392f",
+        "ddab3fd7623=K5ef0a222",
+        "dbf230346fc=K69e3ada4",
+        "dd9aea771bd=K88c3a326",
+        "d6d816c56d7=K03f8f1f7",
+        "d7a1dcc7614=K748eea1f",
+        "d40c00b2736=Ke96a1cfa",
+        "d55b8d63a37=Kefa3c0f6"
+      ],
+      "unresolved": []
+    },
+    "direct_program_grade": {
+      "correct": true,
+      "missing": [],
+      "extra": [],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "meaning": "已观察程序输出的确定性转交重放；不是新的模型运行，也不修复原模型最终答案"
+  },
+  {
+    "campaign": "v3-luna-seed4099",
+    "run": "helpers-references-0",
+    "observation_step": 4,
+    "observed_model_grade": {
+      "correct": false,
+      "missing": [
+        "dda642972e8@12:1",
+        "df5284f0400@12:1"
+      ],
+      "extra": [
+        "dda642972e8@12:12",
+        "dda642972e8@12:14"
+      ],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "direct_program_result": {
+      "answers": [
+        "d12bee89851@12:1",
+        "d35800f69a9@12:1",
+        "d3ddfcd71cf@12:1",
+        "d3ddfcd71cf@12:2",
+        "d4a468ac63c@12:1",
+        "d4b91ec5511@12:1",
+        "d5f104854dd@12:1",
+        "d5f104854dd@12:2",
+        "d770144065c@12:1",
+        "d7a26369429@12:1",
+        "d9bcf1a8b62@12:1",
+        "dae4873b2d7@12:1",
+        "dba4239cfe9@12:1",
+        "dc54b0dc65a@12:1",
+        "dc626b1eff5@12:1",
+        "dd53a55e05e@12:1",
+        "dd76fce62ac@12:1",
+        "dd76fce62ac@12:2",
+        "dda642972e8@12:1",
+        "dda642972e8@14:1",
+        "dda642972e8@14:2",
+        "deb728f754f@12:1",
+        "deb728f754f@12:2",
+        "df5284f0400@12:1"
+      ],
+      "unresolved": []
+    },
+    "direct_program_grade": {
+      "correct": true,
+      "missing": [],
+      "extra": [],
+      "coverage_correct": true,
+      "expected_unresolved": [],
+      "actual_unresolved": []
+    },
+    "meaning": "已观察程序输出的确定性转交重放；不是新的模型运行，也不修复原模型最终答案"
+  }
+]

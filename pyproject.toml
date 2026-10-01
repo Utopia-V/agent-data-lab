@@ -14,3 +14,8 @@ data-lab = "agent_data_lab.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/agent_data_lab"]
+
+[dependency-groups]
+analysis = [
+    "matplotlib>=3.11.2",
+]

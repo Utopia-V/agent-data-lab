@@ -76,7 +76,7 @@ Python 中 `from agent_data_lab.native import markdown_links, html_links, annota
 - `query_learning_db(query, params=(), root='/work')` 执行原生只读 SQL，返回行字典列表，与 Space.sql 共用实现。
 - `load_annotations(root='/work')` 读取 JSONL 标注，返回行字典列表，与 Space.records 共用实现。
 
-三个函数都是迭代器。继续使用 json、sqlite3、pathlib、urllib.parse 等原生库读取数据、处理地址和组合结果。
+链接解析函数返回迭代器；SQL 与 JSONL 读取函数返回列表。继续使用 json、sqlite3、pathlib、urllib.parse 等原生库读取数据、处理地址和组合结果。
 """
 
 

@@ -1,0 +1,915 @@
+{
+  "groups": [
+    {
+      "phase": "v1",
+      "condition": "described",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 31,
+      "tool_calls": 23,
+      "median_wall_seconds": 30.062,
+      "mean_model_completions": 3.875,
+      "input_tokens": 649891,
+      "cached_tokens": 450560,
+      "uncached_input_tokens": 199331,
+      "output_tokens": 4164,
+      "observed_bytes": 328475,
+      "program_characters": 7577,
+      "tool_seconds": 0.3093,
+      "truncated_outputs": 3,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v1",
+      "condition": "interface",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 28,
+      "tool_calls": 20,
+      "median_wall_seconds": 31.639,
+      "mean_model_completions": 3.5,
+      "input_tokens": 508235,
+      "cached_tokens": 362496,
+      "uncached_input_tokens": 145739,
+      "output_tokens": 3944,
+      "observed_bytes": 142152,
+      "program_characters": 5997,
+      "tool_seconds": 0.3841,
+      "truncated_outputs": 1,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v1",
+      "condition": "files",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 34,
+      "tool_calls": 26,
+      "median_wall_seconds": 32.34,
+      "mean_model_completions": 4.25,
+      "input_tokens": 721012,
+      "cached_tokens": 540544,
+      "uncached_input_tokens": 180468,
+      "output_tokens": 4377,
+      "observed_bytes": 318550,
+      "program_characters": 8016,
+      "tool_seconds": 0.3711,
+      "truncated_outputs": 1,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2",
+      "condition": "described",
+      "runs": 12,
+      "correct": 12,
+      "model_completions": 50,
+      "tool_calls": 38,
+      "median_wall_seconds": 26.596,
+      "mean_model_completions": 4.167,
+      "input_tokens": 1112937,
+      "cached_tokens": 858240,
+      "uncached_input_tokens": 254697,
+      "output_tokens": 7490,
+      "observed_bytes": 666482,
+      "program_characters": 13421,
+      "tool_seconds": 0.6033999999999999,
+      "truncated_outputs": 5,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2",
+      "condition": "helpers",
+      "runs": 12,
+      "correct": 12,
+      "model_completions": 47,
+      "tool_calls": 35,
+      "median_wall_seconds": 31.192,
+      "mean_model_completions": 3.917,
+      "input_tokens": 1008591,
+      "cached_tokens": 786560,
+      "uncached_input_tokens": 222031,
+      "output_tokens": 6689,
+      "observed_bytes": 381397,
+      "program_characters": 11518,
+      "tool_seconds": 0.557,
+      "truncated_outputs": 2,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2",
+      "condition": "interface",
+      "runs": 12,
+      "correct": 12,
+      "model_completions": 41,
+      "tool_calls": 29,
+      "median_wall_seconds": 24.753,
+      "mean_model_completions": 3.417,
+      "input_tokens": 763209,
+      "cached_tokens": 528768,
+      "uncached_input_tokens": 234441,
+      "output_tokens": 6684,
+      "observed_bytes": 290612,
+      "program_characters": 9639,
+      "tool_seconds": 0.7498,
+      "truncated_outputs": 2,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2-repa",
+      "condition": "interface",
+      "runs": 3,
+      "correct": 3,
+      "model_completions": 9,
+      "tool_calls": 6,
+      "median_wall_seconds": 22.389,
+      "mean_model_completions": 3,
+      "input_tokens": 201548,
+      "cached_tokens": 128000,
+      "uncached_input_tokens": 73548,
+      "output_tokens": 720,
+      "observed_bytes": 172539,
+      "program_characters": 1366,
+      "tool_seconds": 0.3355,
+      "truncated_outputs": 0,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2-repa",
+      "condition": "files",
+      "runs": 3,
+      "correct": 3,
+      "model_completions": 12,
+      "tool_calls": 9,
+      "median_wall_seconds": 29.003,
+      "mean_model_completions": 4,
+      "input_tokens": 260946,
+      "cached_tokens": 207488,
+      "uncached_input_tokens": 53458,
+      "output_tokens": 1016,
+      "observed_bytes": 119016,
+      "program_characters": 2187,
+      "tool_seconds": 0.1556,
+      "truncated_outputs": 3,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v2-repa",
+      "condition": "helpers",
+      "runs": 3,
+      "correct": 3,
+      "model_completions": 12,
+      "tool_calls": 9,
+      "median_wall_seconds": 26.849,
+      "mean_model_completions": 4,
+      "input_tokens": 282190,
+      "cached_tokens": 196992,
+      "uncached_input_tokens": 85198,
+      "output_tokens": 1345,
+      "observed_bytes": 166774,
+      "program_characters": 3489,
+      "tool_seconds": 0.2296,
+      "truncated_outputs": 2,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v3",
+      "condition": "helpers",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 36,
+      "tool_calls": 28,
+      "median_wall_seconds": 35.592,
+      "mean_model_completions": 4.5,
+      "input_tokens": 790202,
+      "cached_tokens": 618752,
+      "uncached_input_tokens": 171450,
+      "output_tokens": 5490,
+      "observed_bytes": 346689,
+      "program_characters": 11139,
+      "tool_seconds": 0.4998,
+      "truncated_outputs": 1,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v3",
+      "condition": "described",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 37,
+      "tool_calls": 29,
+      "median_wall_seconds": 39.311,
+      "mean_model_completions": 4.625,
+      "input_tokens": 871031,
+      "cached_tokens": 677376,
+      "uncached_input_tokens": 193655,
+      "output_tokens": 5959,
+      "observed_bytes": 578553,
+      "program_characters": 12099,
+      "tool_seconds": 0.4694,
+      "truncated_outputs": 2,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v3",
+      "condition": "interface",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 31,
+      "tool_calls": 23,
+      "median_wall_seconds": 28.221,
+      "mean_model_completions": 3.875,
+      "input_tokens": 588711,
+      "cached_tokens": 464640,
+      "uncached_input_tokens": 124071,
+      "output_tokens": 4244,
+      "observed_bytes": 275365,
+      "program_characters": 7546,
+      "tool_seconds": 0.5972,
+      "truncated_outputs": 2,
+      "tool_failures": 0
+    },
+    {
+      "phase": "v3-luna",
+      "condition": "helpers",
+      "runs": 8,
+      "correct": 5,
+      "model_completions": 50,
+      "tool_calls": 42,
+      "median_wall_seconds": 45.721,
+      "mean_model_completions": 6.25,
+      "input_tokens": 991171,
+      "cached_tokens": 796416,
+      "uncached_input_tokens": 194755,
+      "output_tokens": 11604,
+      "observed_bytes": 197613,
+      "program_characters": 15462,
+      "tool_seconds": 0.721,
+      "truncated_outputs": 2,
+      "tool_failures": 5
+    },
+    {
+      "phase": "v3-luna",
+      "condition": "described",
+      "runs": 8,
+      "correct": 8,
+      "model_completions": 50,
+      "tool_calls": 42,
+      "median_wall_seconds": 50.12,
+      "mean_model_completions": 6.25,
+      "input_tokens": 1037328,
+      "cached_tokens": 849408,
+      "uncached_input_tokens": 187920,
+      "output_tokens": 14131,
+      "observed_bytes": 244488,
+      "program_characters": 16632,
+      "tool_seconds": 0.6012,
+      "truncated_outputs": 5,
+      "tool_failures": 4
+    },
+    {
+      "phase": "v3-luna",
+      "condition": "interface",
+      "runs": 8,
+      "correct": 6,
+      "model_completions": 42,
+      "tool_calls": 34,
+      "median_wall_seconds": 33.484,
+      "mean_model_completions": 5.25,
+      "input_tokens": 906432,
+      "cached_tokens": 706304,
+      "uncached_input_tokens": 200128,
+      "output_tokens": 9531,
+      "observed_bytes": 254361,
+      "program_characters": 10839,
+      "tool_seconds": 0.7158,
+      "truncated_outputs": 3,
+      "tool_failures": 1
+    }
+  ],
+  "pairs": [
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "mixed",
+      "baseline": "files",
+      "model_call_delta": 0,
+      "wall_delta": -3.549
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": -0.652
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "join",
+      "baseline": "files",
+      "model_call_delta": -1,
+      "wall_delta": -11.532
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -14.318
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "latest",
+      "baseline": "files",
+      "model_call_delta": -2,
+      "wall_delta": -7.103
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "latest",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": 8.446
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "lookup",
+      "baseline": "files",
+      "model_call_delta": 0,
+      "wall_delta": 16.756
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "lookup",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": 13.221
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "empty",
+      "baseline": "files",
+      "model_call_delta": 0,
+      "wall_delta": -1.489
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "empty",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 3.403
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "references",
+      "baseline": "files",
+      "model_call_delta": -2,
+      "wall_delta": 1.953
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": 9.628
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "decision",
+      "baseline": "files",
+      "model_call_delta": 1,
+      "wall_delta": 11.435
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": -0.891
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "scoped",
+      "baseline": "files",
+      "model_call_delta": -2,
+      "wall_delta": -21.341
+    },
+    {
+      "phase": "v1",
+      "campaign": "v1-seed71",
+      "task": "scoped",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -19.682
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 7.637
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": 1,
+      "wall_delta": 9.706
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -6.387
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": 7.982
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -11.513
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -2.897
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "empty",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -6.571
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "empty",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": -2.429
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -14.948
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": -2,
+      "wall_delta": -19.636
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "lookup",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -3.681
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed313",
+      "task": "lookup",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -5.138
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "empty",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 5.757
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "empty",
+      "baseline": "helpers",
+      "model_call_delta": 2,
+      "wall_delta": 5.306
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -11.97
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -8.074
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 4.898
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": -5.544
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -14.808
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": -2,
+      "wall_delta": -18.959
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": 31.471
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": 9.947
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "lookup",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": 4.558
+    },
+    {
+      "phase": "v2",
+      "campaign": "v2-seed907",
+      "task": "lookup",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": 5.053
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-backlinks",
+      "baseline": "files",
+      "model_call_delta": -1,
+      "wall_delta": -8.895
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-backlinks",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -10.195
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-intersection",
+      "baseline": "files",
+      "model_call_delta": -1,
+      "wall_delta": -12.973
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-intersection",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -1.836
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-scoped",
+      "baseline": "files",
+      "model_call_delta": -1,
+      "wall_delta": 9.157
+    },
+    {
+      "phase": "v2-repa",
+      "campaign": "v2-repa",
+      "task": "repa-scoped",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -2.526
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -18.615
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": -2,
+      "wall_delta": -18.43
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": 2.68
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -5.431
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 8.725
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": 4.808
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -23.412
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed2027",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -12.819
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": 2,
+      "wall_delta": 16.502
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": 1,
+      "wall_delta": -3.722
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -33.636
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": -4,
+      "wall_delta": -20.886
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": 1.567
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": -5.966
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -3,
+      "wall_delta": -38.504
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed2027",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -17.287
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -2,
+      "wall_delta": -20.174
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -14.478
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": -2.503
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": 1,
+      "wall_delta": 5.14
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": -1,
+      "wall_delta": -8.843
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -8.683
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": -8.621
+    },
+    {
+      "phase": "v3",
+      "campaign": "v3-seed4099",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": -8.464
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "references",
+      "baseline": "described",
+      "model_call_delta": -3,
+      "wall_delta": -41.886
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "references",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": -20.566
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "decision",
+      "baseline": "described",
+      "model_call_delta": 0,
+      "wall_delta": 10.486
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "decision",
+      "baseline": "helpers",
+      "model_call_delta": -2,
+      "wall_delta": 6.289
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "join",
+      "baseline": "described",
+      "model_call_delta": 1,
+      "wall_delta": -1.201
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "join",
+      "baseline": "helpers",
+      "model_call_delta": 0,
+      "wall_delta": -11.344
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "mixed",
+      "baseline": "described",
+      "model_call_delta": -5,
+      "wall_delta": -5.138
+    },
+    {
+      "phase": "v3-luna",
+      "campaign": "v3-luna-seed4099",
+      "task": "mixed",
+      "baseline": "helpers",
+      "model_call_delta": -1,
+      "wall_delta": 12.25
+    }
+  ]
+}

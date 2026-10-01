@@ -1,0 +1,1602 @@
+[
+  {
+    "campaign": "v1-seed71",
+    "manifest": {
+      "version": "v1",
+      "seed": 71,
+      "count": 120,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "files",
+        "described",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "lookup",
+          "prompt": "读取对象 dd97fe15282，返回它的校验词。answers 只含这个词。",
+          "answers": [
+            "K06717fbe"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "latest",
+          "prompt": "列出最近一次提交仍然答错的全部题目 ref。不要把历史错误当作当前错误。answers 为 ref 列表。",
+          "answers": [
+            "d004191bee4",
+            "d023401599b",
+            "d035a255897",
+            "d0bbf7afb93",
+            "d10569f776c",
+            "d115a760440",
+            "d250f9c4d9f",
+            "d2e3ae99917",
+            "d31d4b7b026",
+            "d3e15f3faea",
+            "d44d8e988bb",
+            "d549e8b9f42",
+            "d59089d3181",
+            "d5a59132652",
+            "d5c02533038",
+            "d602d4d81dd",
+            "d77fb4780fe",
+            "d7de491519f",
+            "d9f40ba9ecc",
+            "da6d2a887c4",
+            "db4112c6c6c",
+            "dbba9de3f19",
+            "dbd26cd9098",
+            "dcbc2bfff33",
+            "dd3a5c8d075",
+            "ddd03cd4460",
+            "de079f1f6d9",
+            "de800315242",
+            "df27e203fce",
+            "dfd8b99fb0d"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d035a255897=K2aff8932",
+            "d10569f776c=K747720bb",
+            "d3e15f3faea=K7c5e26a0",
+            "d5a59132652=K51be8043",
+            "d602d4d81dd=Ka4336f53",
+            "d77fb4780fe=K6678a8c3",
+            "d7de491519f=K94aa4517",
+            "d9f40ba9ecc=Kf9c11965",
+            "da6d2a887c4=K77eb07b9",
+            "dbba9de3f19=K04075f63",
+            "dd3a5c8d075=Kddbb8eb5",
+            "ddd03cd4460=K30b14110",
+            "de800315242=Ka093414c"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 dd97fe15282 在下列范围内的全部实际 CommonMark 链接出现位置：[\"dd97fe15282\", \"d9f40ba9ecc\", \"dd8be2b0243\", \"d61919cfb27\", \"ddcfa78d2c1\", \"dcbc2bfff33\", \"df3ec6a4316\", \"d35b0113383\", \"dcc4e030e98\", \"d59089d3181\", \"d1d093106d0\", \"d58be15b186\", \"d60879c5dee\", \"dd3a5c8d075\", \"de666bbc221\", \"dc3516d59a5\", \"db662b32a09\", \"d023401599b\", \"da96cc10763\", \"d24aff8a595\", \"d41209630f7\", \"d5a59132652\", \"d5a636ee3d4\", \"d50bce16f72\", \"df1bc30f218\", \"d3e15f3faea\", \"dfdabf9a905\", \"d0906ee3f9a\", \"d4c47d02527\", \"df27e203fce\", \"dc5b593bcdf\", \"d9ddb05835a\", \"d6843434c94\", \"d115a760440\", \"da419e05935\", \"d24368b6407\", \"d2a57bf1118\", \"dbba9de3f19\", \"d3bd7a24b23\", \"dedbd7d6a7a\", \"da190707ec5\", \"dbd26cd9098\", \"d5fd37bd95b\", \"d7c7f804bf4\", \"dcca34a1834\", \"d250f9c4d9f\", \"d6d874c3729\", \"d1aa15c9370\", \"d874eeb798b\", \"de800315242\", \"dbb4d4318ac\", \"d088043c0bf\", \"d5782bd9fc3\", \"d549e8b9f42\", \"df3d8f3b3bf\", \"d0f1cdbda06\", \"db733fb08d8\", \"d5c02533038\", \"d0156c17853\", \"d239871b3d7\", \"d04b41281d1\", \"d602d4d81dd\", \"d71c2a84ef3\", \"d02b6683e45\", \"d112cbcdf24\", \"dfd8b99fb0d\", \"dd055ed7f89\", \"ded02aa773d\", \"de65fe020e9\", \"d2e3ae99917\", \"d744d3536fe\", \"d8b8e23a070\", \"d05754b47d2\", \"d10569f776c\", \"d346080dd42\", \"d784fcf4f60\", \"d0fd2ef88b8\", \"d7de491519f\", \"da59d4f7c8c\", \"dfcb606dee5\", \"d78ad0f7e01\", \"de079f1f6d9\", \"db1c5696837\", \"d1bb93d744d\", \"d355b1da591\", \"d77fb4780fe\", \"df08704acf3\", \"d72bc624aaf\", \"dc66a79030c\", \"db4112c6c6c\", \"d60d37a1052\", \"df23a863f57\", \"ddfc60f99d6\", \"d31d4b7b026\", \"dce23ede872\", \"d0e6cafad93\", \"d5e1c288ed4\", \"d035a255897\", \"d3aff197a0c\", \"dd719c34961\", \"dc6df3e1a91\", \"d44d8e988bb\", \"d683781a148\", \"d34edb24edf\", \"d4e4f5dbd8c\", \"da6d2a887c4\", \"d499e304fb8\", \"d07f3f0d9a5\", \"d8ab6a705d4\", \"ddd03cd4460\", \"d92e62b5268\", \"d1e493aacde\", \"da705ad405d\", \"d0bbf7afb93\", \"d0fb2ea1a90\", \"d136333739b\", \"d29813d7813\", \"d004191bee4\", \"decae14417f\", \"d43038a297b\"]。排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d0f1cdbda06@12:1",
+            "d10569f776c@12:1",
+            "d112cbcdf24@12:1",
+            "d1d093106d0@12:1",
+            "d24aff8a595@12:1",
+            "d31d4b7b026@12:1",
+            "d31d4b7b026@12:2",
+            "d43038a297b@12:1",
+            "d43038a297b@12:2",
+            "d499e304fb8@12:1",
+            "d499e304fb8@12:2",
+            "d4c47d02527@12:1",
+            "d4c47d02527@14:1",
+            "d4c47d02527@14:2",
+            "d6d874c3729@12:1",
+            "d78ad0f7e01@12:1",
+            "d78ad0f7e01@12:2",
+            "d9f40ba9ecc@12:1",
+            "db1c5696837@12:1",
+            "dbba9de3f19@12:1",
+            "dbd26cd9098@12:1",
+            "dbd26cd9098@12:2",
+            "dc3516d59a5@12:1",
+            "dc3516d59a5@12:2",
+            "dc6df3e1a91@12:1",
+            "dd8be2b0243@12:1",
+            "dd8be2b0243@12:2",
+            "ddd03cd4460@12:1",
+            "decae14417f@12:1",
+            "ded02aa773d@12:1",
+            "ded02aa773d@12:2",
+            "df23a863f57@12:1",
+            "df3d8f3b3bf@12:1",
+            "df3d8f3b3bf@12:2"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "scoped",
+          "prompt": "在最近一次提交仍答错的题目范围内，搜索包含字面短语‘写回路径’的文档。按 ref 字典序返回前三个不同文档的 ref。",
+          "answers": [
+            "d035a255897",
+            "d10569f776c",
+            "d3e15f3faea"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 dd97fe15282。在范围 [\"d9f40ba9ecc\", \"dd8be2b0243\", \"page:71\", \"annotation:n0\", \"annotation:n1\", \"opaque:71\", \"missing:71\", \"broken:71\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d9f40ba9ecc@12:1",
+            "dd8be2b0243@12:1",
+            "dd8be2b0243@12:2",
+            "opaque:71@1:1",
+            "page:71@2:1"
+          ],
+          "unresolved": [
+            "broken:71",
+            "missing:71"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e077",
+            "K94aa4517"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "empty",
+          "prompt": "在显式空范围 [] 内，搜索字面短语‘写回路径’，返回匹配对象 ref。",
+          "answers": [],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "77ebd57c42fa2aff06416e9a89dc44cad10b9c7a66e83f37cd34fd02e997fae7",
+      "git_revision": "513a65659d78e3b4a56c7bf07cf5a09a0b48e8a0",
+      "git_dirty": false,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "2b172cdae02d325a8e8ae4056ea0eeb9a9a0e851d068da05fca39e308cb61afd"
+    },
+    "implementation_archive": "implementations/2b172cdae02d325a8e8ae4056ea0eeb9a9a0e851d068da05fca39e308cb61afd.tar.gz",
+    "archive_sha256": "947ee9e638fba0c39161b01f730c6ac89eeab0270484e6cce03c527a4bc48b5d",
+    "order": [
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "latest",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "latest",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "latest",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "join",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "57e83ed574ab025a25c1d25b41ddd7ca9a17604a11d60256c3e862391f360d69",
+      "cli.py": "ec3412bfc0e7e12ed7df5a5e39c4988f5c55655bbc6dba1a25f8d9c48bd15af2",
+      "fixtures.py": "cb57873468cf9a80ac1010bb6715fb21a5b7c652fbd1a368d940664a7fd93dcb",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "6729b36b1319ec85b721e335b513e5edabd5ff010b98319f0c2b86ae6a900b22"
+    }
+  },
+  {
+    "campaign": "v2-seed313",
+    "manifest": {
+      "version": "v2",
+      "variant": "native",
+      "seed": 313,
+      "count": 120,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "lookup",
+          "prompt": "读取对象 d7bd6899029，返回它的校验词。answers 只含这个词。",
+          "answers": [
+            "K5e0ac9ce"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d1b196fb8b4=K8d7f6bcc",
+            "d1da1196c7e=K4c997051",
+            "d2ff9ae560c=K20764ada",
+            "d3e9eb8e461=Kdd88ea43",
+            "d4df7ddaa30=Kbd7677b7",
+            "d64596e49de=K96ce8630",
+            "d762be07399=Kb72db128",
+            "d90aec9c365=Ka3a8bf55",
+            "d9a3926f8aa=K388f2e43",
+            "dd777c83e02=K257b4a3b",
+            "ddb1330d2e6=K1050c499",
+            "defe2f21451=Kf47c0cb3",
+            "df719fd3815=K361ca24e"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d7bd6899029 在下列范围内的全部实际链接出现位置：[\"d7bd6899029\", \"d9a3926f8aa\", \"dd2033f6d7a\", \"ddf554ddf04\", \"d61f25c31d6\", \"d1a84e5230d\", \"d8b4f2f5954\", \"ddea9070525\", \"dae1e8672f8\", \"dc6631b6778\", \"d1f26379465\", \"d35f902e6bd\", \"d4230f02058\", \"df719fd3815\", \"da6fa798000\", \"d21a5baa080\", \"de6ac9032ce\", \"d4ccaa4856b\", \"dc3d51638b6\", \"ddccf5156e2\", \"d59dc48300a\", \"d64596e49de\", \"d4b806b7ed7\", \"da95d0ec1ff\", \"deeff4bbfc7\", \"d3e9eb8e461\", \"d4d98b6009e\", \"d1f27371449\", \"d24ddc27de8\", \"dd1a59a3a2c\", \"d8046d2fee1\", \"d27d8a4833a\", \"d05103ff239\", \"db4637cd577\", \"d4d1751e0ac\", \"d6e96120bfd\", \"d5f43d1dd5e\", \"d90aec9c365\", \"d93916c0c77\", \"db6ee14c842\", \"defcc8609ea\", \"d255bccceeb\", \"d1bcf149c2b\", \"df9df67947b\", \"da99ae11191\", \"dbb7b13d711\", \"d77250b7db0\", \"d8e2bc3ea27\", \"d50a84b2cc0\", \"d1da1196c7e\", \"dbef8c07aba\", \"d0ba49380b0\", \"d4828711444\", \"d6da1ba0700\", \"d9595f22f66\", \"d67cebac2d9\", \"d1d64f6f4b6\", \"dd52bc70a2f\", \"d3cb3c89eaf\", \"dea4db28fa3\", \"d65f4499f11\", \"d4df7ddaa30\", \"d42515db4b9\", \"da718f2dc6f\", \"d7a407f989f\", \"de7cb297132\", \"d3a415592df\", \"d8260c2a18d\", \"defecb01d91\", \"de04391fb8b\", \"d098f73919a\", \"d7ca2a386c4\", \"d4c8151e848\", \"d1b196fb8b4\", \"d128d905b89\", \"de561cf9869\", \"d40806e333b\", \"dd777c83e02\", \"d8636a15e2b\", \"d0abe888979\", \"dd347d57b4b\", \"db4373dc091\", \"d2961334b8c\", \"d6f652fe869\", \"d5da11765e7\", \"defe2f21451\", \"df15fff4027\", \"d07181ff559\", \"d555facf016\", \"d28851c46a9\", \"d868023e021\", \"da5210afd44\", \"d6ecb73598a\", \"d0a9dc90015\", \"d3aa2fe4c71\", \"df613d67d1b\", \"d5e11554f9a\", \"ddb1330d2e6\", \"d0241df2240\", \"d17f79afe0a\", \"de3ae0fc4de\", \"db2d87840c5\", \"ddd4dc600de\", \"d1cc4090ecc\", \"d4fb09e7918\", \"d2ff9ae560c\", \"d7dcb177cae\", \"dfa5fc57634\", \"de4eb0b1707\", \"d762be07399\", \"daff1a054fd\", \"d4b506573fb\", \"d284bfbd83f\", \"df8c9fe380e\", \"d84be8c175b\", \"d61cd0fd0a5\", \"d9e0f27f9bc\", \"d79a712d1b4\", \"d7f7266ee6b\", \"d7a7735ee39\"]。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d098f73919a@12:1",
+            "d0a9dc90015@12:1",
+            "d0a9dc90015@12:2",
+            "d1b196fb8b4@12:1",
+            "d1cc4090ecc@12:1",
+            "d1f26379465@12:1",
+            "d21a5baa080@12:1",
+            "d21a5baa080@12:2",
+            "d21a5baa080@16:1",
+            "d24ddc27de8@12:1",
+            "d24ddc27de8@14:1",
+            "d24ddc27de8@14:2",
+            "d255bccceeb@12:1",
+            "d255bccceeb@12:2",
+            "d2961334b8c@12:1",
+            "d4d98b6009e@12:1",
+            "d50a84b2cc0@12:1",
+            "d61f25c31d6@12:1",
+            "d67cebac2d9@12:1",
+            "d6ecb73598a@12:1",
+            "d762be07399@12:1",
+            "d77250b7db0@12:1",
+            "d7a407f989f@12:1",
+            "d7a7735ee39@12:1",
+            "d7a7735ee39@12:2",
+            "d7dcb177cae@12:1",
+            "d7dcb177cae@12:2",
+            "d7f7266ee6b@12:1",
+            "d8260c2a18d@12:1",
+            "d8260c2a18d@12:2",
+            "d84be8c175b@12:1",
+            "d90aec9c365@12:1",
+            "d90aec9c365@14:1",
+            "d9595f22f66@12:1",
+            "d9595f22f66@12:2",
+            "d9a3926f8aa@12:1",
+            "da5210afd44@12:1",
+            "db4373dc091@12:1",
+            "dd2033f6d7a@12:1",
+            "dd2033f6d7a@12:2",
+            "dd347d57b4b@12:1",
+            "dd347d57b4b@12:2",
+            "ddccf5156e2@12:1",
+            "de3ae0fc4de@12:1",
+            "dea4db28fa3@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d7bd6899029。在范围 [\"d9a3926f8aa\", \"dd2033f6d7a\", \"page:313\", \"annotation:n0\", \"annotation:n1\", \"opaque:313\", \"missing:313\", \"broken:313\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d9a3926f8aa@12:1",
+            "dd2033f6d7a@12:1",
+            "dd2033f6d7a@12:2",
+            "opaque:313@1:1",
+            "page:313@2:1"
+          ],
+          "unresolved": [
+            "broken:313",
+            "missing:313"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e089",
+            "Kf5c2ea9f"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "empty",
+          "prompt": "在显式空范围 [] 内，搜索字面短语‘写回路径’，返回匹配对象 ref。",
+          "answers": [],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "28d8b776db482b97d0be8f0de9f5e16d05090ec84edba87fb56d2bb49c0b0211",
+      "git_revision": "4fe83dac012ca068959dd4b6582cf328e7eb91c4",
+      "git_dirty": false,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "b22e5b791f20c389001b580a1502b242821f1323dcbd17e1e1d349b0f8d03441"
+    },
+    "implementation_archive": "implementations/b22e5b791f20c389001b580a1502b242821f1323dcbd17e1e1d349b0f8d03441.tar.gz",
+    "archive_sha256": "b2533abdc9d9c5c5ec29ede069aacea665a9e5ec8a2c7db9b19efa366a35e27e",
+    "order": [
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "b69735e457799ef4114c70c459662940c1dec8bf7d24c81e1297a9876fe2801e",
+      "cli.py": "d76ddcad95706af9057213c6b23291bb2b338848ff36d1fac9a59a78eda8a99a",
+      "fixtures.py": "9ae175429e3f11deb3f10c325f73b7acbfc93a5b59375f8dbd32dba1faf6cf74",
+      "native.py": "2fed5f52e92281e317419580be9e2777e5496d9b288dc2f1f391050a372033b8",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v2-seed907",
+    "manifest": {
+      "version": "v2",
+      "variant": "native",
+      "seed": 907,
+      "count": 120,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "lookup",
+          "prompt": "读取对象 d533b9ab367，返回它的校验词。answers 只含这个词。",
+          "answers": [
+            "Kdeca1062"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d0c0969d506=K8e7112de",
+            "d1495871c18=K39800ca1",
+            "d2d517211b1=Kde4a0bf7",
+            "d36e025ad7b=K075b8c81",
+            "d3de3c30de7=K929a3d56",
+            "d4fa906e8d2=K8401e0e0",
+            "d6a2b62caba=K412feaa3",
+            "d787feab409=Kbbc764f0",
+            "d7fce222bd6=K4047b473",
+            "d8a7d2f9d6f=K39ff3d28",
+            "db906921387=K7a11212d",
+            "dbdb1d2f5c0=K0b7d18b9",
+            "dd23d41538b=K5d38abb0"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d533b9ab367 在下列范围内的全部实际链接出现位置：[\"d533b9ab367\", \"d3de3c30de7\", \"d9f8965274a\", \"d51d1b848fa\", \"d95b7e77829\", \"d730e04b2df\", \"d2183b62b32\", \"d86c4f17910\", \"dc5c5192add\", \"d16fd63b5fc\", \"dbd315e383e\", \"d12b28a09fa\", \"d93bf586aee\", \"dbdb1d2f5c0\", \"de1214d83cc\", \"d9e08a71321\", \"dd7e0d79c9f\", \"d59b689876d\", \"d577e5a3b8c\", \"d7decb38239\", \"da84a6648eb\", \"d36e025ad7b\", \"d82c2a2dc2b\", \"d34870ea1aa\", \"d04a984d29e\", \"d6a2b62caba\", \"dc7fd441a42\", \"d439d9e3469\", \"d696538fa39\", \"da326e0f33f\", \"d682d42bc97\", \"d1ecbaa3afc\", \"dc99db647f7\", \"d628760bad9\", \"d8a9b39ccca\", \"d61b0523943\", \"dd0aefde7c9\", \"dd23d41538b\", \"d1d32a458ae\", \"dac3f919a0e\", \"d5eb27def3a\", \"d2ebe7d33c4\", \"d1391b45e35\", \"d16124fe241\", \"d8b8c0e0687\", \"d1d50071462\", \"dea65753b90\", \"d76c28bbd7a\", \"df4c67039b7\", \"d7fce222bd6\", \"d77c1889b2f\", \"d183d658dd8\", \"da6a61d800d\", \"dd9b6e48a3a\", \"d372b5608fa\", \"dedf9a8f275\", \"d3598710fa0\", \"da9469b20e7\", \"d8eb11d2dcf\", \"d4186f49374\", \"dde599670a3\", \"d8a7d2f9d6f\", \"d0a74376b25\", \"d507fff8bab\", \"dca1cc894ab\", \"d8e387c9d3c\", \"dc4ba4259b6\", \"ddf1bd11b27\", \"d37f603596b\", \"deb5f16fb56\", \"d90d690b00a\", \"d1fd15c5045\", \"d19eb38533d\", \"d4fa906e8d2\", \"dcc09666357\", \"daaed511f0a\", \"decad9c0c6b\", \"d1495871c18\", \"ddb56d760c0\", \"d40190182cf\", \"de18226ed20\", \"d1e4bde1922\", \"d33c8fd0729\", \"dad98eaf7cc\", \"da9690c561c\", \"d787feab409\", \"d931b9bf8c9\", \"d58a7388015\", \"dc9fb57d495\", \"d417e8487b0\", \"d188965e055\", \"dfba8cf8f82\", \"d3a792417ad\", \"db07efed15c\", \"ddb3ba0630e\", \"d7fafac7773\", \"d9410700f99\", \"d2d517211b1\", \"da61574ee9f\", \"d1f2f1ed170\", \"df273907e1d\", \"d6bc32523d2\", \"d151c8dac5f\", \"de935f50dcd\", \"dff0de439b1\", \"d0c0969d506\", \"db2bbaa058e\", \"d6a6afefaf5\", \"d5107d951c9\", \"db906921387\", \"d2d6ba539dd\", \"d316e45938f\", \"d06d2d74387\", \"d77c33466dc\", \"d8ffd12e19f\", \"d895c67ed17\", \"db30f88db1e\", \"d6b13ba21cc\", \"dac589ee53d\", \"d9c67ca3b7e\"]。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d1e4bde1922@12:1",
+            "d2ebe7d33c4@12:1",
+            "d2ebe7d33c4@12:2",
+            "d33c8fd0729@12:1",
+            "d372b5608fa@12:1",
+            "d372b5608fa@12:2",
+            "d3a792417ad@12:1",
+            "d3de3c30de7@12:1",
+            "d4186f49374@12:1",
+            "d4fa906e8d2@12:1",
+            "d696538fa39@12:1",
+            "d696538fa39@14:1",
+            "d696538fa39@14:2",
+            "d7decb38239@12:1",
+            "d8ffd12e19f@12:1",
+            "d90d690b00a@12:1",
+            "d95b7e77829@12:1",
+            "d9c67ca3b7e@12:1",
+            "d9c67ca3b7e@12:2",
+            "d9e08a71321@12:1",
+            "d9e08a71321@12:2",
+            "d9e08a71321@16:1",
+            "d9f8965274a@12:1",
+            "d9f8965274a@12:2",
+            "dac589ee53d@12:1",
+            "db07efed15c@12:1",
+            "db07efed15c@12:2",
+            "db2bbaa058e@12:1",
+            "db2bbaa058e@12:2",
+            "db906921387@12:1",
+            "dbd315e383e@12:1",
+            "dc7fd441a42@12:1",
+            "dca1cc894ab@12:1",
+            "dd23d41538b@12:1",
+            "dd23d41538b@14:1",
+            "ddf1bd11b27@12:1",
+            "ddf1bd11b27@12:2",
+            "de18226ed20@12:1",
+            "de18226ed20@12:2",
+            "de935f50dcd@12:1",
+            "dea65753b90@12:1",
+            "dedf9a8f275@12:1",
+            "df273907e1d@12:1",
+            "df4c67039b7@12:1",
+            "dfba8cf8f82@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d533b9ab367。在范围 [\"d3de3c30de7\", \"d9f8965274a\", \"page:907\", \"annotation:n0\", \"annotation:n1\", \"opaque:907\", \"missing:907\", \"broken:907\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d3de3c30de7@12:1",
+            "d9f8965274a@12:1",
+            "d9f8965274a@12:2",
+            "opaque:907@1:1",
+            "page:907@2:1"
+          ],
+          "unresolved": [
+            "broken:907",
+            "missing:907"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e097",
+            "Kde4a0bf7"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "empty",
+          "prompt": "在显式空范围 [] 内，搜索字面短语‘写回路径’，返回匹配对象 ref。",
+          "answers": [],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "c2f3ea75fce1fb692f37c8b3d807353cc7839ce1fa5751306213b9c0a7082245",
+      "git_revision": "4fe83dac012ca068959dd4b6582cf328e7eb91c4",
+      "git_dirty": false,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "b22e5b791f20c389001b580a1502b242821f1323dcbd17e1e1d349b0f8d03441"
+    },
+    "implementation_archive": "implementations/b22e5b791f20c389001b580a1502b242821f1323dcbd17e1e1d349b0f8d03441.tar.gz",
+    "archive_sha256": "b2533abdc9d9c5c5ec29ede069aacea665a9e5ec8a2c7db9b19efa366a35e27e",
+    "order": [
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "empty",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "lookup",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "lookup",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "b69735e457799ef4114c70c459662940c1dec8bf7d24c81e1297a9876fe2801e",
+      "cli.py": "d76ddcad95706af9057213c6b23291bb2b338848ff36d1fac9a59a78eda8a99a",
+      "fixtures.py": "9ae175429e3f11deb3f10c325f73b7acbfc93a5b59375f8dbd32dba1faf6cf74",
+      "native.py": "2fed5f52e92281e317419580be9e2777e5496d9b288dc2f1f391050a372033b8",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v2-repa",
+    "manifest": {
+      "version": "v2-repa",
+      "dataset": "repa",
+      "variant": "native",
+      "seed": 71,
+      "count": 120,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "files",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "repa-backlinks",
+          "prompt": "检查 inventory.json 列出的全部文档，找出哪些文档直接链接到 docs/adr/0003-share-file-based-content-operations.md。只返回引用者的 ref，同一文件出现多次只计一次，不包含间接链接。",
+          "answers": [
+            "README.md",
+            "docs/adr/0002-progressively-load-learning-context.md",
+            "docs/adr/0004-connect-replaceable-frontends-through-application-protocol.md",
+            "docs/adr/0005-execute-display-content-with-host-permissions.md",
+            "docs/development/README.md",
+            "docs/development/content.md",
+            "docs/research/pi-ecosystem-compatibility.md"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "repa-intersection",
+          "prompt": "在全部文档中，哪些文档同时直接链接到 docs/adr/0002-progressively-load-learning-context.md 和 docs/adr/0003-share-file-based-content-operations.md？answers 返回文件 ref。",
+          "answers": [
+            "README.md"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "repa-scoped",
+          "prompt": "仅在 docs/development/ 下的文档中，找出直接链接到 docs/adr/0003-share-file-based-content-operations.md，且正文包含字面串 operationId 的文件。answers 返回文件 ref。",
+          "answers": [
+            "docs/development/content.md"
+          ],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "b6b033589b577f1b1a93c7f223d54f2a4273ce3920b31833b2f896fef8bbe79c",
+      "git_revision": "e82085382b15c2d16969a52c1f90d6f7a807a2d6",
+      "git_dirty": false,
+      "codex_version": "codex-cli 0.159.2",
+      "source": {
+        "repository": "https://github.com/Utopia-V/repa",
+        "revision": "040aa16d7c7a142cdebf39388486c1bc65a98387"
+      },
+      "implementation_sha256": "aaf7aac69ee176d056c0af7d4cf96d374d3986c57f263f2b281e010a0afd80b2"
+    },
+    "implementation_archive": "implementations/aaf7aac69ee176d056c0af7d4cf96d374d3986c57f263f2b281e010a0afd80b2.tar.gz",
+    "archive_sha256": "d37a7ff6d3ebc68b921a5413fb3682c37eb5485d3868a2a05019bbde57446841",
+    "order": [
+      {
+        "condition": "interface",
+        "task": "repa-backlinks",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "repa-scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "repa-backlinks",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "repa-intersection",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "repa-backlinks",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "repa-intersection",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "repa-scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "repa-scoped",
+        "replicate": 0
+      },
+      {
+        "condition": "files",
+        "task": "repa-intersection",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "b69735e457799ef4114c70c459662940c1dec8bf7d24c81e1297a9876fe2801e",
+      "cli.py": "fff7940148aa62e2c3bf873bfa380f042492dcc97f0bf4b9e7685f6e81a7db55",
+      "fixtures.py": "9ae175429e3f11deb3f10c325f73b7acbfc93a5b59375f8dbd32dba1faf6cf74",
+      "native.py": "2fed5f52e92281e317419580be9e2777e5496d9b288dc2f1f391050a372033b8",
+      "repa_corpus.py": "117a9b734e3f9c1f3f87be2427821f4bcef804d7e687eecbd6bf2d9ccfca4ec4",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v3-seed2027",
+    "manifest": {
+      "version": "v3",
+      "dataset": "synthetic",
+      "variant": "native",
+      "seed": 2027,
+      "count": 120,
+      "scope_file": true,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d29dfd1a055=K87bf5685",
+            "d40c00b2736=Ke96a1cfa",
+            "d55b8d63a37=Kefa3c0f6",
+            "d6d816c56d7=K03f8f1f7",
+            "d6eb6374531=K063492ce",
+            "d7a1dcc7614=K748eea1f",
+            "d88875a4d11=Ke1e7392f",
+            "d895241b3c8=K739bdc62",
+            "d92c44d9531=K531c2b64",
+            "dbf230346fc=K69e3ada4",
+            "dd9aea771bd=K88c3a326",
+            "ddab3fd7623=K5ef0a222",
+            "de3c9fc29dd=K3e19b7e2"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d0bb9bb1bed 在下列范围内的全部实际链接出现位置：reference-scope.json 中列出的对象引用集合。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d03f67803a7@12:1",
+            "d03f67803a7@12:2",
+            "d0b9b98bcc9@12:1",
+            "d0b9b98bcc9@14:1",
+            "d0b9b98bcc9@14:2",
+            "d0d8dd0af9c@12:1",
+            "d0e7e3edc2b@12:1",
+            "d1e98e79287@12:1",
+            "d30a378117d@12:1",
+            "d37b55abfc4@12:1",
+            "d6b47608062@12:1",
+            "d7a1dcc7614@12:1",
+            "da65258770a@12:1",
+            "da723101789@12:1",
+            "da723101789@12:2",
+            "da744419536@12:1",
+            "db1799b9c63@12:1",
+            "db1799b9c63@12:2",
+            "dc47496ca77@12:1",
+            "dcf2df567a0@12:1",
+            "de5393e7a44@12:1",
+            "de8b81a3b18@12:1",
+            "de8b81a3b18@12:2",
+            "df238ee4f7f@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d0bb9bb1bed。在范围 [\"d7a1dcc7614\", \"d03f67803a7\", \"page:2027\", \"annotation:n0\", \"annotation:n1\", \"opaque:2027\", \"missing:2027\", \"broken:2027\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d03f67803a7@12:1",
+            "d03f67803a7@12:2",
+            "d7a1dcc7614@12:1",
+            "opaque:2027@1:1",
+            "page:2027@2:1"
+          ],
+          "unresolved": [
+            "broken:2027",
+            "missing:2027"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e113",
+            "K4faefce9"
+          ],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "603e0dd96bb4dc8860292727de592c53d70963ccf13c0f33371282b939cd8ac1",
+      "git_revision": "a80d487704b14fc40d2c5631c5170aa78245a121",
+      "git_dirty": false,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191"
+    },
+    "implementation_archive": "implementations/720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191.tar.gz",
+    "archive_sha256": "52b6d385ed2d4f47011bd978e26626d688107db9f71a6460a05cca06085a65e1",
+    "order": [
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "41d71da9d17d793f40f31a501a989e58ed40ad05c9d4a5d40d02e6da144f83a9",
+      "cli.py": "7734ba9ad612a4b69842ac60cc093b583664aa277b477120acbaef2daa12961e",
+      "fixtures.py": "10d5dcae8bb9f82c05abc5b059f862129e175a64b790ef41f4f784a33e993687",
+      "native.py": "d5ddf8927aae90dce39eda9003edfdb822f3af9d2f278140bedb724e460d7b09",
+      "repa_corpus.py": "117a9b734e3f9c1f3f87be2427821f4bcef804d7e687eecbd6bf2d9ccfca4ec4",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v3-luna-seed2027",
+    "manifest": {
+      "version": "v3-luna",
+      "dataset": "synthetic",
+      "variant": "native",
+      "seed": 2027,
+      "count": 120,
+      "scope_file": true,
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d29dfd1a055=K87bf5685",
+            "d40c00b2736=Ke96a1cfa",
+            "d55b8d63a37=Kefa3c0f6",
+            "d6d816c56d7=K03f8f1f7",
+            "d6eb6374531=K063492ce",
+            "d7a1dcc7614=K748eea1f",
+            "d88875a4d11=Ke1e7392f",
+            "d895241b3c8=K739bdc62",
+            "d92c44d9531=K531c2b64",
+            "dbf230346fc=K69e3ada4",
+            "dd9aea771bd=K88c3a326",
+            "ddab3fd7623=K5ef0a222",
+            "de3c9fc29dd=K3e19b7e2"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d0bb9bb1bed 在下列范围内的全部实际链接出现位置：reference-scope.json 中列出的对象引用集合。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d03f67803a7@12:1",
+            "d03f67803a7@12:2",
+            "d0b9b98bcc9@12:1",
+            "d0b9b98bcc9@14:1",
+            "d0b9b98bcc9@14:2",
+            "d0d8dd0af9c@12:1",
+            "d0e7e3edc2b@12:1",
+            "d1e98e79287@12:1",
+            "d30a378117d@12:1",
+            "d37b55abfc4@12:1",
+            "d6b47608062@12:1",
+            "d7a1dcc7614@12:1",
+            "da65258770a@12:1",
+            "da723101789@12:1",
+            "da723101789@12:2",
+            "da744419536@12:1",
+            "db1799b9c63@12:1",
+            "db1799b9c63@12:2",
+            "dc47496ca77@12:1",
+            "dcf2df567a0@12:1",
+            "de5393e7a44@12:1",
+            "de8b81a3b18@12:1",
+            "de8b81a3b18@12:2",
+            "df238ee4f7f@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d0bb9bb1bed。在范围 [\"d7a1dcc7614\", \"d03f67803a7\", \"page:2027\", \"annotation:n0\", \"annotation:n1\", \"opaque:2027\", \"missing:2027\", \"broken:2027\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d03f67803a7@12:1",
+            "d03f67803a7@12:2",
+            "d7a1dcc7614@12:1",
+            "opaque:2027@1:1",
+            "page:2027@2:1"
+          ],
+          "unresolved": [
+            "broken:2027",
+            "missing:2027"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e113",
+            "K4faefce9"
+          ],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "603e0dd96bb4dc8860292727de592c53d70963ccf13c0f33371282b939cd8ac1",
+      "git_revision": "a80d487704b14fc40d2c5631c5170aa78245a121",
+      "git_dirty": true,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191"
+    },
+    "implementation_archive": "implementations/720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191.tar.gz",
+    "archive_sha256": "52b6d385ed2d4f47011bd978e26626d688107db9f71a6460a05cca06085a65e1",
+    "order": [
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "41d71da9d17d793f40f31a501a989e58ed40ad05c9d4a5d40d02e6da144f83a9",
+      "cli.py": "7734ba9ad612a4b69842ac60cc093b583664aa277b477120acbaef2daa12961e",
+      "fixtures.py": "10d5dcae8bb9f82c05abc5b059f862129e175a64b790ef41f4f784a33e993687",
+      "native.py": "d5ddf8927aae90dce39eda9003edfdb822f3af9d2f278140bedb724e460d7b09",
+      "repa_corpus.py": "117a9b734e3f9c1f3f87be2427821f4bcef804d7e687eecbd6bf2d9ccfca4ec4",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v3-seed4099",
+    "manifest": {
+      "version": "v3",
+      "dataset": "synthetic",
+      "variant": "native",
+      "seed": 4099,
+      "count": 120,
+      "scope_file": true,
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d1cb12bf7d4=K4c866da2",
+            "d1f0d00fd7a=K919a989e",
+            "d3588830a2b=K2cde0f3a",
+            "d570210717b=Ke743d9ce",
+            "d609f0bbc6b=Kb48ea7f8",
+            "d64c13f0f0f=K6e3a35d9",
+            "d768c0d33b3=K45f4d02b",
+            "d770144065c=K3f48c5c9",
+            "d833d08f060=Kf5636fa9",
+            "d83ded7b711=Kde48a72b",
+            "da4f02348d5=Kbc678c72",
+            "db077eb9918=K19e7f875",
+            "db4caa59ae3=K0491b6da"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d6527686060 在下列范围内的全部实际链接出现位置：reference-scope.json 中列出的对象引用集合。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d12bee89851@12:1",
+            "d35800f69a9@12:1",
+            "d3ddfcd71cf@12:1",
+            "d3ddfcd71cf@12:2",
+            "d4a468ac63c@12:1",
+            "d4b91ec5511@12:1",
+            "d5f104854dd@12:1",
+            "d5f104854dd@12:2",
+            "d770144065c@12:1",
+            "d7a26369429@12:1",
+            "d9bcf1a8b62@12:1",
+            "dae4873b2d7@12:1",
+            "dba4239cfe9@12:1",
+            "dc54b0dc65a@12:1",
+            "dc626b1eff5@12:1",
+            "dd53a55e05e@12:1",
+            "dd76fce62ac@12:1",
+            "dd76fce62ac@12:2",
+            "dda642972e8@12:1",
+            "dda642972e8@14:1",
+            "dda642972e8@14:2",
+            "deb728f754f@12:1",
+            "deb728f754f@12:2",
+            "df5284f0400@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d6527686060。在范围 [\"d770144065c\", \"dd76fce62ac\", \"page:4099\", \"annotation:n0\", \"annotation:n1\", \"opaque:4099\", \"missing:4099\", \"broken:4099\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d770144065c@12:1",
+            "dd76fce62ac@12:1",
+            "dd76fce62ac@12:2",
+            "opaque:4099@1:1",
+            "page:4099@2:1"
+          ],
+          "unresolved": [
+            "broken:4099",
+            "missing:4099"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e089",
+            "K5c2942c8"
+          ],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "6e093d83c1382591fe13eeab54dec67e6d995df7c4235b50a69086ec662a3afb",
+      "git_revision": "a80d487704b14fc40d2c5631c5170aa78245a121",
+      "git_dirty": true,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191"
+    },
+    "implementation_archive": "implementations/720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191.tar.gz",
+    "archive_sha256": "52b6d385ed2d4f47011bd978e26626d688107db9f71a6460a05cca06085a65e1",
+    "order": [
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "41d71da9d17d793f40f31a501a989e58ed40ad05c9d4a5d40d02e6da144f83a9",
+      "cli.py": "7734ba9ad612a4b69842ac60cc093b583664aa277b477120acbaef2daa12961e",
+      "fixtures.py": "10d5dcae8bb9f82c05abc5b059f862129e175a64b790ef41f4f784a33e993687",
+      "native.py": "d5ddf8927aae90dce39eda9003edfdb822f3af9d2f278140bedb724e460d7b09",
+      "repa_corpus.py": "117a9b734e3f9c1f3f87be2427821f4bcef804d7e687eecbd6bf2d9ccfca4ec4",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  },
+  {
+    "campaign": "v3-luna-seed4099",
+    "manifest": {
+      "version": "v3-luna",
+      "dataset": "synthetic",
+      "variant": "native",
+      "seed": 4099,
+      "count": 120,
+      "scope_file": true,
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "conditions": [
+        "described",
+        "helpers",
+        "interface"
+      ],
+      "replicates": 1,
+      "tasks": [
+        {
+          "id": "join",
+          "prompt": "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。",
+          "answers": [
+            "d1cb12bf7d4=K4c866da2",
+            "d1f0d00fd7a=K919a989e",
+            "d3588830a2b=K2cde0f3a",
+            "d570210717b=Ke743d9ce",
+            "d609f0bbc6b=Kb48ea7f8",
+            "d64c13f0f0f=K6e3a35d9",
+            "d768c0d33b3=K45f4d02b",
+            "d770144065c=K3f48c5c9",
+            "d833d08f060=Kf5636fa9",
+            "d83ded7b711=Kde48a72b",
+            "da4f02348d5=Kbc678c72",
+            "db077eb9918=K19e7f875",
+            "db4caa59ae3=K0491b6da"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "references",
+          "prompt": "找出对象 d6527686060 在下列范围内的全部实际链接出现位置：reference-scope.json 中列出的对象引用集合。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。",
+          "answers": [
+            "d12bee89851@12:1",
+            "d35800f69a9@12:1",
+            "d3ddfcd71cf@12:1",
+            "d3ddfcd71cf@12:2",
+            "d4a468ac63c@12:1",
+            "d4b91ec5511@12:1",
+            "d5f104854dd@12:1",
+            "d5f104854dd@12:2",
+            "d770144065c@12:1",
+            "d7a26369429@12:1",
+            "d9bcf1a8b62@12:1",
+            "dae4873b2d7@12:1",
+            "dba4239cfe9@12:1",
+            "dc54b0dc65a@12:1",
+            "dc626b1eff5@12:1",
+            "dd53a55e05e@12:1",
+            "dd76fce62ac@12:1",
+            "dd76fce62ac@12:2",
+            "dda642972e8@12:1",
+            "dda642972e8@14:1",
+            "dda642972e8@14:2",
+            "deb728f754f@12:1",
+            "deb728f754f@12:2",
+            "df5284f0400@12:1"
+          ],
+          "unresolved": []
+        },
+        {
+          "id": "mixed",
+          "prompt": "目标是 d6527686060。在范围 [\"d770144065c\", \"dd76fce62ac\", \"page:4099\", \"annotation:n0\", \"annotation:n1\", \"opaque:4099\", \"missing:4099\", \"broken:4099\"] 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。",
+          "answers": [
+            "annotation:n0@subject_ref",
+            "d770144065c@12:1",
+            "dd76fce62ac@12:1",
+            "dd76fce62ac@12:2",
+            "opaque:4099@1:1",
+            "page:4099@2:1"
+          ],
+          "unresolved": [
+            "broken:4099",
+            "missing:4099"
+          ]
+        },
+        {
+          "id": "decision",
+          "prompt": "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。",
+          "answers": [
+            "e089",
+            "K5c2942c8"
+          ],
+          "unresolved": []
+        }
+      ],
+      "corpus_sha256": "6e093d83c1382591fe13eeab54dec67e6d995df7c4235b50a69086ec662a3afb",
+      "git_revision": "a80d487704b14fc40d2c5631c5170aa78245a121",
+      "git_dirty": true,
+      "codex_version": "codex-cli 0.159.2",
+      "implementation_sha256": "720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191"
+    },
+    "implementation_archive": "implementations/720df03749fef94c4a73191c51698e249840270fcfb4799bbade0da4c582c191.tar.gz",
+    "archive_sha256": "52b6d385ed2d4f47011bd978e26626d688107db9f71a6460a05cca06085a65e1",
+    "order": [
+      {
+        "condition": "interface",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "join",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "interface",
+        "task": "mixed",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "references",
+        "replicate": 0
+      },
+      {
+        "condition": "described",
+        "task": "decision",
+        "replicate": 0
+      },
+      {
+        "condition": "helpers",
+        "task": "join",
+        "replicate": 0
+      }
+    ],
+    "module_hashes": {
+      "__init__.py": "5b61a760fcf64cf6b3bcb738ff0fcb29b89b9f7a5f57c31721b08ba7a64032fd",
+      "access.py": "41d71da9d17d793f40f31a501a989e58ed40ad05c9d4a5d40d02e6da144f83a9",
+      "cli.py": "7734ba9ad612a4b69842ac60cc093b583664aa277b477120acbaef2daa12961e",
+      "fixtures.py": "10d5dcae8bb9f82c05abc5b059f862129e175a64b790ef41f4f784a33e993687",
+      "native.py": "d5ddf8927aae90dce39eda9003edfdb822f3af9d2f278140bedb724e460d7b09",
+      "repa_corpus.py": "117a9b734e3f9c1f3f87be2427821f4bcef804d7e687eecbd6bf2d9ccfca4ec4",
+      "runner.py": "31a875a8532dc8be06faef46a3814e90b6097baef55c0db4ad6a6ba3fbcee5d0",
+      "sandbox.py": "f5a97eb497207fe980d5741677120e545cddaa43daf50aad3642da76aff00530"
+    }
+  }
+]

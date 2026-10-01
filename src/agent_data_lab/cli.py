@@ -89,11 +89,15 @@ def campaign(args):
             prompt += "HELPERS.md 提供可复用的来源解析函数；原生文件与编程仍可使用。"
         prompt += "\n任务：" + task.prompt + "\n只提交符合 schema 的 JSON 结果。"
         start = time.monotonic()
+        trace_path = directory / (name + ".trace.jsonl")
+        def preserve_exchange(exchange):
+            with trace_path.open("a") as stream:
+                stream.write(json.dumps(exchange, ensure_ascii=False) + "\n")
         try:
             with CodexRunner(host, args.model, args.effort, args.timeout) as runner:
                 result = runner.run(prompt, Sandbox(work, directory / "scratch" / name,
                     interface=condition == "interface", helpers=condition == "helpers",
-                    provider=snapshot / "access.py"))
+                    provider=snapshot / "access.py"), on_exchange=preserve_exchange)
             result["grade"] = grade(result["final"], task)
             result["protocol_valid"] = not result.get("unexpected_tools")
         except Exception as error:
