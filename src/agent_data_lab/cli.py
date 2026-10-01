@@ -14,6 +14,7 @@ import time
 from .fixtures import generate, dataset_digest, write_json, DESCRIPTION, API_HELP, HELPER_HELP
 from .runner import CodexRunner
 from .sandbox import Sandbox
+from .repa_corpus import generate_repa, REVISION as REPA_REVISION, DESCRIPTION as REPA_DESCRIPTION
 
 
 def grade(final: str, task):
@@ -36,7 +37,8 @@ def campaign(args):
     directory = Path(args.output).resolve()
     directory.mkdir(parents=True, exist_ok=False)
     canonical = directory / "canonical"
-    tasks = generate(canonical, args.seed, args.count, variant=args.variant)
+    tasks = (generate_repa(canonical, Path(args.repa_repository)) if args.dataset == "repa"
+             else generate(canonical, args.seed, args.count, variant=args.variant))
     if args.tasks:
         wanted = set(args.tasks.split(","))
         if not wanted <= {task.id for task in tasks}:
@@ -45,12 +47,15 @@ def campaign(args):
     conditions = args.conditions.split(",")
     if not set(conditions) <= {"files", "described", "helpers", "interface"}:
         raise ValueError("unknown condition")
-    manifest = {"version": args.version, "variant": args.variant, "seed": args.seed, "count": args.count, "model": args.model,
+    manifest = {"version": args.version, "dataset": args.dataset, "variant": args.variant,
+        "seed": args.seed, "count": args.count, "model": args.model,
         "effort": args.effort, "conditions": conditions, "replicates": args.replicates,
         "tasks": [asdict(task) for task in tasks], "corpus_sha256": dataset_digest(canonical),
         "git_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
         "git_dirty": bool(subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()),
         "codex_version": subprocess.check_output(["codex", "--version"], text=True).strip()}
+    if args.dataset == "repa":
+        manifest["source"] = {"repository": "https://github.com/Utopia-V/repa", "revision": REPA_REVISION}
     # Freeze hashes before the first model call, even during exploratory runs.
     source_root = Path(__file__).parent
     snapshot = directory / "implementation"
@@ -68,7 +73,7 @@ def campaign(args):
         work = directory / "workspaces" / name
         shutil.copytree(canonical, work)
         if condition != "files":
-            (work / "DATA.md").write_text(DESCRIPTION)
+            (work / "DATA.md").write_text(REPA_DESCRIPTION if args.dataset == "repa" else DESCRIPTION)
         if condition == "interface":
             (work / "API.md").write_text(API_HELP)
         elif condition == "helpers":
@@ -113,6 +118,8 @@ def main():
     run.add_argument("--output", required=True)
     run.add_argument("--seed", type=int, default=71)
     run.add_argument("--version", default="v2")
+    run.add_argument("--dataset", choices=["synthetic", "repa"], default="synthetic")
+    run.add_argument("--repa-repository", default="../repa")
     run.add_argument("--variant", choices=["stable", "native"], default="native")
     run.add_argument("--count", type=int, default=120)
     run.add_argument("--model", default="gpt-6-astra")
