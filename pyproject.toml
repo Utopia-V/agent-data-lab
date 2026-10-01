@@ -1,0 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-data-lab"
+version = "0.1.0"
+description = "Controlled experiments on agent-facing data access"
+requires-python = ">=3.12"
+dependencies = ["markdown-it-py==4.2.0"]
+
+[project.scripts]
+data-lab = "agent_data_lab.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent_data_lab"]
