@@ -1,0 +1,3018 @@
+{
+  "version": "handoff-v1",
+  "groups": [
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 20,
+        "input_tokens": 717432,
+        "cached_input_tokens": 638720,
+        "uncached_input_tokens": 78712,
+        "output_tokens": 5407,
+        "seconds": 239.165,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 8,
+        "completed": 8,
+        "graded_turns": 8,
+        "correct": 8,
+        "model_calls": 37,
+        "input_tokens": 1240139,
+        "cached_input_tokens": 1106432,
+        "uncached_input_tokens": 133707,
+        "output_tokens": 11809,
+        "seconds": 488.031,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 5.719979526475072e-06,
+      "observation_seconds": 0.0826,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 8,
+        "input_tokens": 168893,
+        "cached_input_tokens": 150272,
+        "uncached_input_tokens": 18621,
+        "output_tokens": 1373,
+        "seconds": 68.201,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 9,
+        "correct": 9,
+        "model_calls": 45,
+        "input_tokens": 1409032,
+        "cached_input_tokens": 1256704,
+        "uncached_input_tokens": 152328,
+        "output_tokens": 13182,
+        "seconds": 556.232,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 28,
+        "input_tokens": 886325,
+        "cached_input_tokens": 788992,
+        "uncached_input_tokens": 97333,
+        "output_tokens": 6780,
+        "seconds": 307.366,
+        "missing_usage": 0
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 18,
+        "input_tokens": 596473,
+        "cached_input_tokens": 549376,
+        "uncached_input_tokens": 47097,
+        "output_tokens": 3302,
+        "seconds": 154.031,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 8,
+        "correct": 8,
+        "model_calls": 38,
+        "input_tokens": 1288203,
+        "cached_input_tokens": 1178368,
+        "uncached_input_tokens": 109835,
+        "output_tokens": 11526,
+        "seconds": 462.679,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 4.83799958601594e-05,
+      "observation_seconds": 0.0805,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 6,
+        "input_tokens": 136118,
+        "cached_input_tokens": 86144,
+        "uncached_input_tokens": 49974,
+        "output_tokens": 1281,
+        "seconds": 66.158,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 10,
+        "completed": 10,
+        "graded_turns": 9,
+        "correct": 9,
+        "model_calls": 44,
+        "input_tokens": 1424321,
+        "cached_input_tokens": 1264512,
+        "uncached_input_tokens": 159809,
+        "output_tokens": 12807,
+        "seconds": 528.837,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 24,
+        "input_tokens": 732591,
+        "cached_input_tokens": 635520,
+        "uncached_input_tokens": 97071,
+        "output_tokens": 4583,
+        "seconds": 220.189,
+        "missing_usage": 0
+      }
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 20,
+        "input_tokens": 731781,
+        "cached_input_tokens": 677504,
+        "uncached_input_tokens": 54277,
+        "output_tokens": 4958,
+        "seconds": 215.75,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 8,
+        "correct": 8,
+        "model_calls": 40,
+        "input_tokens": 1423511,
+        "cached_input_tokens": 1306496,
+        "uncached_input_tokens": 117015,
+        "output_tokens": 13182,
+        "seconds": 524.398,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 0.00018704100511968136,
+      "observation_seconds": 0.0809,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 7,
+        "input_tokens": 150958,
+        "cached_input_tokens": 121472,
+        "uncached_input_tokens": 29486,
+        "output_tokens": 1089,
+        "seconds": 50.096,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 10,
+        "completed": 10,
+        "graded_turns": 9,
+        "correct": 9,
+        "model_calls": 47,
+        "input_tokens": 1574469,
+        "cached_input_tokens": 1427968,
+        "uncached_input_tokens": 146501,
+        "output_tokens": 14271,
+        "seconds": 574.494,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 27,
+        "input_tokens": 882739,
+        "cached_input_tokens": 798976,
+        "uncached_input_tokens": 83763,
+        "output_tokens": 6047,
+        "seconds": 265.846,
+        "missing_usage": 0
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 19,
+        "input_tokens": 871396,
+        "cached_input_tokens": 791040,
+        "uncached_input_tokens": 80356,
+        "output_tokens": 3852,
+        "seconds": 103.076,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 8,
+        "completed": 8,
+        "graded_turns": 8,
+        "correct": 7,
+        "model_calls": 35,
+        "input_tokens": 1428923,
+        "cached_input_tokens": 1285888,
+        "uncached_input_tokens": 143035,
+        "output_tokens": 9961,
+        "seconds": 239.586,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 4.739995347335935e-06,
+      "observation_seconds": 0.0834,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 7,
+        "input_tokens": 163226,
+        "cached_input_tokens": 128512,
+        "uncached_input_tokens": 34714,
+        "output_tokens": 954,
+        "seconds": 34.152,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 9,
+        "correct": 8,
+        "model_calls": 42,
+        "input_tokens": 1592149,
+        "cached_input_tokens": 1414400,
+        "uncached_input_tokens": 177749,
+        "output_tokens": 10915,
+        "seconds": 273.738,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 26,
+        "input_tokens": 1034622,
+        "cached_input_tokens": 919552,
+        "uncached_input_tokens": 115070,
+        "output_tokens": 4806,
+        "seconds": 137.228,
+        "missing_usage": 0
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 23,
+        "input_tokens": 837922,
+        "cached_input_tokens": 775680,
+        "uncached_input_tokens": 62242,
+        "output_tokens": 5649,
+        "seconds": 166.603,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 8,
+        "correct": 7,
+        "model_calls": 42,
+        "input_tokens": 1560843,
+        "cached_input_tokens": 1432576,
+        "uncached_input_tokens": 128267,
+        "output_tokens": 13176,
+        "seconds": 334.614,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 4.5630993554368615e-05,
+      "observation_seconds": 0.0819,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 7,
+        "input_tokens": 135043,
+        "cached_input_tokens": 109056,
+        "uncached_input_tokens": 25987,
+        "output_tokens": 754,
+        "seconds": 27.493,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 10,
+        "completed": 10,
+        "graded_turns": 9,
+        "correct": 8,
+        "model_calls": 49,
+        "input_tokens": 1695886,
+        "cached_input_tokens": 1541632,
+        "uncached_input_tokens": 154254,
+        "output_tokens": 13930,
+        "seconds": 362.107,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 30,
+        "input_tokens": 972965,
+        "cached_input_tokens": 884736,
+        "uncached_input_tokens": 88229,
+        "output_tokens": 6403,
+        "seconds": 194.096,
+        "missing_usage": 0
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "continuation": {
+        "turns": 5,
+        "completed": 5,
+        "graded_turns": 5,
+        "correct": 5,
+        "model_calls": 27,
+        "input_tokens": 1119765,
+        "cached_input_tokens": 1043968,
+        "uncached_input_tokens": 75797,
+        "output_tokens": 5229,
+        "seconds": 149.39,
+        "missing_usage": 0
+      },
+      "with_creation": {
+        "turns": 9,
+        "completed": 9,
+        "graded_turns": 8,
+        "correct": 7,
+        "model_calls": 46,
+        "input_tokens": 1842686,
+        "cached_input_tokens": 1700864,
+        "uncached_input_tokens": 141822,
+        "output_tokens": 12756,
+        "seconds": 317.401,
+        "missing_usage": 0
+      },
+      "expected_followup_turns": 5,
+      "render_seconds": 0.00015299097867682576,
+      "observation_seconds": 0.0816,
+      "whole_continuation_correct": true,
+      "reentry": {
+        "turns": 1,
+        "completed": 1,
+        "graded_turns": 1,
+        "correct": 1,
+        "model_calls": 8,
+        "input_tokens": 201636,
+        "cached_input_tokens": 161024,
+        "uncached_input_tokens": 40612,
+        "output_tokens": 1539,
+        "seconds": 39.685,
+        "missing_usage": 0
+      },
+      "whole_workflow": {
+        "turns": 10,
+        "completed": 10,
+        "graded_turns": 9,
+        "correct": 8,
+        "model_calls": 54,
+        "input_tokens": 2044322,
+        "cached_input_tokens": 1861888,
+        "uncached_input_tokens": 182434,
+        "output_tokens": 14295,
+        "seconds": 357.086,
+        "missing_usage": 0
+      },
+      "all_followups": {
+        "turns": 6,
+        "completed": 6,
+        "graded_turns": 6,
+        "correct": 6,
+        "model_calls": 35,
+        "input_tokens": 1321401,
+        "cached_input_tokens": 1204992,
+        "uncached_input_tokens": 116409,
+        "output_tokens": 6768,
+        "seconds": 189.075,
+        "missing_usage": 0
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 87109,
+      "cached_input_tokens": 48896,
+      "uncached_input_tokens": 38213,
+      "output_tokens": 736,
+      "seconds": 41.665,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 6,
+      "input_tokens": 201714,
+      "cached_input_tokens": 174336,
+      "uncached_input_tokens": 27378,
+      "output_tokens": 1750,
+      "seconds": 75.022,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 133517,
+      "cached_input_tokens": 125440,
+      "uncached_input_tokens": 8077,
+      "output_tokens": 993,
+      "seconds": 44.223,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 144686,
+      "cached_input_tokens": 142080,
+      "uncached_input_tokens": 2606,
+      "output_tokens": 916,
+      "seconds": 36.882,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "files",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 150406,
+      "cached_input_tokens": 147968,
+      "uncached_input_tokens": 2438,
+      "output_tokens": 1012,
+      "seconds": 41.373,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 73076,
+      "cached_input_tokens": 51968,
+      "uncached_input_tokens": 21108,
+      "output_tokens": 345,
+      "seconds": 21.708,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 150708,
+      "cached_input_tokens": 136192,
+      "uncached_input_tokens": 14516,
+      "output_tokens": 922,
+      "seconds": 45.023,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 157622,
+      "cached_input_tokens": 149632,
+      "uncached_input_tokens": 7990,
+      "output_tokens": 819,
+      "seconds": 39.59,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 127572,
+      "cached_input_tokens": 125440,
+      "uncached_input_tokens": 2132,
+      "output_tokens": 517,
+      "seconds": 22.747,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 2,
+      "input_tokens": 87495,
+      "cached_input_tokens": 86144,
+      "uncached_input_tokens": 1351,
+      "output_tokens": 699,
+      "seconds": 24.963,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 92196,
+      "cached_input_tokens": 69504,
+      "uncached_input_tokens": 22692,
+      "output_tokens": 432,
+      "seconds": 34.6,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 167180,
+      "cached_input_tokens": 148992,
+      "uncached_input_tokens": 18188,
+      "output_tokens": 1422,
+      "seconds": 60.209,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 178154,
+      "cached_input_tokens": 169856,
+      "uncached_input_tokens": 8298,
+      "output_tokens": 1097,
+      "seconds": 44.228,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 144149,
+      "cached_input_tokens": 141440,
+      "uncached_input_tokens": 2709,
+      "output_tokens": 951,
+      "seconds": 35.474,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-astra",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 150102,
+      "cached_input_tokens": 147712,
+      "uncached_input_tokens": 2390,
+      "output_tokens": 1056,
+      "seconds": 41.239,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 70933,
+      "cached_input_tokens": 48384,
+      "uncached_input_tokens": 22549,
+      "output_tokens": 694,
+      "seconds": 20.327,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 7,
+      "input_tokens": 301895,
+      "cached_input_tokens": 267520,
+      "uncached_input_tokens": 34375,
+      "output_tokens": 1196,
+      "seconds": 34.202,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 170580,
+      "cached_input_tokens": 158976,
+      "uncached_input_tokens": 11604,
+      "output_tokens": 847,
+      "seconds": 20.374,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 192714,
+      "cached_input_tokens": 183552,
+      "uncached_input_tokens": 9162,
+      "output_tokens": 375,
+      "seconds": 11.577,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "files",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ],
+            "sources": [
+              "/work/project/packages/repa/src/content/protocol.ts",
+              "/scratch/answers/method-catalog.json"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 2,
+      "input_tokens": 135274,
+      "cached_input_tokens": 132608,
+      "uncached_input_tokens": 2666,
+      "output_tokens": 740,
+      "seconds": 16.596,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 74755,
+      "cached_input_tokens": 51456,
+      "uncached_input_tokens": 23299,
+      "output_tokens": 523,
+      "seconds": 22.077,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 137715,
+      "cached_input_tokens": 121600,
+      "uncached_input_tokens": 16115,
+      "output_tokens": 732,
+      "seconds": 26.11,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 8,
+      "input_tokens": 334048,
+      "cached_input_tokens": 319488,
+      "uncached_input_tokens": 14560,
+      "output_tokens": 3409,
+      "seconds": 89.195,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 191207,
+      "cached_input_tokens": 185344,
+      "uncached_input_tokens": 5863,
+      "output_tokens": 395,
+      "seconds": 15.416,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "documented",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 2,
+      "input_tokens": 100197,
+      "cached_input_tokens": 97792,
+      "uncached_input_tokens": 2405,
+      "output_tokens": 590,
+      "seconds": 13.805,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "client-validation",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        },
+        "actual": {
+          "operation_without_base": [
+            "content.edit",
+            "content.applyPatch",
+            "content.associate",
+            "operation.get",
+            "operation.undo",
+            "operation.reconcile"
+          ],
+          "requires_base": [
+            "content.write",
+            "content.move",
+            "content.copy",
+            "material.collect",
+            "content.relink",
+            "content.remove",
+            "content.setComposition",
+            "context.set"
+          ]
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 5,
+      "input_tokens": 91026,
+      "cached_input_tokens": 68608,
+      "uncached_input_tokens": 22418,
+      "output_tokens": 718,
+      "seconds": 23.468,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "integration-plan",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            10,
+            17,
+            20,
+            21
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        },
+        "actual": {
+          "display_bridge_issue": 23,
+          "display_dependencies": [
+            17,
+            20,
+            21,
+            10
+          ],
+          "model_tools": [
+            "read",
+            "edit",
+            "write",
+            "apply_patch"
+          ],
+          "public_run_steer_registered": false,
+          "resource_hold_registered": true,
+          "display_page_receives_host_key": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 8,
+      "input_tokens": 246839,
+      "cached_input_tokens": 220160,
+      "uncached_input_tokens": 26679,
+      "output_tokens": 1089,
+      "seconds": 35.303,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "changed-policy",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        },
+        "actual": {
+          "preparation_ms": 600000,
+          "hold_ms": 1800000,
+          "upload_limit_bytes": 33554432,
+          "resource_download_type": "application/octet-stream",
+          "resource_download_disposition": "attachment",
+          "cases": {
+            "disconnected_after_45_minutes": "lease_expired",
+            "active_after_45_minutes": "available",
+            "renew_after_release": "lease_expired",
+            "another_host_get": "permission_required"
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 7,
+      "input_tokens": 365139,
+      "cached_input_tokens": 348416,
+      "uncached_input_tokens": 16723,
+      "output_tokens": 2134,
+      "seconds": 52.737,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "prompt-settings",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        },
+        "actual": {
+          "reset_required": [
+            "scope",
+            "namespace",
+            "key",
+            "base"
+          ],
+          "set_required": [
+            "scope",
+            "namespace",
+            "key",
+            "value",
+            "base"
+          ],
+          "scope_kinds": [
+            "application",
+            "space",
+            "session"
+          ],
+          "file_changes_modes": [
+            "on-demand",
+            "notice",
+            "diff"
+          ],
+          "reset_requires_operation_id": false
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 4,
+      "input_tokens": 233533,
+      "cached_input_tokens": 227328,
+      "uncached_input_tokens": 6205,
+      "output_tokens": 400,
+      "seconds": 14.748,
+      "missing_usage": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "replicate": 0,
+      "condition": "structured",
+      "task": "handoff-package",
+      "grade": {
+        "correct": true,
+        "errors": [],
+        "expected": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              10,
+              17,
+              20,
+              21
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        },
+        "actual": {
+          "parameter_filters": {
+            "operation_without_base": [
+              "content.edit",
+              "content.applyPatch",
+              "content.associate",
+              "operation.get",
+              "operation.undo",
+              "operation.reconcile"
+            ],
+            "requires_base": [
+              "content.write",
+              "content.move",
+              "content.copy",
+              "material.collect",
+              "content.relink",
+              "content.remove",
+              "content.setComposition",
+              "context.set"
+            ]
+          },
+          "integration": {
+            "display_bridge_issue": 23,
+            "display_dependencies": [
+              17,
+              20,
+              21,
+              10
+            ],
+            "model_tools": [
+              "read",
+              "edit",
+              "write",
+              "apply_patch"
+            ],
+            "public_run_steer_registered": false,
+            "resource_hold_registered": true,
+            "display_page_receives_host_key": false
+          },
+          "resources": {
+            "preparation_ms": 600000,
+            "hold_ms": 1800000,
+            "upload_limit_bytes": 33554432,
+            "resource_download_type": "application/octet-stream",
+            "resource_download_disposition": "attachment",
+            "cases": {
+              "disconnected_after_45_minutes": "lease_expired",
+              "active_after_45_minutes": "available",
+              "renew_after_release": "lease_expired",
+              "another_host_get": "permission_required"
+            }
+          },
+          "settings": {
+            "set_required": [
+              "scope",
+              "namespace",
+              "key",
+              "value",
+              "base"
+            ],
+            "reset_required": [
+              "scope",
+              "namespace",
+              "key",
+              "base"
+            ],
+            "scope_kinds": [
+              "application",
+              "space",
+              "session"
+            ],
+            "file_changes_modes": [
+              "on-demand",
+              "notice",
+              "diff"
+            ],
+            "reset_requires_operation_id": false
+          }
+        }
+      },
+      "status": "completed",
+      "protocol_valid": true,
+      "turns": 1,
+      "completed": 1,
+      "graded_turns": 1,
+      "correct": 1,
+      "model_calls": 3,
+      "input_tokens": 183228,
+      "cached_input_tokens": 179456,
+      "uncached_input_tokens": 3772,
+      "output_tokens": 888,
+      "seconds": 23.134,
+      "missing_usage": 0
+    }
+  ],
+  "accounting": "with_creation includes the same initial work for each alternative; documentation creation is charged to documented and structured"
+}

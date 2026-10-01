@@ -13,12 +13,15 @@
 - [当前设计与研究范围](docs/design.md)
 - [实验协议](docs/experiment.md)
 - [原始来源与工作接续实验](docs/raw-source-experiments.md)
+- [工作成果组织与跨任务使用实验](docs/work-organization-experiments.md)：区分普通工件、工作说明与同内容的可查询结构；[项目交接结果](results/2026-10-02-handoff/report.md)包括建立成本和再次接手。
 - [已有系统与复用范围](docs/related-systems.md)
 - [实验结果](results/README.md)
 
 实验材料包括可重建的合成语料、固定版本的 Repa 文档与公开 DABstep 数据；模型实验的原始记录默认保存在 Git 忽略目录中。
 
 当前方案保留原生来源与程序操作，把含义和范围关联到对应数据，按需要提供原文与变化观察，直接交付程序结果。设计责任与 Repa 接入边界见[设计说明](docs/design.md)；[交互报告示例](results/2026-10-01-observations/example-report/README.md)可独立打开。
+
+项目交接实验进一步比较了成果本身的组织：模型先从源码、文档和任务记录形成工作结果，再跨任务组合和接续。普通工件完成了后续工作，可查询成果记录未取得稳定的成本优势；当前不把统一登记作为复用前提。
 
 ## 运行
 
