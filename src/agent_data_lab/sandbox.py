@@ -9,12 +9,13 @@ import mdurl
 
 
 class Sandbox:
-    def __init__(self, corpus: Path, scratch: Path, *, interface: bool, provider: Path | None = None):
+    def __init__(self, corpus: Path, scratch: Path, *, interface: bool, provider: Path | None = None, helpers: bool = False):
         self.corpus = corpus.resolve()
         self.scratch = scratch.resolve()
         self.scratch.mkdir(parents=True, exist_ok=True)
         self.interface = interface
         self.provider = (provider or Path(__file__).with_name("access.py")).resolve()
+        self.helpers = helpers
 
     def run(self, command: str, *, max_chars: int = 24000):
         if not isinstance(command, str):
@@ -31,8 +32,12 @@ class Sandbox:
                 "--dir", "/opt/deps", "--chdir", "/work"]
         for module in (markdown_it, mdurl):
             args += ["--ro-bind", str(Path(module.__file__).parent), f"/opt/deps/{module.__name__}"]
+        if self.interface or self.helpers:
+            args += ["--dir", "/opt/agent_data_lab",
+                     "--ro-bind", str(self.provider.with_name("__init__.py")), "/opt/agent_data_lab/__init__.py",
+                     "--ro-bind", str(self.provider.with_name("native.py")), "/opt/agent_data_lab/native.py"]
         if self.interface:
-            args += ["--ro-bind", str(self.provider), "/opt/access.py"]
+            args += ["--ro-bind", str(self.provider), "/opt/agent_data_lab/access.py"]
         args += ["/bin/bash", "--noprofile", "--norc", "-c", command]
         started = time.monotonic()
         try:

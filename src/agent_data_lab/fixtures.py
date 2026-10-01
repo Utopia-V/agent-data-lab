@@ -35,13 +35,14 @@ latency_us 为微秒；只在相同 dataset 下比较 latency_us，越低越好�
 annotations.jsonl 每行是一条标注，subject_ref 是真实关系，quoted_ref 只是文本样例。
 普通文档使用 CommonMark 链接；代码块、行内代码和仅出现地址文字不构成链接。
 HTML 的 a[href] 是链接。repa:document/<ref>#<fragment> 指向对象及其内部位置。
+相对路径按引用者所在目录解析，再对应 inventory.json 中的对象身份。
 损坏或缺失的文件并不表示内容中不存在关联；对未能判断的对象保留其 ref。
 """
 
 
 API_HELP = """# Python 接口
 
-在 python3 中使用 `from access import Space; s = Space('/work')`。
+在 python3 中使用 `from agent_data_lab.access import Space; s = Space('/work')`。
 所有原生文件、sqlite3、markdown_it 和 shell 仍可使用。接口按需使用。
 
 - `s.objects()` -> inventory.json 的对象列表。
@@ -62,7 +63,22 @@ truncated 表示返回结果被 limit 截断，不能解释为全部匹配。无
 """
 
 
-def generate(root: Path, seed: int, count: int = 120) -> list[Task]:
+HELPER_HELP = """# 来源辅助函数
+
+Python 中 `from agent_data_lab.native import markdown_links, html_links, annotation_links`。
+这些函数与接口组的底层解析实现相同，均为可自由组合的普通函数：
+
+- `markdown_links(text)` 枚举实际链接，包括 reference-style 与内嵌 HTML，排除代码样例。
+  每项为 {uri, line, end_line, ordinal, context, relation}；line 为块起始行（1-based），
+  ordinal 为块内所有链接的序号（1-based）；uri 是原生地址，可能是相对路径。
+- `html_links(text)` 枚举 a[href]，返回 {uri,line,column,ordinal,context,relation}；ordinal 为文件内链接顺序。
+- `annotation_links(row)` 返回标注对象的声明关系，字段为 {uri,field,ordinal,relation}。
+
+三个函数都是迭代器。继续使用 json、sqlite3、pathlib、urllib.parse 等原生库读取数据、处理地址和组合结果。
+"""
+
+
+def generate(root: Path, seed: int, count: int = 120, *, variant: str = "stable") -> list[Task]:
     if count < 24:
         raise ValueError("count must be >= 24")
     root.mkdir(parents=True, exist_ok=True)
@@ -71,9 +87,12 @@ def generate(root: Path, seed: int, count: int = 120) -> list[Task]:
     refs = ["d" + rng.randbytes(5).hex() for _ in range(count)]
     target = refs[0]
     inventory, facts, occurrences, attempts, annotations, experiments = [], {}, [], [], [], []
+    target_path = None
     for index, ref in enumerate(refs):
         token = "K" + rng.randbytes(4).hex()
         path = f"notes/{rng.randrange(10000,99999)}-{index}.md"
+        if index == 0:
+            target_path = path
         lines = [f"# 学习记录 {index}", "", f"对象：{ref}", f"校验词：{token}", ""]
         latest_wrong = index % 4 == 1
         has_phrase = index % 3 == 1 or index % 7 == 0
@@ -85,6 +104,11 @@ def generate(root: Path, seed: int, count: int = 120) -> list[Task]:
         if index % 13 == 2:
             occurrences.extend([f"{ref}@{len(lines) + 1}:1", f"{ref}@{len(lines) + 1}:2"])
             lines += [f"先读 [定义][basis]，再复查 [前提][basis]。", "", f"[basis]: repa:document/{target}#assumptions", ""]
+        if variant == "native" and index % 11 == 4:
+            occurrences.append(f"{ref}@{len(lines) + 1}:1")
+            lines += [f'<a href="repa:document/{target}#embedded">嵌入链接</a>', ""]
+        if variant == "native" and index % 2 == 0:
+            lines = [line.replace(f"repa:document/{target}", Path(target_path).name) for line in lines]
         # Search text alone cannot distinguish these from actual links.
         lines += [f"地址样例 `repa:document/{target}`。", "", "```md", f"[不是引用](repa:document/{target})", "```", ""]
         if index % 5 == 0:
@@ -112,7 +136,8 @@ def generate(root: Path, seed: int, count: int = 120) -> list[Task]:
     for row in annotations:
         inventory.append({"ref": "annotation:" + row["id"], "kind": "record", "key": row["id"]})
     html_ref = "page:" + str(seed)
-    html_text = f'<h1>交互材料</h1>\n<a href="repa:document/{target}#demo">演示来源</a>\n<code>repa:document/{target}</code>\n'
+    html_uri = target_path if variant == "native" else f"repa:document/{target}"
+    html_text = f'<h1>交互材料</h1>\n<a href="{html_uri}#demo">演示来源</a>\n<code>repa:document/{target}</code>\n'
     (root / "demo.html").write_text(html_text)
     inventory.append({"ref": html_ref, "kind": "html", "path": "demo.html"})
     missing, broken, opaque = "missing:" + str(seed), "broken:" + str(seed), "opaque:" + str(seed)
@@ -140,7 +165,7 @@ def generate(root: Path, seed: int, count: int = 120) -> list[Task]:
         Task("lookup", f"读取对象 {target}，返回它的校验词。answers 只含这个词。", [facts[target]["token"]], []),
         Task("latest", "列出最近一次提交仍然答错的全部题目 ref。不要把历史错误当作当前错误。answers 为 ref 列表。", wrong, []),
         Task("join", "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。", [ref + "=" + facts[ref]["token"] for ref in both], []),
-        Task("references", f"找出对象 {target} 在下列范围内的全部实际 CommonMark 链接出现位置：{refs_json}。排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。", sorted(occurrences), []),
+        Task("references", f"找出对象 {target} 在下列范围内的全部实际链接出现位置：{refs_json}。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。", sorted(occurrences), []),
         Task("scoped", "在最近一次提交仍答错的题目范围内，搜索包含字面短语‘写回路径’的文档。按 ref 字典序返回前三个不同文档的 ref。", both[:3], []),
         Task("mixed", f"目标是 {target}。在范围 {json.dumps(mixed_scope)} 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。", sorted(mixed_answers), [broken, missing]),
         Task("decision", "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。", [best[0], facts[best[4]]["token"]], []),

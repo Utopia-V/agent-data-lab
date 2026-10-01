@@ -47,6 +47,14 @@ lookup 和 empty 检查简单任务的额外负担；latest 检查完整枚举�
 
 模型调用次数取本机 Codex 0.159.2 app-server 的 `rawResponse/completed` 通知；仅保留完成次数及使用量元数据，其他 raw 内容在接收端立即丢弃。token 使用以 `thread/tokenUsage/updated` 的报告为准。输出字节数不转换为 token。
 
+## v2：区分普通辅助函数与统一接口
+
+v1 的 interface 条件同时提供可复用解析代码和统一访问语义，不能把两者的收益归到同一个原因。v2 增加 helpers 条件：在 described 基础上提供 `markdown_links`、`html_links`、`annotation_links`，与 interface 共用相同的底层解析实现；它们保留原生地址，不负责对象目录、反向查询、范围和覆盖组合。
+
+v2 语料额外包含相对路径链接和 Markdown 内嵌 HTML。标准答案仍在生成时由事实创建，不依赖候选接口。此前在确定性检查中发现的两类漏计修复后，用 seed 313、907 分别比较 described、helpers、interface。选择 join、references、mixed、decision、lookup、empty 六项，保留简单任务的成本对照。实验运行前冻结实现与本节协议。
+
+本轮首先判断统一接口相对于已有辅助函数是否减少实际往返与错误。若 helpers 已获得相近效果，结论应收窄到来源说明和复用实现，不能据此要求全局查询协议。
+
 ## 收束条件
 
 完整保留产生结论的实现版本、实验参数与可重建材料。确定性行为成立后，依据配对模型实验决定保留、修改或撤回候选接口。收益不足时收窄到说明约定或源端辅助函数；不以已投入代码量决定保留。

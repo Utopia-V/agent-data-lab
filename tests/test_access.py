@@ -30,7 +30,7 @@ class AccessBehavior(unittest.TestCase):
         for seed in (3, 99, 742):
             with self.subTest(seed=seed):
                 root = Path(self.temp.name) / str(seed)
-                tasks = {task.id: task for task in generate(root, seed, 60)}
+                tasks = {task.id: task for task in generate(root, seed, 60, variant="native")}
                 space = Space(root)
                 target = tasks["lookup"].prompt.split()[1].split("，")[0]
                 scope = [row["ref"] for row in space.objects() if row["kind"] == "markdown" and ":" not in row["ref"]]
@@ -113,7 +113,7 @@ class AccessBehavior(unittest.TestCase):
         secret = Path(self.temp.name) / "oracle.json"
         secret.write_text("not available to model")
         sandbox = Sandbox(self.root, Path(self.temp.name) / "scratch", interface=True)
-        code = "from access import Space; import pathlib; s=Space(); print(len(s.objects())); print(pathlib.Path(" + repr(str(secret)) + ").exists()); print(len(s.sql('select * from attempts')))"
+        code = "from agent_data_lab.access import Space; import pathlib; s=Space(); print(len(s.objects())); print(pathlib.Path(" + repr(str(secret)) + ").exists()); print(len(s.sql('select * from attempts')))"
         import shlex
         result = sandbox.run("python3 -c " + shlex.quote(code))
         self.assertEqual(result["exit_code"], 0, result["output"])
@@ -128,6 +128,34 @@ class AccessBehavior(unittest.TestCase):
         self.assertTrue(grade(json.dumps(good), task)["correct"])
         for bad in [dict(good, answers=task.answers[:-1]), dict(good, answers=task.answers*2), dict(good, unresolved=[])]:
             self.assertFalse(grade(json.dumps(bad), task)["correct"])
+
+    def test_native_paths_html_anchors_and_stable_addresses_resolve_to_one_identity(self):
+        write_json(self.root / "inventory.json", [
+            {"ref":"source", "kind":"markdown", "path":"notes/source.md"},
+            {"ref":"target", "kind":"markdown", "path":"资料 页面.md"}])
+        (self.root / "资料 页面.md").write_text("# 目标\n")
+        (self.root / "notes/source.md").write_text(
+            "[one](../%E8%B5%84%E6%96%99%20%E9%A1%B5%E9%9D%A2.md#first)\n\n"
+            '<a href="repa:document/target#second">two</a>\n\n'
+            '正文 <a href="../资料%20页面.md#third">three</a> 和 [four](repa:document/target)。\n\n'
+            '```html\n<a href="repa:document/target">not a link</a>\n```\n')
+        result = self.space.references_to("target", within=["source"])
+        self.assertEqual([(x["line"], x["ordinal"], x["fragment"]) for x in result["items"]],
+                         [(1,1,"first"),(3,1,"second"),(5,1,"third"),(5,2,"")])
+        self.assertTrue(result["complete"])
+
+    def test_malformed_scope_and_ambiguous_native_identity_do_not_silently_match(self):
+        with self.assertRaises(TypeError):
+            self.space.search("x", within="one-ref")
+        with self.assertRaises(TypeError):
+            self.space.search("x", within=[None])
+        write_json(self.root / "inventory.json", [
+            {"ref":"source", "kind":"markdown", "path":"source.md"},
+            {"ref":"a", "kind":"markdown", "path":"target.md"},
+            {"ref":"b", "kind":"markdown", "path":"target.md"}])
+        (self.root / "source.md").write_text("[x](target.md)\n")
+        result = self.space.references_to("a", within=["source"])
+        self.assertEqual(result["unresolved"], [{"ref":"source", "reason":"ambiguous_target"}])
 
 
 if __name__ == "__main__":

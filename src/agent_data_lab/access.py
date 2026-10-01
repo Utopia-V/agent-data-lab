@@ -3,32 +3,19 @@
 from __future__ import annotations
 
 from hashlib import sha256
-from html.parser import HTMLParser
 import json
 from pathlib import Path
 import sqlite3
 from typing import Any
 from urllib.parse import unquote, urlsplit
 
-from markdown_it import MarkdownIt
+from .native import markdown_links, html_links, annotation_links
 
 
 class ReadFailure(Exception):
     def __init__(self, ref: str, reason: str):
         self.ref, self.reason = ref, reason
         super().__init__(f"{ref}: {reason}")
-
-
-class HtmlLinks(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.links: list[tuple[str, int, int]] = []
-
-    def handle_starttag(self, tag, attrs):
-        if tag == "a":
-            for key, value in attrs:
-                if key == "href" and value is not None:
-                    self.links.append((value, *self.getpos()))
 
 
 def target_ref(uri: str) -> tuple[str, str] | None:
@@ -43,7 +30,6 @@ class Space:
 
     def __init__(self, root: str | Path = "/work"):
         self.root = Path(root).resolve()
-        self.markdown = MarkdownIt("commonmark")
 
     def objects(self) -> list[dict[str, Any]]:
         # Reload so an external move/relink does not freeze identity to a path.
@@ -104,8 +90,31 @@ class Space:
         return result
 
     def _scope(self, within: list[str] | None) -> list[str]:
+        if within is not None and (not isinstance(within, list) or not all(isinstance(ref, str) for ref in within)):
+            raise TypeError("within must be a list of object references or None")
         refs = [entry["ref"] for entry in self.objects()] if within is None else within
         return list(dict.fromkeys(refs))
+
+    def _destination(self, uri: str, source: dict[str, Any]):
+        stable = target_ref(uri)
+        if stable is not None:
+            return stable
+        parsed = urlsplit(uri)
+        if parsed.scheme or parsed.netloc or "path" not in source:
+            return None
+        if not parsed.path:
+            return source["ref"], parsed.fragment
+        path = Path(unquote(parsed.path))
+        if path.is_absolute():
+            candidate = self.root / path.relative_to("/")
+        else:
+            candidate = (self.root / source["path"]).parent / path
+        candidate = candidate.resolve()
+        matches = [entry["ref"] for entry in self.objects()
+                   if "path" in entry and (self.root / entry["path"]).resolve() == candidate]
+        if len(matches) > 1:
+            raise ReadFailure(source["ref"], "ambiguous_target")
+        return (matches[0], parsed.fragment) if matches else None
 
     def _scan(self, within, operation):
         items, covered, unresolved = [], [], []
@@ -149,34 +158,16 @@ class Space:
             ref, kind = entry["ref"], entry["kind"]
             links: list[dict[str, Any]] = []
             if kind == "markdown":
-                lines = text.splitlines()
-                for token in self.markdown.parse(text):
-                    if token.type != "inline" or token.map is None:
-                        continue
-                    start, end = token.map
-                    ordinal = 0
-                    for child in token.children or []:
-                        if child.type == "link_open":
-                            ordinal += 1
-                            links.append({"uri": child.attrGet("href"), "line": start + 1,
-                                          "end_line": end, "ordinal": ordinal,
-                                          "context": "\n".join(lines[start:end]), "relation": "link"})
+                links = list(markdown_links(text))
             elif kind == "html":
-                parser = HtmlLinks()
-                parser.feed(text)
-                for ordinal, (uri, line, column) in enumerate(parser.links, 1):
-                    links.append({"uri": uri, "line": line, "column": column,
-                                  "ordinal": ordinal, "relation": "link", "context": text.splitlines()[line - 1]})
+                links = list(html_links(text))
             elif kind == "record":
                 row = json.loads(text)
-                # The source schema declares subject_ref. Text fields are not relations.
-                links.append({"uri": "repa:document/" + row["subject_ref"],
-                              "field": "subject_ref", "ordinal": 1,
-                              "relation": "annotates", "context": text})
+                links = [dict(link, context=text) for link in annotation_links(row)]
             else:
                 raise ReadFailure(ref, "unsupported_reference_query")
             for link in links:
-                destination = target_ref(link.pop("uri"))
+                destination = self._destination(link.pop("uri"), entry)
                 if destination is not None and destination[0] == target:
                     yield {"ref": ref, "target": target, "fragment": destination[1],
                            "revision": revision, **link}
