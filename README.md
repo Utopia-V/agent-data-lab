@@ -27,6 +27,6 @@ uv run data-lab campaign --output campaigns/example --seed 71 --model gpt-6-astr
 
 `campaign` 会实际调用模型。每个输出目录只创建一次；manifest 保存语料与实现哈希、模型、思考强度、任务、运行顺序和源码快照。原始结果包含可见工具交互、最终回答和使用量，不保留模型隐藏推理。
 
-图表由 `analysis` 依赖组中的 Matplotlib 生成，当前使用已安装的 Noto Sans CJK 中文字体。公开结果包含冻结实现归档，可按报告中的哈希恢复各阶段；本机 campaigns/ 另外保留原始语料和完整运行目录。
+图表由 `analysis` 依赖组中的 Matplotlib 生成，当前使用已安装的 Noto Sans CJK 中文字体。公开结果包含冻结实现归档，可按报告中的哈希恢复各阶段；本机 campaigns/ 另外保留原始语料、源码快照和模型原始记录。各次运行复制出的工作区在核验后删除，需要时由这些输入重建。
 
 关联研究入口：[Repa #30](https://github.com/Utopia-V/repa/issues/30)。
