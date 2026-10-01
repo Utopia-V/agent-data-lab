@@ -47,4 +47,4 @@ Luna 调用了工作记录的选择、工件定位与来源变化查询。桥接
 - [输入、条件顺序与实现哈希](provenance.json)，[冻结实现](implementations)，[原始资料快照](source.tar.gz)。
 - [模型实际生成的工作与产物](artifacts.tar.gz)：保留原始起点、两种同内容说明以及各条件两次交接后的工件。
 
-恢复 source.tar.gz 的 corpus 目录并使用 provenance 中的对应实现。主过程通过 agent_data_lab.handoff 执行，再次交接通过 agent_data_lab.handoff_resume 执行；分析使用评分 v1.1。模型输出随实际运行变化，固定版本与已有轨迹用于复核本批结果。
+将 source.tar.gz 解压为含 corpus/ 和 manifest.json 的数据目录，通过 --dataset 传入，并使用 provenance 中的对应实现。主过程通过 agent_data_lab.handoff 执行，再次交接通过 agent_data_lab.handoff_resume 执行；分析使用评分 v1.1。模型输出随实际运行变化，固定版本与已有轨迹用于复核本批结果。
