@@ -65,7 +65,7 @@ truncated 表示返回结果被 limit 截断，不能解释为全部匹配。无
 
 HELPER_HELP = """# 来源辅助函数
 
-Python 中 `from agent_data_lab.native import markdown_links, html_links, annotation_links`。
+Python 中 `from agent_data_lab.native import markdown_links, html_links, annotation_links, query_learning_db, load_annotations`。
 这些函数与接口组的底层解析实现相同，均为可自由组合的普通函数：
 
 - `markdown_links(text)` 枚举实际链接，包括 reference-style 与内嵌 HTML，排除代码样例。
@@ -73,12 +73,14 @@ Python 中 `from agent_data_lab.native import markdown_links, html_links, annota
   ordinal 为块内所有链接的序号（1-based）；uri 是原生地址，可能是相对路径。
 - `html_links(text)` 枚举 a[href]，返回 {uri,line,column,ordinal,context,relation}；ordinal 为文件内链接顺序。
 - `annotation_links(row)` 返回标注对象的声明关系，字段为 {uri,field,ordinal,relation}。
+- `query_learning_db(query, params=(), root='/work')` 执行原生只读 SQL，返回行字典列表，与 Space.sql 共用实现。
+- `load_annotations(root='/work')` 读取 JSONL 标注，返回行字典列表，与 Space.records 共用实现。
 
 三个函数都是迭代器。继续使用 json、sqlite3、pathlib、urllib.parse 等原生库读取数据、处理地址和组合结果。
 """
 
 
-def generate(root: Path, seed: int, count: int = 120, *, variant: str = "stable") -> list[Task]:
+def generate(root: Path, seed: int, count: int = 120, *, variant: str = "stable", scope_file: bool = False) -> list[Task]:
     if count < 24:
         raise ValueError("count must be >= 24")
     root.mkdir(parents=True, exist_ok=True)
@@ -156,6 +158,11 @@ def generate(root: Path, seed: int, count: int = 120, *, variant: str = "stable"
     wrong = sorted(ref for ref, fact in facts.items() if fact["wrong"])
     both = sorted(ref for ref, fact in facts.items() if fact["wrong"] and fact["phrase"])
     refs_json = json.dumps(refs, ensure_ascii=False)
+    reference_scope = refs
+    if scope_file:
+        reference_scope = refs[::2] + refs[1:2]
+        write_json(root / "reference-scope.json", reference_scope)
+        refs_json = "reference-scope.json 中列出的对象引用集合"
     valid_experiments = [row for row in experiments if row[1] == "cpu" and row[2] and facts[row[4]]["wrong"]]
     best = min(valid_experiments, key=lambda row: (row[3], row[0]))
     mixed_scope = [refs[1], refs[2], html_ref, "annotation:n0", "annotation:n1", opaque, missing, broken]
@@ -165,7 +172,7 @@ def generate(root: Path, seed: int, count: int = 120, *, variant: str = "stable"
         Task("lookup", f"读取对象 {target}，返回它的校验词。answers 只含这个词。", [facts[target]["token"]], []),
         Task("latest", "列出最近一次提交仍然答错的全部题目 ref。不要把历史错误当作当前错误。answers 为 ref 列表。", wrong, []),
         Task("join", "在最近一次提交仍答错的题目中，找到正文包含字面短语‘写回路径’的全部文档。answers 每项使用 ref=校验词 格式。", [ref + "=" + facts[ref]["token"] for ref in both], []),
-        Task("references", f"找出对象 {target} 在下列范围内的全部实际链接出现位置：{refs_json}。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。", sorted(occurrences), []),
+        Task("references", f"找出对象 {target} 在下列范围内的全部实际链接出现位置：{refs_json}。使用 CommonMark 规则，包括其中的 HTML a[href]；排除代码和仅出现地址的文字，reference-style 链接的每次使用都计入。answers 每项为 ref@块起始行:块内链接序号，均从1开始；重复引用逐项保留。", sorted(item for item in occurrences if item.split('@')[0] in reference_scope), []),
         Task("scoped", "在最近一次提交仍答错的题目范围内，搜索包含字面短语‘写回路径’的文档。按 ref 字典序返回前三个不同文档的 ref。", both[:3], []),
         Task("mixed", f"目标是 {target}。在范围 {json.dumps(mixed_scope)} 中找出全部实际引用。Markdown/CommonMark 的真实链接、HTML a[href]、标注的 subject_ref 都计入；unclassified.txt 中的文字明确声明了其链接语法，应继续读取处理。answers 文档用 ref@块起始行:块内链接序号，HTML用 ref@行:文件内链接序号，标注用 ref@subject_ref。unresolved 只列最终仍无法判断的对象 ref。", sorted(mixed_answers), [broken, missing]),
         Task("decision", "从 cpu 数据集、校验通过、关联题目最近一次提交仍答错的实验中，选择 latency_us 最低的一项；同值按实验 id 字典序。answers 返回两个字符串：实验 id、关联文档的校验词。", [best[0], facts[best[4]]["token"]], []),

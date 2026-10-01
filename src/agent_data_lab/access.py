@@ -5,11 +5,10 @@ from __future__ import annotations
 from hashlib import sha256
 import json
 from pathlib import Path
-import sqlite3
 from typing import Any
 from urllib.parse import unquote, urlsplit
 
-from .native import markdown_links, html_links, annotation_links
+from .native import markdown_links, html_links, annotation_links, query_learning_db, load_annotations
 
 
 class ReadFailure(Exception):
@@ -36,14 +35,12 @@ class Space:
         return json.loads((self.root / "inventory.json").read_text())
 
     def sql(self, query: str, params=()) -> list[dict[str, Any]]:
-        with sqlite3.connect(f"file:{self.root / 'learning.sqlite'}?mode=ro", uri=True) as db:
-            db.row_factory = sqlite3.Row
-            return [dict(row) for row in db.execute(query, params)]
+        return query_learning_db(query, params, self.root)
 
     def records(self, name: str = "annotations") -> list[dict[str, Any]]:
         if name != "annotations":
             raise ValueError(f"unknown record source: {name}")
-        return [json.loads(line) for line in (self.root / "annotations.jsonl").read_text().splitlines() if line]
+        return load_annotations(self.root)
 
     def _entry(self, ref: str) -> dict[str, Any]:
         entries = [entry for entry in self.objects() if entry["ref"] == ref]

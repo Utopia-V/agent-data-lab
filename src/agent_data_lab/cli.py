@@ -38,7 +38,7 @@ def campaign(args):
     directory.mkdir(parents=True, exist_ok=False)
     canonical = directory / "canonical"
     tasks = (generate_repa(canonical, Path(args.repa_repository)) if args.dataset == "repa"
-             else generate(canonical, args.seed, args.count, variant=args.variant))
+             else generate(canonical, args.seed, args.count, variant=args.variant, scope_file=args.scope_file))
     if args.tasks:
         wanted = set(args.tasks.split(","))
         if not wanted <= {task.id for task in tasks}:
@@ -48,7 +48,7 @@ def campaign(args):
     if not set(conditions) <= {"files", "described", "helpers", "interface"}:
         raise ValueError("unknown condition")
     manifest = {"version": args.version, "dataset": args.dataset, "variant": args.variant,
-        "seed": args.seed, "count": args.count, "model": args.model,
+        "seed": args.seed, "count": args.count, "scope_file": args.scope_file, "model": args.model,
         "effort": args.effort, "conditions": conditions, "replicates": args.replicates,
         "tasks": [asdict(task) for task in tasks], "corpus_sha256": dataset_digest(canonical),
         "git_revision": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
@@ -121,6 +121,7 @@ def main():
     run.add_argument("--dataset", choices=["synthetic", "repa"], default="synthetic")
     run.add_argument("--repa-repository", default="../repa")
     run.add_argument("--variant", choices=["stable", "native"], default="native")
+    run.add_argument("--scope-file", action="store_true")
     run.add_argument("--count", type=int, default=120)
     run.add_argument("--model", default="gpt-6-astra")
     run.add_argument("--effort", default="high")

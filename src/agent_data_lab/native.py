@@ -1,6 +1,9 @@
 """Reusable source-specific helpers; no registry, scope, reverse query or coverage layer."""
 
 from html.parser import HTMLParser
+import json
+from pathlib import Path
+import sqlite3
 
 from markdown_it import MarkdownIt
 
@@ -51,3 +54,14 @@ def annotation_links(row):
     """The annotation source schema declares subject_ref as the relation field."""
     yield {"uri": "repa:document/" + row["subject_ref"], "field": "subject_ref",
            "ordinal": 1, "relation": "annotates"}
+
+
+def query_learning_db(query, params=(), root="/work"):
+    """Execute native SQL and return row dictionaries; no query translation."""
+    with sqlite3.connect(f"file:{Path(root) / 'learning.sqlite'}?mode=ro", uri=True) as db:
+        db.row_factory = sqlite3.Row
+        return [dict(row) for row in db.execute(query, params)]
+
+
+def load_annotations(root="/work"):
+    return [json.loads(line) for line in (Path(root) / "annotations.jsonl").read_text().splitlines() if line]
